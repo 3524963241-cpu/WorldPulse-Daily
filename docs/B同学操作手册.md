@@ -20,15 +20,23 @@
 
 ## 二、RSS 源验证结果（已实测）
 
-经真实网络测试，以下 3 个源稳定可用（BBC / Al Jazeera / Google News 在部分网络环境下不可达，故未采用）：
+经真实网络测试，以下 **6 个**源稳定可用（BBC / Al Jazeera / Guardian / DW / NYT / CNN / France24 在部分网络环境下不可达，故未采用）：
 
-| 源 | 地址 | 实测 |
-|---|---|---|
-| NPR World | `https://feeds.npr.org/1004/rss.xml` | ✅ 10 条/次 |
-| NPR Business | `https://feeds.npr.org/1006/rss.xml` | ✅ 10 条/次 |
-| MarketWatch Top | `https://feeds.content.dowjones.io/public/rss/mw_topstories` | ✅ 10 条/次 |
+| 源 | 地址 | 实测 | 定位 |
+|---|---|---|---|
+| NPR World | `https://feeds.npr.org/1004/rss.xml` | ✅ 10 条/次 | 地缘 + 政治 |
+| NPR Politics | `https://feeds.npr.org/1014/rss.xml` | ✅ 10 条/次 | 政治 |
+| NPR Business | `https://feeds.npr.org/1006/rss.xml` | ✅ 10 条/次 | 财经 + 政治 |
+| MarketWatch Top | `https://feeds.content.dowjones.io/public/rss/mw_topstories` | ✅ 10 条/次 | 财经 |
+| MarketWatch Markets | `https://feeds.content.dowjones.io/public/rss/mw_marketpulse` | ✅ 30 条/次 | 财经 |
+| CNBC World News | `https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100727362` | ✅ 30 条/次 | 财经 |
 
 源地址集中在 `update_news.py` 顶部的 `RSS_SOURCES` 配置区，更换/新增源只改这一处。
+
+> **为什么要 6 个源**：单个 NPR 频道每次只吐 10 条，3 个源合计 30 条，
+> 经 48 小时过滤和分类后只剩 15~16 条，凑不满约定的 20 条。
+> 加上 MarketWatch Markets 和 CNBC（各 30 条）后，原始条目达到 100 条，
+> 最终稳定输出 20 条。这是"条数不够"问题的根本解法。
 
 ---
 
@@ -56,9 +64,14 @@
 ```
 
 规则要点：
-- 最多 20 条，按热度降序，id 按 `news-001` 顺序编号；
+- **固定输出 20 条**，按热度降序，id 按 `news-001` 顺序编号；
+- 20 条按**三领域软配额**分配（地缘 5 / 政治 7 / 市场 8），某领域当天条数不足时名额让给其他领域；
 - `lat/lng` 允许为 null —— 该新闻仍显示在列表，但不上地图；
 - `heat` 是**编辑规则热度**（见第六节），不是全网真实搜索热度，A 需在页面标注。
+
+> 为什么要有配额：财经源每次吐的条目远多于政治源（30 vs 10），
+> 纯按热度排会让首页 60% 都是财经新闻，地图上也只剩美国一个点。
+> 配额保证三个领域都有内容可展示，是"编辑推荐"逻辑的一部分。
 
 ---
 
@@ -118,7 +131,14 @@ python3 scripts/update_news.py
 5. **验收**：运行成功后，打开 `https://<你的用户名>.github.io/<仓库名>/`，
    再刷新 `data/news.json` 的 `updated_at` 是否更新为刚才的时间。
 
-定时说明：cron 设为 UTC 00:30 = **北京时间 08:30**。GitHub 定时任务可能延迟几分钟到几十分钟；公开仓库长期无活动时定时任务可能被自动停用（正常 push 一次即可恢复）——这是 GitHub 的机制，不是脚本故障。
+定时说明：cron 设了两班，**UTC 00:30 = 北京时间 08:30**（早班，覆盖欧美夜间新闻）和 **UTC 12:30 = 北京时间 20:30**（晚班，覆盖当天亚洲时段与美股盘中）。
+
+关于定时任务的三个注意点：
+
+1. GitHub 定时任务可能**延迟几分钟到几十分钟**，尤其高峰期，属正常现象；
+2. 公开仓库**长期（约 60 天）无 push 活动**时，GitHub 会自动停用 schedule，
+   重新 push 一次即可恢复 —— 这是 GitHub 的机制，不是脚本故障；
+3. 除了定时，任何时候都能在 `Actions` 页手动 `Run workflow` 立即更新，答辩演示用这个。
 
 ---
 
@@ -160,7 +180,9 @@ heat = 新鲜度(0-50) + 主题相关(0-20) + 地理定位(0-10) + 来源基础(
 |---|---|---|
 | `ModuleNotFoundError: feedparser` | 没装依赖 | `pip3 install -r requirements.txt` |
 | 获取步骤全部 `✗` | 网络无法访问境外 RSS | 换网络环境，或把 `RSS_SOURCES` 换成可达源 |
-| 新闻只有 8~10 条 | RSS 源每次只给最近 10 条，属正常 | 正常现象，满足"最多 20 条"要求 |
+| 新闻只有 8~15 条 | 源数量不足，或分类词典误杀（关键词没覆盖到） | ① 在 `RSS_SOURCES` 增源；② 看日志「分类」那行丢弃了多少条，把漏掉的关键词补进 `CATEGORY_KEYWORDS` |
+| 输出条数不到 20 | 某领域当天新闻太少，配额补不满 | 属正常，配额是**软**的；如长期不足就增源 |
+| 标题全是 `[EN]` 开头 | 免费翻译接口当天配额用尽 | 等配额重置，或配 DeepL 密钥（`TRANSLATE_API_KEY`） |
 | 标题全是 `[EN]` 开头 | 翻译接口当日配额耗尽 | 正常回退；或配置 DeepL 密钥 |
 | Actions 定时没跑 | GitHub 延迟或仓库闲置被停用 | 手动 Run workflow；push 一次代码 |
 | Actions 权限报错 403 | workflow 权限未生效 | 确认使用本仓库的 `update.yml`（已声明 `contents: write` 等）；仓库 Settings → Actions → General → Workflow permissions 选 "Read and write" |
