@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T12:19:33Z",
+  "updated_at": "2026-10-13T12:32:45Z",
   "news": [
     {
       "id": "news-001",
@@ -12,7 +12,7 @@
       "published_at": "2026-10-13T11:53:45Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/10/13/iran-us-war-houthis-saudi-arabia-airport.html",
-      "heat": 97
+      "heat": 96
     },
     {
       "id": "news-002",
@@ -90,7 +90,7 @@
       "published_at": "2026-10-13T11:00:00Z",
       "source": "MarketWatch Top",
       "url": "https://www.marketwatch.com/story/options-traders-expect-wild-stock-market-swings-beginning-later-this-month-here-are-4-things-to-watch-e4931b02?mod=mw_rss_topstories",
-      "heat": 91
+      "heat": 90
     },
     {
       "id": "news-008",
@@ -103,7 +103,7 @@
       "published_at": "2026-10-13T10:01:37Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/10/13/unitedhealth-group-unh-earnings-q3-2026.html",
-      "heat": 91
+      "heat": 90
     },
     {
       "id": "news-009",
@@ -120,6 +120,19 @@
     },
     {
       "id": "news-010",
+      "title": "随着“蟑螂”抗议活动因涉嫌选民欺诈而增加，莫迪捍卫印度是“民主之母”",
+      "summary": "印度因涉嫌选民欺诈而要求罢免首席选举专员的抗议活动愈演愈烈。",
+      "category": "politics",
+      "country": "印度",
+      "lat": 20.59,
+      "lng": 78.96,
+      "published_at": "2026-10-13T12:19:37Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/13/cockroach-fraud-india-protest-modi.html",
+      "heat": 89
+    },
+    {
+      "id": "news-011",
       "title": "这家欧洲最有价值的公司在推出技术收益之前应该做些什么",
       "summary": "ASML将在周三荷兰阿姆斯特丹开幕前公布其第三季度财务收益。",
       "category": "markets",
@@ -132,7 +145,7 @@
       "heat": 89
     },
     {
-      "id": "news-011",
+      "id": "news-012",
       "title": "特朗普与普京的柴油协议激怒了欧洲",
       "summary": "特朗普总统与俄罗斯的柴油协议引发了欧洲的愤怒，乌克兰总统泽伦斯基质疑华盛顿的动机，盟友发誓要继续向莫斯科施压。",
       "category": "politics",
@@ -145,7 +158,7 @@
       "heat": 84
     },
     {
-      "id": "news-012",
+      "id": "news-013",
       "title": "北约计划如何应对俄罗斯对该联盟的潜在攻击",
       "summary": "NPR的史蒂夫·英斯基普（ Steve Inskeep ）与美国前欧洲事务助理国务卿丹·汉密尔顿（ Dan Hamilton ）谈到了北约反击俄罗斯对该联盟任何可能攻击的详细计划。",
       "category": "geopolitics",
@@ -155,19 +168,6 @@
       "published_at": "2026-10-13T08:44:14Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/10/13/nx-s1-5998721/how-nato-plans-to-combat-potential-attacks-on-the-alliance-from-russia",
-      "heat": 84
-    },
-    {
-      "id": "news-013",
-      "title": "随着“蟑螂”抗议活动因涉嫌选民欺诈而增加，莫迪捍卫印度是“民主之母”",
-      "summary": "印度因涉嫌选民欺诈而要求罢免首席选举专员的抗议活动愈演愈烈。",
-      "category": "politics",
-      "country": "印度",
-      "lat": 20.59,
-      "lng": 78.96,
-      "published_at": "2026-10-13T07:17:46Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/10/13/cockroach-fraud-india-protest-modi.html",
       "heat": 84
     },
     {
@@ -259,7 +259,7 @@
       "published_at": "2026-10-12T16:50:44Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/10/12/faa-saudi-arabia-flight-risks.html",
-      "heat": 65
+      "heat": 64
     }
   ]
 }
