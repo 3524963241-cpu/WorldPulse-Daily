@@ -3,12 +3,16 @@
 # 作用：
 #   1. 每天北京时间 08:30（UTC 00:30）自动运行新闻更新脚本；
 #   2. 也支持在 GitHub 网页上手动触发（Actions → 选本工作流 → Run workflow）；
-#   3. 新闻更新成功后，把新的 data/news.json 提交回仓库；
-#   4. 最后把整个网站发布到 GitHub Pages。
+#   3. 新闻更新成功后，把新的 data/news.json 提交回仓库，并立即发布到 GitHub Pages。
 #
-# 失败保护：update_news.py 抓取失败或结果过少时以非零码退出，
-#   本工作流会在"更新新闻"一步直接失败，不会提交坏数据、不会发布旧页面 ——
-#   线上网站继续使用上一次成功发布的内容。
+# 为什么只有一个 job（重要）：
+#   早期版本拆成了「更新新闻」+「发布网站」两个 job，结果发布 job 的 checkout
+#   拿到的是「本次运行刚开始时」的旧 commit，把更新前的 news.json 发布出去了 ——
+#   仓库里数据是最新的，线上却是旧的。合并成一个 job 后，打包的是更新后的工作目录，
+#   从根本上消除了这个问题。请勿再拆回两个 job。
+#
+# 失败保护：update_news.py 抓取失败或结果过少时以非零码退出，整个任务随即失败，
+#   不会提交坏数据、也不会发布新页面 —— 线上网站继续使用上一次成功发布的内容。
 #
 # 使用前必须做的两件事（详见 docs/B同学操作手册.md）：
 #   ① 仓库 Settings → Pages → Build and deployment → Source 选 "GitHub Actions"；
@@ -37,11 +41,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # ---------- 第一步：更新新闻数据 ----------
-  update-news:
-    name: 更新新闻数据
+  update-and-deploy:
+    name: 更新新闻并发布网站
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # ---------- 1. 准备环境 ----------
       - name: 拉取仓库代码
         uses: actions/checkout@v4
 
@@ -54,6 +61,8 @@ jobs:
       - name: 安装依赖
         run: pip install -r requirements.txt
 
+      # ---------- 2. 抓取并更新新闻数据 ----------
+      # 脚本失败会以非零码退出，后续步骤不会执行，线上保持上一次的内容。
       - name: 运行新闻更新脚本
         run: python3 scripts/update_news.py
         env:
@@ -61,6 +70,7 @@ jobs:
           TRANSLATE_PROVIDER: ${{ vars.TRANSLATE_PROVIDER || 'mymemory' }}
           TRANSLATE_API_KEY: ${{ secrets.TRANSLATE_API_KEY }}
 
+      # ---------- 3. 把新数据提交回仓库 ----------
       - name: 提交新的 news.json
         run: |
           git config user.name  "news-bot"
@@ -73,17 +83,9 @@ jobs:
             git push
           fi
 
-  # ---------- 第二步：发布到 GitHub Pages ----------
-  deploy-pages:
-    name: 发布到 GitHub Pages
-    needs: update-news          # 必须等新闻更新成功后才发布
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: 拉取最新代码（含刚更新的 news.json）
-        uses: actions/checkout@v4
+      # ---------- 4. 打包并发布（打包的是本 job 更新后的工作目录）----------
+      - name: 配置 Pages
+        uses: actions/configure-pages@v5
 
       - name: 打包静态网站
         uses: actions/upload-pages-artifact@v3
