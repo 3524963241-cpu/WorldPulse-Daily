@@ -165,6 +165,7 @@ heat = 新鲜度(0-50) + 主题相关(0-20) + 地理定位(0-10) + 来源基础(
 | Actions 定时没跑 | GitHub 延迟或仓库闲置被停用 | 手动 Run workflow；push 一次代码 |
 | Actions 权限报错 403 | workflow 权限未生效 | 确认使用本仓库的 `update.yml`（已声明 `contents: write` 等）；仓库 Settings → Actions → General → Workflow permissions 选 "Read and write" |
 | Pages 404 | Pages Source 未选 GitHub Actions | 按第五节第 2 步设置 |
+| Actions 全绿，但线上 `news.json` 是旧的 | **不要把「更新新闻」和「发布网站」拆成两个 job** | 拆开时发布 job 的 checkout 拿到的是本次运行开始时的旧 commit，会把更新前的数据发布出去。本仓库的 `update.yml` 已合并为单 job，请勿改回 |
 
 ---
 
@@ -172,5 +173,6 @@ heat = 新鲜度(0-50) + 主题相关(0-20) + 地理定位(0-10) + 来源基础(
 
 1. 打开终端，运行 `python3 scripts/update_news.py`，展示中文日志流水线；
 2. 打开 `data/news.json`，指出真实新闻的 title/source/url 可点开核对；
-3. 打开 GitHub Actions 页面，手动 Run workflow，展示「更新新闻数据 → 发布到 GitHub Pages」两个绿色步骤；
+3. 打开 GitHub Actions 页面，手动 Run workflow，展示一个绿色任务里依次跑完「抓取 → 去重 → 过滤 → 分类 → 翻译 → 定位 → 评分 → 提交 → 发布」；
+   然后打开线上 `https://<用户名>.github.io/WorldPulse-Daily/data/news.json`，确认 `updated_at` 是刚才的运行时间（证明发布的是本次更新的数据，而不是缓存/旧内容）；
 4. 强调异常保护：「即使现在断网，网站仍然显示上次成功的数据」——可当场演示断网运行脚本退出码 2 且旧数据完好。
