@@ -1,0 +1,4 @@
+# WorldPulse Daily 新闻流水线依赖（B 同学负责）
+# 安装命令：pip3 install -r requirements.txt
+
+feedparser==6.0.14   # 解析 RSS 订阅源
