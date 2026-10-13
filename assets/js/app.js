@@ -43,8 +43,13 @@ const CATEGORY_LABEL = {
   markets: '金融市场'
 };
 
-// 相对路径，在本地和 GitHub Pages 上都能用
+// 数据源二选一：
+//   ① 相对路径（默认）：本地起 HTTP 服务 / GitHub Pages 上都能用，每天自动更新
+//   ② 线上真实数据绝对地址：已开启跨域（Access-Control-Allow-Origin: *），
+//      在任意域名、甚至 file:// 之外的环境都能直接 fetch，适合联调
+//      注意：用 ② 时必须联网，且 file:// 协议下依然会被浏览器拦，仍需起本地服务
 const DATA_URL = 'data/news.json';
+// const DATA_URL = 'https://3524963241-cpu.github.io/WorldPulse-Daily/data/news.json';
 
 function formatTime(iso) {
   if (!iso) return '时间未知';
