@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T11:20:18Z",
+  "updated_at": "2026-10-13T11:40:46Z",
   "news": [
     {
       "id": "news-001",
@@ -12,10 +12,23 @@
       "published_at": "2026-10-13T10:51:33Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/10/13/nx-s1-5998798/pakistan-imposes-emergency-rule-in-former-prime-ministers-stronghold",
-      "heat": 96
+      "heat": 95
     },
     {
       "id": "news-002",
+      "title": "美国财富已从房屋转向股票。我们有充分的理由感到担忧。",
+      "summary": "由于人工智能繁荣，四年牛市的股票价格居高不下。但这也增加了资金成本。",
+      "category": "markets",
+      "country": "美国",
+      "lat": 37.09,
+      "lng": -95.71,
+      "published_at": "2026-10-13T11:30:00Z",
+      "source": "MarketWatch Top",
+      "url": "https://www.marketwatch.com/story/u-s-wealth-has-shifted-to-stocks-from-homes-there-are-big-reasons-to-worry-aa05864d?mod=mw_rss_topstories",
+      "heat": 92
+    },
+    {
+      "id": "news-003",
       "title": "期权交易员预计股市将从本月晚些时候开始大幅波动。以下是4个值得关注的事项。",
       "summary": "在经历了一个多事的夏天之后，美国股市似乎已经平静下来。在过去的几个交易日中，交易量有所减少，而主要指数大多出现横盘整理。",
       "category": "markets",
@@ -25,20 +38,7 @@
       "published_at": "2026-10-13T11:00:00Z",
       "source": "MarketWatch Top",
       "url": "https://www.marketwatch.com/story/options-traders-expect-wild-stock-market-swings-beginning-later-this-month-here-are-4-things-to-watch-e4931b02?mod=mw_rss_topstories",
-      "heat": 92
-    },
-    {
-      "id": "news-003",
-      "title": "韩国股市自由落体，这就是为什么",
-      "summary": "韩国市场的上涨是基于对半导体行业盈利能力及其持续时间的预期。情绪是周期性的，现在，怀疑论正在上升",
-      "category": "markets",
-      "country": "韩国",
-      "lat": 35.91,
-      "lng": 127.77,
-      "published_at": "2026-10-13T09:03:00Z",
-      "source": "MarketWatch Top",
-      "url": "https://www.marketwatch.com/story/the-korean-stock-markets-in-freefall-and-these-are-the-reasons-why-9615ac8d?mod=mw_rss_topstories",
-      "heat": 90
+      "heat": 91
     },
     {
       "id": "news-004",
@@ -90,30 +90,30 @@
       "published_at": "2026-10-13T11:08:14Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/10/13/g-s1-147822/up-first-newsletter-trump-ads-funding-campaign-rallies-ilhan-omar",
-      "heat": 82
+      "heat": 81
     },
     {
       "id": "news-008",
-      "title": "《绝命毒师》明星亚伦·保罗以750万美元的价格出售洛杉矶的房子；他现在住在巴黎",
-      "summary": "《绝命毒师》（ Breaking Bad ）明星亚伦·保罗（ Aaron Paul ）终于找到了他历史悠久的洛杉矶住宅的买家，在将其投放市场后一年多以749.5万美元的价格出售了这座传奇房产。",
+      "title": "Six Flags的股票在致命事故发生后跌至52周低点附近",
+      "summary": "六旗娱乐过山车发生致命事故，导致游乐园运营商的股票接近今年的最低水平。",
       "category": "markets",
-      "country": "法国",
-      "lat": 46.23,
-      "lng": 2.21,
-      "published_at": "2026-10-13T09:03:00Z",
+      "country": null,
+      "lat": null,
+      "lng": null,
+      "published_at": "2026-10-13T11:31:00Z",
       "source": "MarketWatch Top",
-      "url": "https://www.marketwatch.com/story/breaking-bad-star-aaron-paul-sells-l-a-home-for-7-5-million-he-now-lives-in-paris-fb5990f5?mod=mw_rss_topstories",
-      "heat": 82
+      "url": "https://www.marketwatch.com/story/six-flags-stock-slumps-near-52-week-lows-after-fatal-accident-3f938112?mod=mw_rss_topstories",
+      "heat": 78
     },
     {
       "id": "news-009",
-      "title": "为什么这家全球头号基金经理六年来首次改变了对债券的看法",
+      "title": "为什么全球第一的基金经理六年来第一次改变了对债券的看法",
       "summary": "六年后，贝莱德在政府债券中找到了机会。",
       "category": "markets",
       "country": null,
       "lat": null,
       "lng": null,
-      "published_at": "2026-10-13T10:56:00Z",
+      "published_at": "2026-10-13T11:28:00Z",
       "source": "MarketWatch Top",
       "url": "https://www.marketwatch.com/story/why-the-worlds-number-one-fund-manager-has-just-changed-its-mind-on-bonds-for-the-first-time-in-six-years-4b1b5490?mod=mw_rss_topstories",
       "heat": 78
@@ -129,7 +129,7 @@
       "published_at": "2026-10-12T21:43:48Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/10/12/nx-s1-5998808/trump-announced-a-partial-russia-ukraine-ceasefire-did-either-country-know-about-it",
-      "heat": 78
+      "heat": 77
     },
     {
       "id": "news-011",
@@ -142,7 +142,7 @@
       "published_at": "2026-10-12T20:42:49Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/10/12/nx-s1-5984940/both-russia-and-ukraine-are-using-ai-powered-drones-on-the-battlefield",
-      "heat": 73
+      "heat": 72
     },
     {
       "id": "news-012",
@@ -181,7 +181,7 @@
       "published_at": "2026-10-12T21:33:18Z",
       "source": "NPR Business",
       "url": "https://www.npr.org/2026/10/12/nx-s1-5993837/farmers-say-theyll-take-the-relief-of-trumps-eo-but-theyre-still-hurting",
-      "heat": 58
+      "heat": 57
     },
     {
       "id": "news-015",
