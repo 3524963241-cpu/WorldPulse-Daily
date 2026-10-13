@@ -1,0 +1,96 @@
+# WorldPulse Daily —— 自动更新新闻并发布网站（B 同学负责）
+# ============================================================
+# 作用：
+#   1. 每天北京时间 08:30（UTC 00:30）自动运行新闻更新脚本；
+#   2. 也支持在 GitHub 网页上手动触发（Actions → 选本工作流 → Run workflow）；
+#   3. 新闻更新成功后，把新的 data/news.json 提交回仓库；
+#   4. 最后把整个网站发布到 GitHub Pages。
+#
+# 失败保护：update_news.py 抓取失败或结果过少时以非零码退出，
+#   本工作流会在"更新新闻"一步直接失败，不会提交坏数据、不会发布旧页面 ——
+#   线上网站继续使用上一次成功发布的内容。
+#
+# 使用前必须做的两件事（详见 docs/B同学操作手册.md）：
+#   ① 仓库 Settings → Pages → Build and deployment → Source 选 "GitHub Actions"；
+#   ② 如需密钥翻译，在 Settings → Secrets and variables → Actions 添加
+#      TRANSLATE_API_KEY（TRANSLATE_PROVIDER 默认 mymemory，可不用密钥）。
+
+name: 更新新闻并发布网站
+
+on:
+  schedule:
+    # UTC 00:30 = 北京时间 08:30。GitHub 定时任务可能延迟几分钟到几十分钟，属正常现象。
+    - cron: '30 0 * * *'
+  workflow_dispatch: {}   # 允许手动触发，Day 2 演示时用这个
+
+# 权限说明：
+#   contents: write  —— 允许把新的 news.json 提交回仓库
+#   pages / id-token  —— GitHub Pages 官方部署方式所需
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# 同一时间只跑一个更新任务，避免两次运行互相覆盖
+concurrency:
+  group: update-and-deploy
+  cancel-in-progress: false
+
+jobs:
+  # ---------- 第一步：更新新闻数据 ----------
+  update-news:
+    name: 更新新闻数据
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取仓库代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 运行新闻更新脚本
+        run: python3 scripts/update_news.py
+        env:
+          # 翻译服务从仓库 Secrets 读取，不写进代码。未配置密钥时用免费 MyMemory。
+          TRANSLATE_PROVIDER: ${{ vars.TRANSLATE_PROVIDER || 'mymemory' }}
+          TRANSLATE_API_KEY: ${{ secrets.TRANSLATE_API_KEY }}
+
+      - name: 提交新的 news.json
+        run: |
+          git config user.name  "news-bot"
+          git config user.email "actions@github.com"
+          git add data/news.json
+          if git diff --cached --quiet; then
+            echo "news.json 没有变化，跳过提交。"
+          else
+            git commit -m "自动更新新闻 $(date -u '+%Y-%m-%d %H:%M') UTC"
+            git push
+          fi
+
+  # ---------- 第二步：发布到 GitHub Pages ----------
+  deploy-pages:
+    name: 发布到 GitHub Pages
+    needs: update-news          # 必须等新闻更新成功后才发布
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 拉取最新代码（含刚更新的 news.json）
+        uses: actions/checkout@v4
+
+      - name: 打包静态网站
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # 整个仓库就是静态网站（index.html、css/、js/、data/）
+          path: '.'
+
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
