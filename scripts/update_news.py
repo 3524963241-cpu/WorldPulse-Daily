@@ -42,10 +42,17 @@ NEWS_JSON_PATH = os.path.join(BASE_DIR, "data", "news.json")
 LOCATIONS_JSON_PATH = os.path.join(BASE_DIR, "data", "locations.json")
 
 # RSS 新闻源（已实测可用；如需更换，先用浏览器打开链接确认能访问）
+# score 是"来源基础分"，会算进热度（0~20），权威/主源给高分
+# 注意：单个 NPR 频道只吐 10 条，所以要多挂几个频道才凑得够 20 条
 RSS_SOURCES = [
+    # —— 地缘冲突 / 国际政治主力 ——
     {"name": "NPR World",       "url": "https://feeds.npr.org/1004/rss.xml",   "score": 20},
+    {"name": "NPR Politics",    "url": "https://feeds.npr.org/1014/rss.xml",   "score": 18},
     {"name": "NPR Business",    "url": "https://feeds.npr.org/1006/rss.xml",   "score": 18},
+    # —— 金融市场主力 ——
     {"name": "MarketWatch Top", "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories", "score": 20},
+    {"name": "MarketWatch Markets", "url": "https://feeds.content.dowjones.io/public/rss/mw_marketpulse", "score": 16},
+    {"name": "CNBC World News", "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100727362", "score": 17},
 ]
 
 # 三领域分类关键词词典（英文小写；命中次数最多的类别获胜）
@@ -65,14 +72,24 @@ CATEGORY_KEYWORDS = {
         "talks", "protest", "protests", "policy", "vote", "cabinet", "senate",
         "congress", "impeach", "sanctions", "trade deal", "diplomatic",
         "election commission", "referendum", "coup",
+        "migrants", "migrant", "immigration", "lawmakers", "legislation",
+        "lawsuit", "court", "governor", "mayor", "united nations", "nato",
+        "eu leaders", "state department", "white house",
     ],
     # 金融市场 markets
+    # （investing / economics / billion 等是后来补的：原先词典漏了它们，
+    #   导致"SpaceX 千亿投资热潮""诺贝尔经济学奖"这类财经新闻被误杀）
     "markets": [
-        "stock", "stocks", "market", "markets", "economy", "inflation",
+        "stock", "stocks", "market", "markets", "economy", "economic",
+        "economics", "inflation",
         "interest rate", "interest rates", "fed", "federal reserve", "bank",
         "banking", "dollar", "gdp", "tariff", "tariffs", "earnings", "shares",
-        "bonds", "investors", "recession", "currency", "crypto", "bitcoin",
+        "bonds", "investors", "investor", "investing", "invest", "investment",
+        "recession", "currency", "crypto", "bitcoin",
         "oil prices", "wall street", "nasdaq", "dow", "s&p", "ipo", "merger",
+        "billion", "trillion", "outlook", "forecast", "revenue", "profit",
+        "quarterly", "portfolio", "financial", "financially", "fund", "funds",
+        "unemployment", "jobless", "rate cut", "treasury", "yields", "stake",
     ],
 }
 
@@ -91,6 +108,13 @@ RELAX_HOURS = 24 * 7    # 如果 48 小时内不足 MIN_NEWS 条，放宽到 7 �
 MIN_NEWS = 8            # 放宽阈值
 MAX_NEWS = 20           # 最多输出 20 条
 MIN_VALID_TO_WRITE = 3  # 少于 3 条有效新闻就视为异常，不覆盖旧数据
+
+# 三领域配额（软配额）：先给每个领域各留够名额，剩下的再按热度补位。
+# 这么做的原因：财经源（MarketWatch / CNBC）每次吐的条目远多于政治源，
+# 纯按热度排会让首页被财经新闻刷屏，地图上也只剩美国一个点。
+# 某领域当天确实没那么多新闻时，名额自动让给其他领域，不会硬凑。
+TARGET_NEWS = 20
+CATEGORY_QUOTA = {"geopolitics": 5, "politics": 7, "markets": 8}
 
 # 请求超时与礼貌间隔（秒），避免被新闻源封禁
 REQUEST_INTERVAL = 1.0
@@ -280,19 +304,29 @@ def step5_translate(items):
             it["summary_cn"] = it["summary"]
         return items
 
+    # 分两轮：先把所有标题翻完，再翻摘要。
+    # 原因：免费接口每天有配额，如果逐条「标题+摘要」交替请求，
+    # 配额一断就是后半段新闻标题和摘要双双变英文，列表页会很难看。
+    # 先保标题，最坏情况也只是摘要残留英文，主展示仍是中文。
     ok = fail = 0
     for it in items:
         t, ok1 = translate_text(it["title"], TRANSLATE_PROVIDER)
-        s, ok2 = translate_text(it["summary"], TRANSLATE_PROVIDER)
         if ok1:
             it["title_cn"] = t
             ok += 1
         else:
             it["title_cn"] = "[EN] " + it["title"]  # 回退：保留英文原文并打标记
             fail += 1
-        it["summary_cn"] = s if ok2 else it["summary"]
         time.sleep(0.3)  # 免费接口限速
-    log("翻译", f"翻译成功 {ok} 条，回退英文 {fail} 条（标记为 [EN]）")
+    log("翻译", f"标题：成功 {ok} 条，回退英文 {fail} 条（标记为 [EN]）")
+
+    ok2 = fail2 = 0
+    for it in items:
+        s, good = translate_text(it["summary"], TRANSLATE_PROVIDER)
+        it["summary_cn"] = s if good else it["summary"]
+        ok2, fail2 = (ok2 + 1, fail2) if good else (ok2, fail2 + 1)
+        time.sleep(0.3)
+    log("翻译", f"摘要：成功 {ok2} 条，回退英文 {fail2} 条")
     return items
 
 
@@ -345,6 +379,37 @@ def step7_heat(items, now):
         it["heat"] = int(round(min(100, fresh + topic + geo + it["source_score"])))
     items.sort(key=lambda x: (-x["heat"], -x["published_at"].timestamp()))
     return items
+
+
+def step7b_quota(items):
+    """配额挑选：先满足各领域名额，剩余席位按热度补位，最后统一重排。"""
+    used = [False] * len(items)
+    picked = []
+    log_count = {}
+
+    for cat, quota in CATEGORY_QUOTA.items():
+        got = 0
+        for i, it in enumerate(items):
+            if used[i] or it["category"] != cat:
+                continue
+            used[i] = True
+            picked.append(it)
+            got += 1
+            if got >= quota:
+                break
+        log_count[cat] = got
+
+    for i, it in enumerate(items):
+        if len(picked) >= TARGET_NEWS:
+            break
+        if not used[i]:
+            used[i] = True
+            picked.append(it)
+
+    picked.sort(key=lambda x: (-x["heat"], -x["published_at"].timestamp()))
+    log("配额", "各领域入选：地缘冲突 {}｜国际政治 {}｜金融市场 {}，合计 {} 条".format(
+        log_count["geopolitics"], log_count["politics"], log_count["markets"], len(picked)))
+    return picked[:MAX_NEWS]
 
 
 def step8_output(items, now):
@@ -413,15 +478,21 @@ def main():
         keep_old_data("没有新闻落入三个分类领域")
         sys.exit(2)
 
-    # 5~6. 翻译 + 定位
-    items = step6_locate(step5_translate(items))
+    # 5. 定位（必须排在评分前：热度里的「地理定位分」依赖这一步的结果）
+    items = step6_locate(items)
 
-    # 7~8. 评分 + 输出
-    items = step7_heat(items, now)
+    # 6. 评分 + 按配额挑选出最终入选的新闻
+    items = step7b_quota(step7_heat(items, now))
     if len(items) < MIN_VALID_TO_WRITE:
         keep_old_data(f"有效新闻不足 {MIN_VALID_TO_WRITE} 条（只有 {len(items)} 条）")
         sys.exit(2)
 
+    # 7. 只翻译入选的这 20 条（关键：先挑后翻）
+    #    早期版本是先翻译全部候选再挑，100 条候选里只留 20 条，
+    #    等于白烧掉约 60% 的免费翻译配额，还让单次运行慢了 3 倍。
+    items = step5_translate(items)
+
+    # 8. 输出
     payload = step8_output(items, now)
 
     # 结果预览（方便本地检查和答辩演示）
