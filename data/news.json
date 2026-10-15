@@ -1,60 +1,151 @@
 {
-  "updated_at": "2026-10-14T13:09:30Z",
+  "updated_at": "2026-10-15T01:09:30Z",
   "news": [
     {
       "id": "news-001",
-      "title": "美国银行在政府罚款12亿$的痛苦中增加了利润损失",
-      "summary": "美国银行(Bank of America)股价下跌，原因是投资者对该行乐观的收益报告中增加的12亿美元政府罚款感到失望。",
-      "category": "markets",
-      "country": "美国",
-      "lat": 37.09,
-      "lng": -95.71,
-      "published_at": "2026-10-14T12:45:00Z",
-      "source": "MarketWatch Top",
-      "url": "https://www.marketwatch.com/story/bank-of-america-adds-a-profit-miss-to-the-misery-of-a-1-2-billion-government-fine-d4420bfa?mod=mw_rss_topstories",
-      "heat": 100
-    },
-    {
-      "id": "news-002",
-      "title": "在第三季度收入错失和监管处罚后，美国银行股价下跌7%",
+      "title": "在第三季度收入错失和监管处罚后，美国银行股价下跌",
       "summary": "美国银行股价周三下跌，此前该公司的交易收入低于预期，并受到12亿美元财政部罚款的影响。",
       "category": "markets",
       "country": "美国",
       "lat": 37.09,
       "lng": -95.71,
-      "published_at": "2026-10-14T12:54:01Z",
+      "published_at": "2026-10-14T20:20:46Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/10/14/bank-of-america-bac-q3-2026-earnings.html",
-      "heat": 97
+      "heat": 92
     },
     {
-      "id": "news-003",
-      "title": "美国银行因洗钱违规行为被罚款12亿美元",
-      "summary": "财政部的行动是在美国银行公布季度收益前不到一天宣布的。",
+      "id": "news-002",
+      "title": "您可能过度投资于股票。为什么60-40投资组合仍然是明智之选。",
+      "summary": "在美国历史的大部分时间里，全股票和60-40的投资组合一直并驾齐驱，追踪30年的回报。",
       "category": "markets",
       "country": "美国",
       "lat": 37.09,
       "lng": -95.71,
-      "published_at": "2026-10-14T11:11:30Z",
+      "published_at": "2026-10-14T22:25:00Z",
+      "source": "MarketWatch Top",
+      "url": "https://www.marketwatch.com/story/youre-probably-too-invested-in-equities-why-a-60-40-portfolio-is-still-the-smart-way-to-go-853daade?mod=mw_rss_topstories",
+      "heat": 89
+    },
+    {
+      "id": "news-003",
+      "title": "标准普尔500指数期货下跌，交易员等待更多美国经济数据：实时更新",
+      "summary": "这些举措是在美国通胀数据高于预期的情况下出现失败之后采取的。",
+      "category": "markets",
+      "country": "美国",
+      "lat": 37.09,
+      "lng": -95.71,
+      "published_at": "2026-10-14T23:40:59Z",
       "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/10/13/bank-of-america-treasury-money-laundering.html",
-      "heat": 95
+      "url": "https://www.cnbc.com/2026/10/14/stock-market-today-live-updates.html",
+      "heat": 87
     },
     {
       "id": "news-004",
-      "title": "Charles Schwab和DoorDash在可能引领市场走高的廉价股中名列前茅",
-      "summary": "第三季度盈利增长预计将由能源和半导体公司推动，但如果其他市场出现呢？汇丰银行设想股票市场最终将扩大。",
+      "title": "印度境内通讯：亿万富翁安巴尼的大型IPO面临马斯克争执中的估值现实检查",
+      "summary": "马斯克言论的核心公司Jio Platforms将于本月晚些时候推出IPO。",
+      "category": "markets",
+      "country": "印度",
+      "lat": 20.59,
+      "lng": 78.96,
+      "published_at": "2026-10-15T00:30:13Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/15/india-starlink-musk-jio-ambani-ipo.html",
+      "heat": 84
+    },
+    {
+      "id": "news-005",
+      "title": "人工智能交易正在分崩离析，因为通货膨胀担心科技股大肆炒作",
+      "summary": "投资者想知道，高通胀和借贷成本的增加是否会破坏人工智能的建设。",
       "category": "markets",
       "country": null,
       "lat": null,
       "lng": null,
-      "published_at": "2026-10-14T12:45:00Z",
+      "published_at": "2026-10-14T23:36:00Z",
       "source": "MarketWatch Top",
-      "url": "https://www.marketwatch.com/story/from-charles-schwab-to-doordash-why-these-bargain-stocks-could-lead-the-market-higher-4d99fb97?mod=mw_rss_topstories",
-      "heat": 90
+      "url": "https://www.marketwatch.com/story/the-ai-trade-is-splintering-as-inflation-fears-rattle-hyped-up-tech-stocks-dbf49369?mod=mw_rss_topstories",
+      "heat": 84
     },
     {
-      "id": "news-005",
+      "id": "news-006",
+      "title": "CoreWeave的人工智能债券暴跌，为更广泛的市场竖起红旗",
+      "summary": "CoreWeave几个月前发行的债券周三早些时候跌至美元兑美元81美分，收益率超过15%。",
+      "category": "markets",
+      "country": null,
+      "lat": null,
+      "lng": null,
+      "published_at": "2026-10-14T22:03:00Z",
+      "source": "MarketWatch Top",
+      "url": "https://www.marketwatch.com/story/coreweave-sparks-worry-about-broader-credit-market-stress-as-its-bonds-tumble-887458e4?mod=mw_rss_topstories",
+      "heat": 83
+    },
+    {
+      "id": "news-007",
+      "title": "CoreWeave股价暴跌，债券收益率接近15 ％ ，原因是担心人工智能借贷狂潮",
+      "summary": "CoreWeave的股价下跌了15% ，而其债券的收益率进一步飙升。",
+      "category": "markets",
+      "country": null,
+      "lat": null,
+      "lng": null,
+      "published_at": "2026-10-14T20:46:32Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/14/coreweave-stock-bond-yields-ai-debt.html",
+      "heat": 82
+    },
+    {
+      "id": "news-008",
+      "title": "财政部表示，美国最大的银行让政治影响谁接受银行服务",
+      "summary": "美国财政部的新调查结果可能会加重唐纳德·特朗普总统长期以来的不满，即主要银行歧视保守派。",
+      "category": "markets",
+      "country": "美国",
+      "lat": 37.09,
+      "lng": -95.71,
+      "published_at": "2026-10-14T18:51:42Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/14/treasury-banks-debanking-trump-reputation-risk.html",
+      "heat": 82
+    },
+    {
+      "id": "news-009",
+      "title": "乌克兰警告Starlink限制正在扰乱军事行动，因为俄罗斯正在捣毁其能源基础设施",
+      "summary": "泽伦斯基说，一枚弹道导弹击中了特朗普周日宣布的“能源停火”所涵盖的能源基础设施。",
+      "category": "geopolitics",
+      "country": "俄罗斯",
+      "lat": 61.52,
+      "lng": 105.31,
+      "published_at": "2026-10-14T16:34:24Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/14/russia-ukraine-energy-ceasefire-power-outages.html",
+      "heat": 80
+    },
+    {
+      "id": "news-010",
+      "title": "随着伊朗加大攻击力度，集装箱船在霍尔木兹海峡沉没",
+      "summary": "最近几周，伊朗加大了对经过霍尔木兹的商船的打击力度，试图阻止原油出口反弹。",
+      "category": "geopolitics",
+      "country": "伊朗",
+      "lat": 35.41,
+      "lng": 51.37,
+      "published_at": "2026-10-14T19:22:00Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/14/container-ship-sinks-strait-hormuz-as-iran-war-attacks.html",
+      "heat": 79
+    },
+    {
+      "id": "news-011",
+      "title": "伊朗表示，它正在“计算时机” ，直到它能够袭击美国军舰；沙特阿美的设施遭到袭击",
+      "summary": "与此同时，据报道，沙特阿拉伯的沙特阿美公司一夜之间遭到了新的攻击。",
+      "category": "geopolitics",
+      "country": "美国",
+      "lat": 37.09,
+      "lng": -95.71,
+      "published_at": "2026-10-14T17:12:20Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/14/us-iran-war-trump-hormuz-saudi.html",
+      "heat": 77
+    },
+    {
+      "id": "news-012",
       "title": "外交官理查德·哈斯讨论俄乌战争和特朗普的角色",
       "summary": "NPR的史蒂夫·英斯基普（ Steve Inskeep ）与资深外交官理查德·哈斯（ Richard Haass ）谈到了俄罗斯-乌克兰战争以及特朗普总统正在扮演的角色。",
       "category": "politics",
@@ -64,98 +155,7 @@
       "published_at": "2026-10-14T10:44:30Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/10/14/nx-s1-6000164/diplomat-richard-haass-discusses-the-russia-ukraine-war-and-trumps-role",
-      "heat": 89
-    },
-    {
-      "id": "news-006",
-      "title": "贝莱德的资产增长15%后相当于美国经济规模的一半",
-      "summary": "基金管理巨头贝莱德(BlackRock)周三表示，在增长15%之后，管理的资产接近15.5万亿美元。",
-      "category": "markets",
-      "country": "美国",
-      "lat": 37.09,
-      "lng": -95.71,
-      "published_at": "2026-10-14T10:41:00Z",
-      "source": "MarketWatch Top",
-      "url": "https://www.marketwatch.com/story/blackrock-now-has-assets-equal-to-half-the-size-of-the-u-s-economy-after-15-growth-c382b289?mod=mw_rss_topstories",
-      "heat": 89
-    },
-    {
-      "id": "news-007",
-      "title": "由于9月核心通胀高于预期， 10年期美国国债收益率大幅上涨",
-      "summary": "在最近的通胀读数之后，国债收益率走高。",
-      "category": "markets",
-      "country": null,
-      "lat": null,
-      "lng": null,
-      "published_at": "2026-10-14T13:09:05Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/10/14/us-treasury-yields-cpi-inflation-report.html",
-      "heat": 87
-    },
-    {
-      "id": "news-008",
-      "title": "随着热点通胀报告发送更高的收益率，股票期货陷入赤字：实时更新",
-      "summary": "周二，芯片股下跌和银行业绩好坏参半，拖累了主要平均水平。",
-      "category": "markets",
-      "country": null,
-      "lat": null,
-      "lng": null,
-      "published_at": "2026-10-14T13:01:16Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/10/13/stock-market-today-live-updates-.html",
-      "heat": 87
-    },
-    {
-      "id": "news-009",
-      "title": "CNBC每日公开赛：泽伦斯基前往英国就新的支持进行谈判",
-      "summary": "英国首相将接待乌克兰总统弗拉基米尔·泽伦斯基（ Volodymyr Zelenskyy ） ，欧洲领导人将集会表达对该国的支持。",
-      "category": "politics",
-      "country": "乌克兰",
-      "lat": 48.38,
-      "lng": 31.17,
-      "published_at": "2026-10-14T06:57:16Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/10/14/daily-open-zelenskyy-uk-visit-asml-results.html",
-      "heat": 87
-    },
-    {
-      "id": "news-010",
-      "title": "贝莱德吸引了2050亿美元的客户资金，季度利润超过预期",
-      "summary": "贝莱德管理的资产—决定其大部分收益—从一年前的13.46万亿美元上升至15.49万亿美元。",
-      "category": "markets",
-      "country": null,
-      "lat": null,
-      "lng": null,
-      "published_at": "2026-10-14T11:57:19Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/10/14/blackrock-profit-jumps-as-resilient-markets-boost-fees.html",
-      "heat": 86
-    },
-    {
-      "id": "news-011",
-      "title": "伊朗表示，它正在“计算时机” ，直到它可以攻击美国军舰；沙特阿美的设施遭到袭击",
-      "summary": "与此同时，据报道，沙特阿拉伯的沙特阿美公司一夜之间遭到了新的攻击。",
-      "category": "geopolitics",
-      "country": "美国",
-      "lat": 37.09,
-      "lng": -95.71,
-      "published_at": "2026-10-14T12:43:45Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/10/14/us-iran-war-trump-hormuz-saudi.html",
-      "heat": 85
-    },
-    {
-      "id": "news-012",
-      "title": "乌克兰警告Starlink限制正在扰乱军事行动，因为俄罗斯正在捣毁其能源基础设施",
-      "summary": "泽伦斯基说，一枚弹道导弹击中了特朗普周日宣布的“能源停火”所涵盖的能源基础设施。",
-      "category": "geopolitics",
-      "country": "俄罗斯",
-      "lat": 61.52,
-      "lng": 105.31,
-      "published_at": "2026-10-14T09:18:18Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/10/14/russia-ukraine-energy-ceasefire-power-outages.html",
-      "heat": 85
+      "heat": 77
     },
     {
       "id": "news-013",
@@ -168,7 +168,7 @@
       "published_at": "2026-10-14T11:38:51Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/10/14/g-s1-148040/up-first-newsletter-volodymyr-zelenskyy-pope-leo-kimberly-guilfoyle-media-free-speech",
-      "heat": 82
+      "heat": 70
     },
     {
       "id": "news-014",
@@ -181,7 +181,7 @@
       "published_at": "2026-10-14T10:37:42Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/10/14/diesel-deal-oil-price-iea-report.html",
-      "heat": 82
+      "heat": 70
     },
     {
       "id": "news-015",
@@ -194,7 +194,7 @@
       "published_at": "2026-10-14T08:44:34Z",
       "source": "NPR Politics",
       "url": "https://www.npr.org/2026/10/14/nx-s1-6000179/former-white-house-ethics-lawyer-on-kimberly-guilfoyles-alleged-ethics-violations",
-      "heat": 81
+      "heat": 69
     },
     {
       "id": "news-016",
@@ -207,23 +207,10 @@
       "published_at": "2026-10-14T09:09:39Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/10/14/g-s1-148027/trump-ambassador-greece-resignation",
-      "heat": 80
+      "heat": 67
     },
     {
       "id": "news-017",
-      "title": "欧盟关于柴油协议的Dombrovskis ：现在不是放松俄罗斯制裁的时候",
-      "summary": "欧盟经济和生产力专员瓦尔迪斯·东布罗夫斯基斯（ Valdis Dombrovskis ）讨论了潜在的美俄柴油协议的影响，并警告不要在乌克兰战争期间放松制裁。他还强调欧洲迫切需要加强区域防御能力，以增加",
-      "category": "politics",
-      "country": "美国",
-      "lat": 37.09,
-      "lng": -95.71,
-      "published_at": "2026-10-14T07:58:34Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/video/2026/10/14/eus-dombrovskis-diesel-deal-no-reason-to-ease-russian-sanctions.html",
-      "heat": 80
-    },
-    {
-      "id": "news-018",
       "title": "美国驻希腊大使金伯利·吉尔福伊尔（ Kimberly Guilfoyle ）因不当行为指控辞职",
       "summary": "特朗普总统已迫使他的驻希腊大使金伯利·吉尔福伊尔（ Kimberly Guilfoyle ）下台。她在美国驻雅典大使馆任职前和任职期间都面临着不当行为的指控，对此她予以否认。",
       "category": "politics",
@@ -233,10 +220,10 @@
       "published_at": "2026-10-14T09:08:04Z",
       "source": "NPR Politics",
       "url": "https://www.npr.org/2026/10/14/nx-s1-6000592/u-s-ambassador-to-greece-kimberly-guilfoyle-resigns-following-misconduct-allegations",
-      "heat": 78
+      "heat": 65
     },
     {
-      "id": "news-019",
+      "id": "news-018",
       "title": "在堪萨斯州，新近竞争的参议院竞选测试限制了特朗普不受欢迎的政策",
       "summary": "堪萨斯州的选民可以在近一个世纪以来首次将民主党人派往参议院，并将州长办公室重新交给共和党控制，即使这对共和党来说可能是艰难的一年。",
       "category": "politics",
@@ -246,20 +233,33 @@
       "published_at": "2026-10-14T09:00:00Z",
       "source": "NPR Politics",
       "url": "https://www.npr.org/2026/10/14/nx-s1-5995633/kansas-senate-race-hamilton-marshall-tossup",
-      "heat": 76
+      "heat": 63
+    },
+    {
+      "id": "news-019",
+      "title": "贝莱德的拉里·芬克（ Larry Fink ）警告称，数据中心暂停可能会引发经济衰退",
+      "summary": "当地反对数据中心建设一直是定于11月3日星期二举行的中期选举的一个特点。",
+      "category": "politics",
+      "country": null,
+      "lat": null,
+      "lng": null,
+      "published_at": "2026-10-14T16:27:12Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/14/blackrocks-fink-warns-data-center-moratorium-could-spark-a-recession.html",
+      "heat": 62
     },
     {
       "id": "news-020",
-      "title": "为什么Pete Hegseth想要直播处决？",
-      "summary": "美国国防部长皮特·赫格塞斯（ Pete Hegseth ）提议直播一名因2009年袭击胡德堡而被定罪的男子的处决情况。一些学者说，这个想法植根于他的宗教背景。",
-      "category": "geopolitics",
-      "country": "美国",
-      "lat": 37.09,
-      "lng": -95.71,
-      "published_at": "2026-10-13T20:03:42Z",
-      "source": "NPR Politics",
-      "url": "https://www.npr.org/2026/10/13/nx-s1-5996831/why-does-pete-hegseth-want-to-livestream-an-execution",
-      "heat": 64
+      "title": "CNN ， MS NOW和POLITICO战胜白宫—目前",
+      "summary": "一名联邦法官周二晚间裁定，特朗普总统不能禁止新闻机构在白宫报道他，因为他不喜欢这些报道的性质--至少在正式审判之前是这样。",
+      "category": "politics",
+      "country": null,
+      "lat": null,
+      "lng": null,
+      "published_at": "2026-10-14T07:16:02Z",
+      "source": "NPR Business",
+      "url": "https://www.npr.org/2026/10/14/nx-s1-6001398/white-house-media-ban",
+      "heat": 61
     }
   ]
 }
