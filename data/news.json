@@ -1,8 +1,99 @@
 {
-  "updated_at": "2026-10-17T13:01:48Z",
+  "updated_at": "2026-10-18T01:10:30Z",
   "news": [
     {
       "id": "news-001",
+      "title": "金伯利·吉尔福伊尔（ Kimberly Guilfoyle ）丑闻后国务院的状况",
+      "summary": "美国国家公共广播电台的乔尔·罗斯（ Joel Rose ）与前美国驻委内瑞拉大使詹姆斯· B ·斯托里（ James B. Story ）谈论金伯利·吉尔福伊尔（ Kimberly Guilfoyle ）丑闻",
+      "category": "politics",
+      "country": "美国",
+      "lat": 37.09,
+      "lng": -95.71,
+      "published_at": "2026-10-17T21:18:50Z",
+      "source": "NPR World",
+      "url": "https://www.npr.org/2026/10/17/nx-s1-6001729/the-state-of-the-state-department-in-the-wake-of-the-kimberly-guilfoyle-scandal",
+      "heat": 88
+    },
+    {
+      "id": "news-002",
+      "title": "投资者正在购买美国各地的大片林地，这是市场上最长期的押注之一",
+      "summary": "购买养老基金和其他机构投资者的Timberland经理可以等待数十年才能获得回报，但市场也可能是一个利润陷阱。",
+      "category": "markets",
+      "country": "美国",
+      "lat": 37.09,
+      "lng": -95.71,
+      "published_at": "2026-10-17T16:31:06Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/17/timberland-investing-returns-risk.html",
+      "heat": 88
+    },
+    {
+      "id": "news-003",
+      "title": "学生抗议活动在法国扩大到更大的社会动荡",
+      "summary": "法国各地的城市发生了数百起抗议活动。他们中的大多数是和平的，但有些人变得混乱和暴力。",
+      "category": "politics",
+      "country": "法国",
+      "lat": 46.23,
+      "lng": 2.21,
+      "published_at": "2026-10-17T21:18:52Z",
+      "source": "NPR World",
+      "url": "https://www.npr.org/2026/10/17/nx-s1-6006735/student-protests-widen-into-greater-social-unrest-in-france",
+      "heat": 84
+    },
+    {
+      "id": "news-004",
+      "title": "人类学的克拉克告诉政策制定者，人工智能正在迅速发展，可能会大大提高美国的GDP",
+      "summary": "Anthropic的杰克·克拉克（ Jack Clark ）表示，需要国际合作来为变革性技术制定“不寻常和严肃的规则”。",
+      "category": "markets",
+      "country": "美国",
+      "lat": 37.09,
+      "lng": -95.71,
+      "published_at": "2026-10-17T23:04:00Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/17/ai-us-gdp-anthropics-clark.html",
+      "heat": 79
+    },
+    {
+      "id": "news-005",
+      "title": "法国大规模抗议活动演变为多年来最严重的骚乱",
+      "summary": "虽然数十万人在数十个城市的街头游行中抗议，但暴力边缘团体针对公共建筑，抢劫和袭击警察。",
+      "category": "politics",
+      "country": "法国",
+      "lat": 46.23,
+      "lng": 2.21,
+      "published_at": "2026-10-17T22:27:51Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/17/french-protesters-take-to-streets-over-rising-prices-and-social-strain.html",
+      "heat": 78
+    },
+    {
+      "id": "news-006",
+      "title": "泽伦斯基敦促在特朗普暂停制裁后支持美国对俄罗斯的新制裁",
+      "summary": "泽伦斯基称此举令人遗憾，并补充说，这将鼓励俄罗斯继续进攻。特朗普告诉国会，暂停谈判符合国家利益，但没有提供进一步的细节。",
+      "category": "politics",
+      "country": "美国",
+      "lat": 37.09,
+      "lng": -95.71,
+      "published_at": "2026-10-17T14:25:10Z",
+      "source": "NPR World",
+      "url": "https://www.npr.org/2026/10/17/nx-s1-6006745/us-sanctions-russia",
+      "heat": 77
+    },
+    {
+      "id": "news-007",
+      "title": "韩国财政部长表示，半导体市场将“至少在明年之前”保持稳定",
+      "summary": "韩国财政部长表示，尽管全球芯片抛售，但由于供应仍然紧张，半导体增长至少可以持续到2027年。",
+      "category": "politics",
+      "country": "韩国",
+      "lat": 35.91,
+      "lng": 127.77,
+      "published_at": "2026-10-17T16:45:15Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/17/south-korea-semiconductor-outlook-lee-hyoung-il.html",
+      "heat": 76
+    },
+    {
+      "id": "news-008",
       "title": "微软、Shopify和另外3只最受欢迎的华尔街盈利股票",
       "summary": "随着财报季的开始，精选科技公司有机会为投资者带来巨大的积极惊喜。",
       "category": "markets",
@@ -12,10 +103,36 @@
       "published_at": "2026-10-17T12:01:00Z",
       "source": "MarketWatch Top",
       "url": "https://www.marketwatch.com/story/microsoft-shopify-and-3-more-ai-stocks-that-are-favorite-wall-street-earnings-plays-0bb61e81?mod=mw_rss_topstories",
-      "heat": 89
+      "heat": 76
     },
     {
-      "id": "news-002",
+      "id": "news-009",
+      "title": "特朗普放弃对俄罗斯的广泛新制裁，泽伦斯基谴责这是“错误的”",
+      "summary": "9月，特朗普签署了针对俄罗斯入侵乌克兰的格雷厄姆法案。",
+      "category": "geopolitics",
+      "country": "俄罗斯",
+      "lat": 61.52,
+      "lng": 105.31,
+      "published_at": "2026-10-17T19:35:18Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/17/trump-waives-russia-related-sanctions-tariffs-before-they-take-effect-.html",
+      "heat": 75
+    },
+    {
+      "id": "news-010",
+      "title": "随着抗议者在法国各地集会，学生们加入，混战和火灾爆发",
+      "summary": "随着法国财政危机的加深，法国各地的示威者周六与学生聚集在一起，抗议生活费用的上涨。",
+      "category": "politics",
+      "country": "法国",
+      "lat": 46.23,
+      "lng": 2.21,
+      "published_at": "2026-10-17T15:57:40Z",
+      "source": "NPR World",
+      "url": "https://www.npr.org/2026/10/17/nx-s1-6006773/student-protests-france",
+      "heat": 74
+    },
+    {
+      "id": "news-011",
       "title": "欺诈、负担能力和特朗普政策在明尼苏达州参议院辩论中引发摩擦",
       "summary": "明尼苏达州美国参议院席位的主要政党候选人周五在MPR News上进行了长达一小时的辩论，其中欺诈、负担能力和特朗普政府政策的影响是摩擦的关键点。",
       "category": "politics",
@@ -25,10 +142,36 @@
       "published_at": "2026-10-17T11:43:14Z",
       "source": "NPR Politics",
       "url": "https://www.npr.org/2026/10/17/nx-s1-6004910/minn-us-senate-race",
-      "heat": 85
+      "heat": 72
     },
     {
-      "id": "news-003",
+      "id": "news-012",
+      "title": "虚假购物狂潮和“幸福保险” ：最新的金融科技应用揭示了我们的财务焦虑",
+      "summary": "金融科技公司正在关注美国人如何改变他们的财务习惯，他们已经开发出新产品来尝试迎接这一时刻。",
+      "category": "markets",
+      "country": null,
+      "lat": null,
+      "lng": null,
+      "published_at": "2026-10-17T18:52:00Z",
+      "source": "MarketWatch Top",
+      "url": "https://www.marketwatch.com/story/fake-shopping-sprees-and-happiness-insurance-the-latest-fintech-apps-reveal-our-financial-anxieties-77770a46?mod=mw_rss_topstories",
+      "heat": 71
+    },
+    {
+      "id": "news-013",
+      "title": "投资，而不是房屋所有权，是让Z世代租房者感到成功的头号里程碑",
+      "summary": "“许多人没有关注房屋所有权，而是优先考虑财务自由和无债务生活。”",
+      "category": "markets",
+      "country": null,
+      "lat": null,
+      "lng": null,
+      "published_at": "2026-10-17T18:40:00Z",
+      "source": "MarketWatch Top",
+      "url": "https://www.marketwatch.com/story/gen-z-renters-are-the-only-group-more-likely-to-feel-successful-by-investing-than-buying-a-house-30ac5344?mod=mw_rss_topstories",
+      "heat": 71
+    },
+    {
+      "id": "news-014",
       "title": "IMFC主席表示全球经济具有弹性；代表们退出俄罗斯官员",
       "summary": "“不断升级的冲突和贸易紧张局势可能会进一步扰乱关键的贸易路线，”国际货币与金融委员会主席表示。",
       "category": "markets",
@@ -38,10 +181,10 @@
       "published_at": "2026-10-17T11:41:06Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/10/17/imf-members-call-for-more-support-amid-war-shocks-advanced-intelligence-risks.html",
-      "heat": 84
+      "heat": 71
     },
     {
-      "id": "news-004",
+      "id": "news-015",
       "title": "欧洲央行的拉加德表示，债券抛售将减缓通货膨胀",
       "summary": "最近几周，全球债券收益率飙升，负债累累的法国是受影响最严重的国家之一。",
       "category": "markets",
@@ -51,10 +194,10 @@
       "published_at": "2026-10-17T10:52:54Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/10/17/ecbs-lagarde-says-bond-selloff-will-slow-inflation.html",
-      "heat": 83
+      "heat": 70
     },
     {
-      "id": "news-005",
+      "id": "news-016",
       "title": "种族隔离后数十年，南非人为过去的罪行寻求正义",
       "summary": "种族隔离结束30多年后，南非过去一些最严重罪行的受害者家属仍在为正义而战。随着幸存者和行为人年龄的增长，新一轮的法律努力正在寻求真相、问责和赔偿，以免为时已晚。",
       "category": "geopolitics",
@@ -64,153 +207,23 @@
       "published_at": "2026-10-17T11:00:00Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/10/17/nx-s1-5987671/south-africa-justice-sharpeville-apartheid",
-      "heat": 82
-    },
-    {
-      "id": "news-006",
-      "title": "政治周：特朗普的俄罗斯柴油交易更新；司法部起诉加利福尼亚州的原因",
-      "summary": "我们来看看特朗普总统说他进口俄罗斯柴油的交易中的情况，以及司法部起诉加利福尼亚州的原因。",
-      "category": "politics",
-      "country": "美国",
-      "lat": 37.09,
-      "lng": -95.71,
-      "published_at": "2026-10-17T11:43:08Z",
-      "source": "NPR Politics",
-      "url": "https://www.npr.org/2026/10/17/nx-s1-5998079/week-in-politics-trumps-russian-diesel-deal-update-why-the-doj-is-suing-california",
-      "heat": 81
-    },
-    {
-      "id": "news-007",
-      "title": "法国抗议者因物价上涨和社会压力而走上街头",
-      "summary": "抗议活动于上个月在巴黎贫穷的北部郊区的高中开始，在那里，抗议教育的示威活动演变成对不平等的愤怒。",
-      "category": "politics",
-      "country": "法国",
-      "lat": 46.23,
-      "lng": 2.21,
-      "published_at": "2026-10-17T12:29:39Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/10/17/french-protesters-take-to-streets-over-rising-prices-and-social-strain.html",
-      "heat": 80
-    },
-    {
-      "id": "news-008",
-      "title": "随着市场领导力从科技股转移，这对普通股来说又是一个伟大的一周",
-      "summary": "标准普尔500指数的科技股刚刚经历了一年半以来最糟糕的一周，而该指数的等权版本巩固了连续第二周的上涨。",
-      "category": "markets",
-      "country": null,
-      "lat": null,
-      "lng": null,
-      "published_at": "2026-10-17T11:30:00Z",
-      "source": "MarketWatch Top",
-      "url": "https://www.marketwatch.com/story/it-was-another-great-week-for-the-average-stock-as-market-leadership-shifts-away-from-tech-8e8516da?mod=mw_rss_topstories",
-      "heat": 80
-    },
-    {
-      "id": "news-009",
-      "title": "美联储本月的利率决定比市场想象的更接近",
-      "summary": "以下是反对美联储加息的一些论点，以及为什么一些经济学家不同意这些论点。",
-      "category": "markets",
-      "country": null,
-      "lat": null,
-      "lng": null,
-      "published_at": "2026-10-17T11:00:00Z",
-      "source": "MarketWatch Top",
-      "url": "https://www.marketwatch.com/story/fed-interest-rate-decision-this-month-is-a-closer-call-than-markets-think-f96ccf95?mod=mw_rss_topstories",
-      "heat": 80
-    },
-    {
-      "id": "news-010",
-      "title": "人行道睡眠者：当亲人在医院时，他们无处可去",
-      "summary": "患者跋涉数英里前往德里的公立医院接受治疗。需要帮助的人可以获得经济援助。但是，对于过夜住宿，家庭通常是独自一人—而且在街上。",
-      "category": "markets",
-      "country": "印度",
-      "lat": 20.59,
-      "lng": 78.96,
-      "published_at": "2026-10-17T09:00:00Z",
-      "source": "NPR World",
-      "url": "https://www.npr.org/2026/10/17/g-s1-147874/hospital-diagnosis-patients-india-sidewalk",
-      "heat": 80
-    },
-    {
-      "id": "news-011",
-      "title": "特朗普以国家利益为由，根据《格雷厄姆法案》放弃对俄罗斯的广泛新制裁和关税",
-      "summary": "9月，特朗普签署了针对俄罗斯入侵乌克兰的格雷厄姆法案。",
-      "category": "geopolitics",
-      "country": "俄罗斯",
-      "lat": 61.52,
-      "lng": 105.31,
-      "published_at": "2026-10-17T10:20:44Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/10/17/trump-waives-russia-related-sanctions-tariffs-before-they-take-effect-.html",
-      "heat": 78
-    },
-    {
-      "id": "news-012",
-      "title": "白银最近从创纪录的高位下跌了50% ，暗示经济放缓即将来临",
-      "summary": "有一种相对不成熟的商品可以提供经济走向的线索，其价值从今年早些时候的创纪录高点下跌了50%以上。",
-      "category": "markets",
-      "country": null,
-      "lat": null,
-      "lng": null,
-      "published_at": "2026-10-17T12:30:00Z",
-      "source": "MarketWatch Top",
-      "url": "https://www.marketwatch.com/story/silvers-recent-50-drop-from-a-record-high-hints-that-an-economic-slowdown-looms-e9fdfaf1?mod=mw_rss_topstories",
-      "heat": 77
-    },
-    {
-      "id": "news-013",
-      "title": "我今年63岁，被诊断出患有淋巴瘤。我明年应该领取社会保障吗？",
-      "summary": "“我的计划是继续工作，只要我能够这样做，并在我仍在赚取薪水的同时投资我的社会保障福利。”",
-      "category": "markets",
-      "country": null,
-      "lat": null,
-      "lng": null,
-      "published_at": "2026-10-17T11:00:00Z",
-      "source": "MarketWatch Top",
-      "url": "https://www.marketwatch.com/story/its-a-wait-and-see-situation-im-63-and-diagnosed-with-lymphoma-should-i-take-my-social-security-next-year-ea88b419?mod=mw_rss_topstories",
-      "heat": 72
-    },
-    {
-      "id": "news-014",
-      "title": "特朗普承诺发动摇摆区闪电战。他会去很多非常红的州",
-      "summary": "特朗普总统在选举日之前的中期旅行闪电战包括他两年前轻松赢得的几个红色州，这表明选举环境对共和党人来说更具挑战性。",
-      "category": "politics",
-      "country": null,
-      "lat": null,
-      "lng": null,
-      "published_at": "2026-10-17T09:00:00Z",
-      "source": "NPR Politics",
-      "url": "https://www.npr.org/2026/10/17/nx-s1-6004276/trump-travel-midterms",
-      "heat": 72
-    },
-    {
-      "id": "news-015",
-      "title": "人群涌向新德里，并在不断升级的抗议活动中挥舞着印度国旗",
-      "summary": "批评人士称，对选民名单的审查具有政治动机，并有可能剥夺选民的权利，因此抗议活动愈演愈烈。选举委员会和莫迪政府否认了这些指控。",
-      "category": "politics",
-      "country": "印度",
-      "lat": 20.59,
-      "lng": 78.96,
-      "published_at": "2026-10-16T13:26:43Z",
-      "source": "NPR World",
-      "url": "https://www.npr.org/2026/10/16/g-s1-148383/crowds-throng-new-delhi-and-wave-indian-flags-amid-escalating-protests",
-      "heat": 71
-    },
-    {
-      "id": "news-016",
-      "title": "Bending Spoons希望恢复软件弃用。伯克希尔哈撒韦公司支持该计划",
-      "summary": "作为一家上市公司，成立不到四个月， Bending Spoons本周就获得了伯克希尔哈撒韦公司的大力信任。",
-      "category": "politics",
-      "country": null,
-      "lat": null,
-      "lng": null,
-      "published_at": "2026-10-17T12:00:01Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/10/17/bending-spoons-wants-to-revive-software-castoffs-berkshire-investing.html",
-      "heat": 70
+      "heat": 69
     },
     {
       "id": "news-017",
+      "title": "苹果的可折叠iPhone Duo值2000 $吗？看看它与其他可折叠手机的搭配。",
+      "summary": "IPhone Duo的预订于周五开始，标志着苹果在可折叠手机市场的首次亮相，该市场主要由三星和谷歌主导。",
+      "category": "markets",
+      "country": null,
+      "lat": null,
+      "lng": null,
+      "published_at": "2026-10-17T18:40:00Z",
+      "source": "MarketWatch Top",
+      "url": "https://www.marketwatch.com/story/is-apples-foldable-iphone-duo-worth-2-000-see-how-it-stacks-up-against-other-foldable-phones-c9066b13?mod=mw_rss_topstories",
+      "heat": 67
+    },
+    {
+      "id": "news-018",
       "title": "特朗普表示不会使用核武器或向伊朗派遣地面部队",
       "summary": "特朗普表示，他不会对伊朗使用核武器或派遣地面部队，因为据报道美国正在权衡新的打击方案。",
       "category": "geopolitics",
@@ -220,36 +233,10 @@
       "published_at": "2026-10-16T09:46:54Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/10/16/us-iran-war-trump-hormuz.html",
-      "heat": 69
-    },
-    {
-      "id": "news-018",
-      "title": "美国人拥有总统的文件吗？上诉法院权衡",
-      "summary": "美国政府表示，在白宫创建的文件属于唐纳德·特朗普，而不是美国人民。这起案件最终可能会落入保守派倾向的最高法院。",
-      "category": "politics",
-      "country": "美国",
-      "lat": 37.09,
-      "lng": -95.71,
-      "published_at": "2026-10-16T09:00:00Z",
-      "source": "NPR Politics",
-      "url": "https://www.npr.org/2026/10/16/nx-s1-5996836/trump-who-owns-presidential-records-act-appeals-court",
-      "heat": 65
+      "heat": 56
     },
     {
       "id": "news-019",
-      "title": "在乌克兰罢工和泽连斯基与美国的分歧日益加剧的情况下，俄罗斯的观点",
-      "summary": "俄罗斯当局说，乌克兰星期四袭击了莫斯科东南部的一家大型炼油厂。这次罢工是为了应对俄罗斯对乌克兰能源基础设施的袭击。",
-      "category": "geopolitics",
-      "country": "美国",
-      "lat": 37.09,
-      "lng": -95.71,
-      "published_at": "2026-10-16T08:51:17Z",
-      "source": "NPR World",
-      "url": "https://www.npr.org/2026/10/16/nx-s1-6004281/russias-view-amid-ukraines-strikes-and-zelenskyys-growing-rift-with-the-u-s",
-      "heat": 63
-    },
-    {
-      "id": "news-020",
       "title": "部长告诉CNBC ，美国Starlink的遏制措施鼓励俄罗斯加强对乌克兰的攻击",
       "summary": "随着俄罗斯罢工的加剧和Starlink限制破坏军事行动，乌克兰正在寻求冬季能源和防空支持。",
       "category": "geopolitics",
@@ -259,7 +246,20 @@
       "published_at": "2026-10-16T10:25:46Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/10/16/zelenskyy-trump-eu-summit-russia-ukraine.html",
-      "heat": 61
+      "heat": 49
+    },
+    {
+      "id": "news-020",
+      "title": "一艘新加坡船只被击沉，但其他船只仍在通过霍尔木兹海峡",
+      "summary": "海事专家表示，尽管两艘集装箱船遭到袭击，新加坡船只仍将继续在危险的霍尔木兹海峡航行。",
+      "category": "geopolitics",
+      "country": "美国",
+      "lat": 37.09,
+      "lng": -95.71,
+      "published_at": "2026-10-16T05:56:28Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/16/strait-hormuz-singapore-ships-attacked.html",
+      "heat": 36
     }
   ]
 }
