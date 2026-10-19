@@ -3,7 +3,14 @@
 # 作用：
 #   1. 每天自动运行两班：北京时间 08:30 和 20:30（UTC 00:30 / 12:30）；
 #   2. 也支持在 GitHub 网页上手动触发（Actions → 选本工作流 → Run workflow）；
-#   3. 新闻更新成功后，把新的 data/news.json 提交回仓库，并立即发布到 GitHub Pages。
+#   3. 新闻更新成功后，把当日数据、概览摘要、历史归档、运行日志提交回仓库，
+#      并立即发布到 GitHub Pages。
+#
+# 退出码约定（update_news.py）：
+#   0 —— 成功
+#   2 —— 抓取或过滤失败（RSS 全挂、有效新闻过少），保留旧数据
+#   3 —— 翻译失败率超过 30%，判定翻译服务异常，保留旧数据（V3.0 新增）
+#   非零即不发布，线上继续使用上一次成功的内容。
 #
 # 为什么只有一个 job（重要）：
 #   早期版本拆成了「更新新闻」+「发布网站」两个 job，结果发布 job 的 checkout
@@ -30,6 +37,10 @@ on:
     - cron: '30 0 * * *'
     - cron: '30 12 * * *'
   workflow_dispatch: {}   # 允许手动触发，Day 2 演示时用这个
+  # 注意：这里刻意不加 push 触发器。
+  # 加了的话 A 每推一次前端代码都会跑一遍完整抓取，白耗 Actions 额度；
+  # 更麻烦的是两次定时任务之间数据被重抓，同一期的 id 会变，
+  # "这一期 20 条"就说不清了。数据只由定时任务和手动触发产生。
 
 # 权限说明：
 #   contents: write  —— 允许把新的 news.json 提交回仓库
@@ -75,13 +86,23 @@ jobs:
           TRANSLATE_API_KEY: ${{ secrets.TRANSLATE_API_KEY }}
 
       # ---------- 3. 把新数据提交回仓库 ----------
-      - name: 提交新的 news.json
+      # 注意 git add 的范围（V3.0 起）：
+      #   data/news.json      当日数据
+      #   data/digest.json    当日概览摘要
+      #   data/archive/       历史归档 + 归档索引（前端日期选择器依赖它）
+      #   data/logs/          运行日志（长期排障线索）
+      # 早期版本只 add 了 news.json，导致归档和概览在 Actions 上跑完就丢了 ——
+      # 本地能看到的文件，线上仓库里没有。这里必须整体加上。
+      - name: 提交新的数据文件
         run: |
           git config user.name  "news-bot"
           git config user.email "actions@github.com"
-          git add data/news.json
+
+          # 保留空目录占位（rm 掉过期归档后目录可能变空）
+          git add -A data/news.json data/digest.json data/archive data/logs
+
           if git diff --cached --quiet; then
-            echo "news.json 没有变化，跳过提交。"
+            echo "数据没有变化，跳过提交。"
           else
             git commit -m "自动更新新闻 $(date -u '+%Y-%m-%d %H:%M') UTC"
             git push
