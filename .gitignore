@@ -4,6 +4,8 @@ __pycache__/
 
 # 临时文件（脚本原子写入产生的中间文件）
 data/*.tmp
+data/archive/*.tmp
+data/logs/*.tmp
 
 # 本地编辑器
 .DS_Store
