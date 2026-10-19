@@ -1,0 +1,25 @@
+{
+  "run_at": "2026-10-18T16:51:36+08:00",
+  "ok_sources": 6,
+  "total_sources": 6,
+  "raw_count": 100,
+  "dedup_count": 100,
+  "time_filtered_count": 59,
+  "classified_count": 44,
+  "dropped_by_category": 15,
+  "located_count": 27,
+  "final_count": 0,
+  "category_dist": {},
+  "source_dist": {},
+  "translate": {
+    "provider": "mymemory",
+    "title_ok": 0,
+    "title_fail": 20,
+    "summary_ok": 0,
+    "summary_fail": 20,
+    "fail_ratio": 1.0,
+    "skipped": false
+  },
+  "status": "translate_degraded",
+  "message": "翻译失败率 100% 超过阈值 30%，判定翻译服务异常"
+}
