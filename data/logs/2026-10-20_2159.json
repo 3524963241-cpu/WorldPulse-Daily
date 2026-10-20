@@ -1,0 +1,29 @@
+{
+  "run_at": "2026-10-20T21:59:56+08:00",
+  "ok_sources": 6,
+  "total_sources": 6,
+  "raw_count": 100,
+  "dedup_count": 98,
+  "time_filtered_count": 63,
+  "classified_count": 45,
+  "dropped_by_category": 18,
+  "located_count": 40,
+  "city_count": 0,
+  "with_image": 20,
+  "final_count": 0,
+  "category_dist": {},
+  "source_dist": {},
+  "translate": {
+    "provider": "mymemory",
+    "provider_final": "mymemory",
+    "switched": true,
+    "title_ok": 5,
+    "title_fail": 15,
+    "summary_ok": 9,
+    "summary_fail": 11,
+    "fail_ratio": 0.75,
+    "skipped": false
+  },
+  "status": "translate_degraded",
+  "message": "翻译失败率 75% 超过阈值 30%，判定翻译服务异常"
+}
