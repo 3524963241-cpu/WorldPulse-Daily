@@ -9,3 +9,6 @@ data/logs/*.tmp
 
 # 本地编辑器
 .DS_Store
+
+# 本地临时脚本/预览（不提交）
+.workbuddy/
