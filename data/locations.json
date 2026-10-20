@@ -1,87 +1,1908 @@
 {
-  "_说明": "WorldPulse Daily 本地地名词典（B 同学负责）。用于在新闻标题/摘要中匹配事件地点。aliases 是英文匹配词（小写，词边界匹配）；name 是中文显示名。匹配不到任何地点时，脚本输出 country=null、lat/lng=null，不放地图点。",
-  "_坐标口径": "lat/lng 为国家/地区代表点的大致经纬度（WGS84），仅用于地图定位展示，不代表事件精确发生地。",
+  "_说明": "WorldPulse Daily 本地地名词典（B 同学负责）。两级结构：locations 是国家/地区表，cities 是城市表。匹配规则见 scripts/update_news.py 的 step6_locate：只在**标题**里找地名，城市优先于国家，且会排除'摘要顺带提到'的情况（标题和摘要必须在同一国家/城市上一致）。匹配不到任何地点时输出 country=null、city=null、lat/lng=null，不放地图点。",
+  "_坐标口径": "locations 里的 lat/lng 是国家代表点；cities 里的 lat/lng 是城市中心点（WGS84，约 2 位小数）。仅用于地图定位展示，不代表事件精确发生地。前端拿到 city 时应优先用城市的坐标，把地图飞到 zoom 9；只有 country 时用国家代表点（zoom 5~6）。",
+  "_匹配优先级": [
+    "1. 标题里命中城市名 → city + 该城市坐标（最精确）",
+    "2. 标题里只命中国家名 → country + 国家坐标，city=null",
+    "3. 标题没命中、但摘要命中 → 采用，但标记 locate_basis='summary'，可信度较低",
+    "4. 都没有 → 全部 null；纯市场报道（无地域属性）由 source_country 规则兜底（见脚本）"
+  ],
   "locations": [
-    { "name": "中国",       "lat": 35.86,  "lng": 104.19, "aliases": ["china", "chinese", "beijing", "shanghai"] },
-    { "name": "美国",       "lat": 37.09,  "lng": -95.71, "aliases": ["united states", "u.s.", "us ", "america", "american", "washington"] },
-    { "name": "俄罗斯",     "lat": 61.52,  "lng": 105.31, "aliases": ["russia", "russian", "moscow", "kremlin"] },
-    { "name": "乌克兰",     "lat": 48.38,  "lng": 31.17,  "aliases": ["ukraine", "ukrainian", "kyiv", "kiev"] },
-    { "name": "以色列",     "lat": 31.05,  "lng": 34.85,  "aliases": ["israel", "israeli", "jerusalem", "tel aviv"] },
-    { "name": "巴勒斯坦",   "lat": 31.95,  "lng": 35.23,  "aliases": ["palestin", "gaza", "west bank", "ramallah"] },
-    { "name": "伊朗",       "lat": 35.41,  "lng": 51.37,  "aliases": ["iran", "iranian", "tehran"] },
-    { "name": "伊拉克",     "lat": 33.22,  "lng": 43.68,  "aliases": ["iraq", "iraqi", "baghdad"] },
-    { "name": "叙利亚",     "lat": 34.80,  "lng": 38.99,  "aliases": ["syria", "syrian", "damascus"] },
-    { "name": "黎巴嫩",     "lat": 33.85,  "lng": 35.86,  "aliases": ["lebanon", "lebanese", "beirut"] },
-    { "name": "沙特阿拉伯", "lat": 23.89,  "lng": 45.08,  "aliases": ["saudi arabia", "saudi", "riyadh"] },
-    { "name": "土耳其",     "lat": 38.96,  "lng": 35.24,  "aliases": ["turkey", "turkish", "ankara", "istanbul"] },
-    { "name": "埃及",       "lat": 26.82,  "lng": 30.80,  "aliases": ["egypt", "egyptian", "cairo"] },
-    { "name": "阿富汗",     "lat": 33.94,  "lng": 67.71,  "aliases": ["afghanistan", "afghan", "kabul", "taliban"] },
-    { "name": "巴基斯坦",   "lat": 30.38,  "lng": 69.35,  "aliases": ["pakistan", "pakistani", "islamabad"] },
-    { "name": "印度",       "lat": 20.59,  "lng": 78.96,  "aliases": ["india", "indian", "new delhi", "delhi"] },
-    { "name": "日本",       "lat": 36.20,  "lng": 138.25, "aliases": ["japan", "japanese", "tokyo"] },
-    { "name": "韩国",       "lat": 35.91,  "lng": 127.77, "aliases": ["south korea", "korean", "seoul"] },
-    { "name": "朝鲜",       "lat": 40.34,  "lng": 127.51, "aliases": ["north korea", "pyongyang", "kim jong"] },
-    { "name": "越南",       "lat": 14.06,  "lng": 108.28, "aliases": ["vietnam", "vietnamese", "hanoi"] },
-    { "name": "泰国",       "lat": 15.87,  "lng": 100.99, "aliases": ["thailand", "thai", "bangkok"] },
-    { "name": "缅甸",       "lat": 21.91,  "lng": 95.96,  "aliases": ["myanmar", "burma", "naypyidaw"] },
-    { "name": "印度尼西亚", "lat": -0.79,  "lng": 113.92, "aliases": ["indonesia", "indonesian", "jakarta"] },
-    { "name": "菲律宾",     "lat": 12.88,  "lng": 121.77, "aliases": ["philippines", "filipino", "manila"] },
-    { "name": "马来西亚",   "lat": 4.21,   "lng": 101.98, "aliases": ["malaysia", "malaysian", "kuala lumpur"] },
-    { "name": "新加坡",     "lat": 1.35,   "lng": 103.82, "aliases": ["singapore", "singaporean"] },
-    { "name": "澳大利亚",   "lat": -25.27, "lng": 133.78, "aliases": ["australia", "australian", "canberra", "sydney"] },
-    { "name": "新西兰",     "lat": -40.90, "lng": 174.89, "aliases": ["new zealand", "wellington"] },
-    { "name": "英国",       "lat": 55.38,  "lng": -3.44,  "aliases": ["britain", "united kingdom", "u.k.", "uk ", "english", "london"] },
-    { "name": "法国",       "lat": 46.23,  "lng": 2.21,   "aliases": ["france", "french", "paris"] },
-    { "name": "德国",       "lat": 51.17,  "lng": 10.45,  "aliases": ["germany", "german", "berlin"] },
-    { "name": "意大利",     "lat": 41.87,  "lng": 12.57,  "aliases": ["italy", "italian", "rome"] },
-    { "name": "西班牙",     "lat": 40.46,  "lng": -3.75,  "aliases": ["spain", "spanish", "madrid"] },
-    { "name": "葡萄牙",     "lat": 39.40,  "lng": -8.22,  "aliases": ["portugal", "portuguese", "lisbon"] },
-    { "name": "荷兰",       "lat": 52.13,  "lng": 5.29,   "aliases": ["netherlands", "dutch", "amsterdam"] },
-    { "name": "比利时",     "lat": 50.50,  "lng": 4.47,   "aliases": ["belgium", "belgian", "brussels"] },
-    { "name": "瑞士",       "lat": 46.82,  "lng": 8.23,   "aliases": ["switzerland", "swiss", "geneva"] },
-    { "name": "瑞典",       "lat": 60.13,  "lng": 18.64,  "aliases": ["sweden", "swedish", "stockholm"] },
-    { "name": "挪威",       "lat": 60.47,  "lng": 8.47,   "aliases": ["norway", "norwegian", "oslo"] },
-    { "name": "芬兰",       "lat": 61.92,  "lng": 25.75,  "aliases": ["finland", "finnish", "helsinki"] },
-    { "name": "波兰",       "lat": 51.92,  "lng": 19.15,  "aliases": ["poland", "polish", "warsaw"] },
-    { "name": "捷克",       "lat": 49.82,  "lng": 15.47,  "aliases": ["czech", "prague"] },
-    { "name": "匈牙利",     "lat": 47.16,  "lng": 19.50,  "aliases": ["hungary", "hungarian", "budapest"] },
-    { "name": "罗马尼亚",   "lat": 45.94,  "lng": 24.97,  "aliases": ["romania", "romanian", "bucharest"] },
-    { "name": "塞尔维亚",   "lat": 44.02,  "lng": 21.01,  "aliases": ["serbia", "serbian", "belgrade"] },
-    { "name": "希腊",       "lat": 39.07,  "lng": 21.82,  "aliases": ["greece", "greek", "athens"] },
-    { "name": "加拿大",     "lat": 56.13,  "lng": -106.35,"aliases": ["canada", "canadian", "ottawa", "toronto"] },
-    { "name": "墨西哥",     "lat": 23.63,  "lng": -102.55,"aliases": ["mexico", "mexican"] },
-    { "name": "巴西",       "lat": -14.24, "lng": -51.93, "aliases": ["brazil", "brazilian", "brasilia"] },
-    { "name": "阿根廷",     "lat": -38.42, "lng": -63.62, "aliases": ["argentina", "argentine", "buenos aires"] },
-    { "name": "智利",       "lat": -35.68, "lng": -71.54, "aliases": ["chile", "chilean", "santiago"] },
-    { "name": "哥伦比亚",   "lat": 4.57,   "lng": -74.30, "aliases": ["colombia", "colombian", "bogota"] },
-    { "name": "委内瑞拉",   "lat": 6.42,   "lng": -66.59, "aliases": ["venezuela", "venezuelan", "caracas"] },
-    { "name": "古巴",       "lat": 21.52,  "lng": -77.78, "aliases": ["cuba", "cuban", "havana"] },
-    { "name": "海地",       "lat": 18.97,  "lng": -72.29, "aliases": ["haiti", "haitian", "port-au-prince"] },
-    { "name": "南非",       "lat": -30.56, "lng": 22.94,  "aliases": ["south africa", "johannesburg", "pretoria"] },
-    { "name": "尼日利亚",   "lat": 9.08,   "lng": 8.68,   "aliases": ["nigeria", "nigerian", "abuja", "lagos"] },
-    { "name": "苏丹",       "lat": 12.86,  "lng": 30.22,  "aliases": ["sudan", "sudanese", "khartoum"] },
-    { "name": "埃塞俄比亚", "lat": 9.15,   "lng": 40.49,  "aliases": ["ethiopia", "ethiopian", "addis ababa"] },
-    { "name": "肯尼亚",     "lat": -0.02,  "lng": 37.91,  "aliases": ["kenya", "kenyan", "nairobi"] },
-    { "name": "索马里",     "lat": 5.15,   "lng": 46.20,  "aliases": ["somalia", "somali", "mogadishu"] },
-    { "name": "利比亚",     "lat": 26.34,  "lng": 17.23,  "aliases": ["libya", "libyan", "tripoli"] },
-    { "name": "刚果（金）", "lat": -4.04,  "lng": 21.76,  "aliases": ["democratic republic of congo", "drc", "congo"] },
-    { "name": "摩洛哥",     "lat": 31.79,  "lng": -7.09,  "aliases": ["morocco", "moroccan", "rabat"] },
-    { "name": "阿尔及利亚", "lat": 28.03,  "lng": 1.66,   "aliases": ["algeria", "algerian"] },
-    { "name": "突尼斯",     "lat": 33.89,  "lng": 9.54,   "aliases": ["tunisia", "tunisian", "tunis"] },
-    { "name": "也门",       "lat": 15.55,  "lng": 48.52,  "aliases": ["yemen", "yemeni", "houthi", "sanaa"] },
-    { "name": "阿联酋",     "lat": 23.42,  "lng": 53.85,  "aliases": ["united arab emirates", "u.a.e.", "dubai", "abu dhabi"] },
-    { "name": "卡塔尔",     "lat": 25.35,  "lng": 51.18,  "aliases": ["qatar", "qatari", "doha"] },
-    { "name": "科威特",     "lat": 29.31,  "lng": 47.48,  "aliases": ["kuwait", "kuwaiti"] },
-    { "name": "约旦",       "lat": 30.59,  "lng": 36.24,  "aliases": ["jordan", "jordanian", "amman"] },
-    { "name": "亚美尼亚",   "lat": 40.07,  "lng": 45.04,  "aliases": ["armenia", "armenian", "yerevan"] },
-    { "name": "阿塞拜疆",   "lat": 40.14,  "lng": 47.58,  "aliases": ["azerbaijan", "baku"] },
-    { "name": "格鲁吉亚",   "lat": 42.32,  "lng": 43.36,  "aliases": ["georgia", "georgian", "tbilisi"] },
-    { "name": "白俄罗斯",   "lat": 53.71,  "lng": 27.95,  "aliases": ["belarus", "belarusian", "minsk"] },
-    { "name": "摩尔多瓦",   "lat": 47.41,  "lng": 28.37,  "aliases": ["moldova", "chisinau"] },
-    { "name": "哈萨克斯坦", "lat": 48.02,  "lng": 66.92,  "aliases": ["kazakhstan", "astana", "almaty"] },
-    { "name": "乌兹别克斯坦","lat": 41.38, "lng": 64.59,  "aliases": ["uzbekistan", "tashkent"] },
-    { "name": "中国台湾地区", "lat": 23.70, "lng": 120.96, "aliases": ["taiwan", "taipei"] },
-    { "name": "中国香港地区", "lat": 22.32, "lng": 114.17, "aliases": ["hong kong"] },
-    { "name": "欧盟",       "lat": 50.84,  "lng": 4.38,   "aliases": ["european union", "e.u."] }
+    {
+      "name": "中国",
+      "lat": 35.86,
+      "lng": 104.19,
+      "aliases": [
+        "china",
+        "chinese"
+      ]
+    },
+    {
+      "name": "美国",
+      "lat": 37.09,
+      "lng": -95.71,
+      "aliases": [
+        "united states",
+        "u.s.",
+        "us ",
+        "america",
+        "american"
+      ]
+    },
+    {
+      "name": "俄罗斯",
+      "lat": 61.52,
+      "lng": 105.31,
+      "aliases": [
+        "russia",
+        "russian",
+        "kremlin"
+      ]
+    },
+    {
+      "name": "乌克兰",
+      "lat": 48.38,
+      "lng": 31.17,
+      "aliases": [
+        "ukraine",
+        "ukrainian"
+      ]
+    },
+    {
+      "name": "以色列",
+      "lat": 31.05,
+      "lng": 34.85,
+      "aliases": [
+        "israel",
+        "israeli"
+      ]
+    },
+    {
+      "name": "巴勒斯坦",
+      "lat": 31.95,
+      "lng": 35.23,
+      "aliases": [
+        "palestin",
+        "west bank"
+      ]
+    },
+    {
+      "name": "伊朗",
+      "lat": 35.41,
+      "lng": 51.37,
+      "aliases": [
+        "iran",
+        "iranian"
+      ]
+    },
+    {
+      "name": "伊拉克",
+      "lat": 33.22,
+      "lng": 43.68,
+      "aliases": [
+        "iraq",
+        "iraqi"
+      ]
+    },
+    {
+      "name": "叙利亚",
+      "lat": 34.8,
+      "lng": 38.99,
+      "aliases": [
+        "syria",
+        "syrian"
+      ]
+    },
+    {
+      "name": "黎巴嫩",
+      "lat": 33.85,
+      "lng": 35.86,
+      "aliases": [
+        "lebanon",
+        "lebanese"
+      ]
+    },
+    {
+      "name": "沙特阿拉伯",
+      "lat": 23.89,
+      "lng": 45.08,
+      "aliases": [
+        "saudi arabia",
+        "saudi"
+      ]
+    },
+    {
+      "name": "土耳其",
+      "lat": 38.96,
+      "lng": 35.24,
+      "aliases": [
+        "turkey",
+        "turkish"
+      ]
+    },
+    {
+      "name": "埃及",
+      "lat": 26.82,
+      "lng": 30.8,
+      "aliases": [
+        "egypt",
+        "egyptian"
+      ]
+    },
+    {
+      "name": "阿富汗",
+      "lat": 33.94,
+      "lng": 67.71,
+      "aliases": [
+        "afghanistan",
+        "afghan",
+        "taliban"
+      ]
+    },
+    {
+      "name": "巴基斯坦",
+      "lat": 30.38,
+      "lng": 69.35,
+      "aliases": [
+        "pakistan",
+        "pakistani"
+      ]
+    },
+    {
+      "name": "印度",
+      "lat": 20.59,
+      "lng": 78.96,
+      "aliases": [
+        "india",
+        "indian"
+      ]
+    },
+    {
+      "name": "日本",
+      "lat": 36.2,
+      "lng": 138.25,
+      "aliases": [
+        "japan",
+        "japanese"
+      ]
+    },
+    {
+      "name": "韩国",
+      "lat": 35.91,
+      "lng": 127.77,
+      "aliases": [
+        "south korea",
+        "korean"
+      ]
+    },
+    {
+      "name": "朝鲜",
+      "lat": 40.34,
+      "lng": 127.51,
+      "aliases": [
+        "north korea",
+        "kim jong"
+      ]
+    },
+    {
+      "name": "越南",
+      "lat": 14.06,
+      "lng": 108.28,
+      "aliases": [
+        "vietnam",
+        "vietnamese"
+      ]
+    },
+    {
+      "name": "泰国",
+      "lat": 15.87,
+      "lng": 100.99,
+      "aliases": [
+        "thailand",
+        "thai"
+      ]
+    },
+    {
+      "name": "缅甸",
+      "lat": 21.91,
+      "lng": 95.96,
+      "aliases": [
+        "myanmar",
+        "burma"
+      ]
+    },
+    {
+      "name": "印度尼西亚",
+      "lat": -0.79,
+      "lng": 113.92,
+      "aliases": [
+        "indonesia",
+        "indonesian"
+      ]
+    },
+    {
+      "name": "菲律宾",
+      "lat": 12.88,
+      "lng": 121.77,
+      "aliases": [
+        "philippines",
+        "filipino"
+      ]
+    },
+    {
+      "name": "马来西亚",
+      "lat": 4.21,
+      "lng": 101.98,
+      "aliases": [
+        "malaysia",
+        "malaysian"
+      ]
+    },
+    {
+      "name": "新加坡",
+      "lat": 1.35,
+      "lng": 103.82,
+      "aliases": [
+        "singapore",
+        "singaporean"
+      ]
+    },
+    {
+      "name": "澳大利亚",
+      "lat": -25.27,
+      "lng": 133.78,
+      "aliases": [
+        "australia",
+        "australian"
+      ]
+    },
+    {
+      "name": "新西兰",
+      "lat": -40.9,
+      "lng": 174.89,
+      "aliases": [
+        "new zealand"
+      ]
+    },
+    {
+      "name": "英国",
+      "lat": 55.38,
+      "lng": -3.44,
+      "aliases": [
+        "britain",
+        "united kingdom",
+        "u.k.",
+        "uk ",
+        "english"
+      ]
+    },
+    {
+      "name": "法国",
+      "lat": 46.23,
+      "lng": 2.21,
+      "aliases": [
+        "france",
+        "french"
+      ]
+    },
+    {
+      "name": "德国",
+      "lat": 51.17,
+      "lng": 10.45,
+      "aliases": [
+        "germany",
+        "german"
+      ]
+    },
+    {
+      "name": "意大利",
+      "lat": 41.87,
+      "lng": 12.57,
+      "aliases": [
+        "italy",
+        "italian"
+      ]
+    },
+    {
+      "name": "西班牙",
+      "lat": 40.46,
+      "lng": -3.75,
+      "aliases": [
+        "spain",
+        "spanish"
+      ]
+    },
+    {
+      "name": "葡萄牙",
+      "lat": 39.4,
+      "lng": -8.22,
+      "aliases": [
+        "portugal",
+        "portuguese"
+      ]
+    },
+    {
+      "name": "荷兰",
+      "lat": 52.13,
+      "lng": 5.29,
+      "aliases": [
+        "netherlands",
+        "dutch"
+      ]
+    },
+    {
+      "name": "比利时",
+      "lat": 50.5,
+      "lng": 4.47,
+      "aliases": [
+        "belgium",
+        "belgian"
+      ]
+    },
+    {
+      "name": "瑞士",
+      "lat": 46.82,
+      "lng": 8.23,
+      "aliases": [
+        "switzerland",
+        "swiss"
+      ]
+    },
+    {
+      "name": "瑞典",
+      "lat": 60.13,
+      "lng": 18.64,
+      "aliases": [
+        "sweden",
+        "swedish"
+      ]
+    },
+    {
+      "name": "挪威",
+      "lat": 60.47,
+      "lng": 8.47,
+      "aliases": [
+        "norway",
+        "norwegian"
+      ]
+    },
+    {
+      "name": "芬兰",
+      "lat": 61.92,
+      "lng": 25.75,
+      "aliases": [
+        "finland",
+        "finnish"
+      ]
+    },
+    {
+      "name": "波兰",
+      "lat": 51.92,
+      "lng": 19.15,
+      "aliases": [
+        "poland",
+        "polish"
+      ]
+    },
+    {
+      "name": "捷克",
+      "lat": 49.82,
+      "lng": 15.47,
+      "aliases": [
+        "czech"
+      ]
+    },
+    {
+      "name": "匈牙利",
+      "lat": 47.16,
+      "lng": 19.5,
+      "aliases": [
+        "hungary",
+        "hungarian"
+      ]
+    },
+    {
+      "name": "罗马尼亚",
+      "lat": 45.94,
+      "lng": 24.97,
+      "aliases": [
+        "romania",
+        "romanian"
+      ]
+    },
+    {
+      "name": "塞尔维亚",
+      "lat": 44.02,
+      "lng": 21.01,
+      "aliases": [
+        "serbia",
+        "serbian"
+      ]
+    },
+    {
+      "name": "希腊",
+      "lat": 39.07,
+      "lng": 21.82,
+      "aliases": [
+        "greece",
+        "greek"
+      ]
+    },
+    {
+      "name": "加拿大",
+      "lat": 56.13,
+      "lng": -106.35,
+      "aliases": [
+        "canada",
+        "canadian"
+      ]
+    },
+    {
+      "name": "墨西哥",
+      "lat": 23.63,
+      "lng": -102.55,
+      "aliases": [
+        "mexico",
+        "mexican"
+      ]
+    },
+    {
+      "name": "巴西",
+      "lat": -14.24,
+      "lng": -51.93,
+      "aliases": [
+        "brazil",
+        "brazilian"
+      ]
+    },
+    {
+      "name": "阿根廷",
+      "lat": -38.42,
+      "lng": -63.62,
+      "aliases": [
+        "argentina",
+        "argentine"
+      ]
+    },
+    {
+      "name": "智利",
+      "lat": -35.68,
+      "lng": -71.54,
+      "aliases": [
+        "chile",
+        "chilean"
+      ]
+    },
+    {
+      "name": "哥伦比亚",
+      "lat": 4.57,
+      "lng": -74.3,
+      "aliases": [
+        "colombia",
+        "colombian"
+      ]
+    },
+    {
+      "name": "委内瑞拉",
+      "lat": 6.42,
+      "lng": -66.59,
+      "aliases": [
+        "venezuela",
+        "venezuelan"
+      ]
+    },
+    {
+      "name": "古巴",
+      "lat": 21.52,
+      "lng": -77.78,
+      "aliases": [
+        "cuba",
+        "cuban"
+      ]
+    },
+    {
+      "name": "海地",
+      "lat": 18.97,
+      "lng": -72.29,
+      "aliases": [
+        "haiti",
+        "haitian",
+        "port-au-prince"
+      ]
+    },
+    {
+      "name": "南非",
+      "lat": -30.56,
+      "lng": 22.94,
+      "aliases": [
+        "south africa"
+      ]
+    },
+    {
+      "name": "尼日利亚",
+      "lat": 9.08,
+      "lng": 8.68,
+      "aliases": [
+        "nigeria",
+        "nigerian"
+      ]
+    },
+    {
+      "name": "苏丹",
+      "lat": 12.86,
+      "lng": 30.22,
+      "aliases": [
+        "sudan",
+        "sudanese"
+      ]
+    },
+    {
+      "name": "埃塞俄比亚",
+      "lat": 9.15,
+      "lng": 40.49,
+      "aliases": [
+        "ethiopia",
+        "ethiopian"
+      ]
+    },
+    {
+      "name": "肯尼亚",
+      "lat": -0.02,
+      "lng": 37.91,
+      "aliases": [
+        "kenya",
+        "kenyan"
+      ]
+    },
+    {
+      "name": "索马里",
+      "lat": 5.15,
+      "lng": 46.2,
+      "aliases": [
+        "somalia",
+        "somali",
+        "mogadishu"
+      ]
+    },
+    {
+      "name": "利比亚",
+      "lat": 26.34,
+      "lng": 17.23,
+      "aliases": [
+        "libya",
+        "libyan"
+      ]
+    },
+    {
+      "name": "刚果（金）",
+      "lat": -4.04,
+      "lng": 21.76,
+      "aliases": [
+        "democratic republic of congo",
+        "drc",
+        "congo"
+      ]
+    },
+    {
+      "name": "摩洛哥",
+      "lat": 31.79,
+      "lng": -7.09,
+      "aliases": [
+        "morocco",
+        "moroccan"
+      ]
+    },
+    {
+      "name": "阿尔及利亚",
+      "lat": 28.03,
+      "lng": 1.66,
+      "aliases": [
+        "algeria",
+        "algerian"
+      ]
+    },
+    {
+      "name": "突尼斯",
+      "lat": 33.89,
+      "lng": 9.54,
+      "aliases": [
+        "tunisia",
+        "tunisian"
+      ]
+    },
+    {
+      "name": "也门",
+      "lat": 15.55,
+      "lng": 48.52,
+      "aliases": [
+        "yemen",
+        "yemeni",
+        "houthi"
+      ]
+    },
+    {
+      "name": "阿联酋",
+      "lat": 23.42,
+      "lng": 53.85,
+      "aliases": [
+        "united arab emirates",
+        "u.a.e."
+      ]
+    },
+    {
+      "name": "卡塔尔",
+      "lat": 25.35,
+      "lng": 51.18,
+      "aliases": [
+        "qatar",
+        "qatari"
+      ]
+    },
+    {
+      "name": "科威特",
+      "lat": 29.31,
+      "lng": 47.48,
+      "aliases": [
+        "kuwait",
+        "kuwaiti"
+      ]
+    },
+    {
+      "name": "约旦",
+      "lat": 30.59,
+      "lng": 36.24,
+      "aliases": [
+        "jordan",
+        "jordanian"
+      ]
+    },
+    {
+      "name": "亚美尼亚",
+      "lat": 40.07,
+      "lng": 45.04,
+      "aliases": [
+        "armenia",
+        "armenian"
+      ]
+    },
+    {
+      "name": "阿塞拜疆",
+      "lat": 40.14,
+      "lng": 47.58,
+      "aliases": [
+        "azerbaijan"
+      ]
+    },
+    {
+      "name": "格鲁吉亚",
+      "lat": 42.32,
+      "lng": 43.36,
+      "aliases": [
+        "georgia",
+        "georgian"
+      ]
+    },
+    {
+      "name": "白俄罗斯",
+      "lat": 53.71,
+      "lng": 27.95,
+      "aliases": [
+        "belarus",
+        "belarusian"
+      ]
+    },
+    {
+      "name": "摩尔多瓦",
+      "lat": 47.41,
+      "lng": 28.37,
+      "aliases": [
+        "moldova",
+        "chisinau"
+      ]
+    },
+    {
+      "name": "哈萨克斯坦",
+      "lat": 48.02,
+      "lng": 66.92,
+      "aliases": [
+        "kazakhstan",
+        "astana",
+        "almaty"
+      ]
+    },
+    {
+      "name": "乌兹别克斯坦",
+      "lat": 41.38,
+      "lng": 64.59,
+      "aliases": [
+        "uzbekistan",
+        "tashkent"
+      ]
+    },
+    {
+      "name": "中国台湾地区",
+      "lat": 23.7,
+      "lng": 120.96,
+      "aliases": [
+        "taiwan"
+      ]
+    },
+    {
+      "name": "中国香港地区",
+      "lat": 22.32,
+      "lng": 114.17,
+      "aliases": []
+    },
+    {
+      "name": "欧盟",
+      "lat": 50.84,
+      "lng": 4.38,
+      "aliases": [
+        "european union",
+        "e.u."
+      ]
+    },
+    {
+      "name": "奥地利",
+      "lat": 47.52,
+      "lng": 14.55,
+      "aliases": [
+        "austria",
+        "austrian"
+      ]
+    },
+    {
+      "name": "丹麦",
+      "lat": 56.26,
+      "lng": 9.5,
+      "aliases": [
+        "denmark",
+        "danish"
+      ]
+    },
+    {
+      "name": "爱尔兰",
+      "lat": 53.41,
+      "lng": -8.24,
+      "aliases": [
+        "ireland",
+        "irish"
+      ]
+    },
+    {
+      "name": "蒙古",
+      "lat": 46.86,
+      "lng": 103.85,
+      "aliases": [
+        "mongolia",
+        "mongolian"
+      ]
+    },
+    {
+      "name": "孟加拉国",
+      "lat": 23.68,
+      "lng": 90.36,
+      "aliases": [
+        "bangladesh",
+        "bangladeshi"
+      ]
+    },
+    {
+      "name": "斯里兰卡",
+      "lat": 7.87,
+      "lng": 80.77,
+      "aliases": [
+        "sri lanka",
+        "sri lankan"
+      ]
+    },
+    {
+      "name": "尼泊尔",
+      "lat": 28.39,
+      "lng": 84.12,
+      "aliases": [
+        "nepal",
+        "nepalese"
+      ]
+    }
+  ],
+  "cities": [
+    {
+      "name": "上海",
+      "country": "中国",
+      "lat": 31.23,
+      "lng": 121.47,
+      "aliases": [
+        "shanghai"
+      ]
+    },
+    {
+      "name": "北京",
+      "country": "中国",
+      "lat": 39.9,
+      "lng": 116.41,
+      "aliases": [
+        "beijing"
+      ]
+    },
+    {
+      "name": "广州",
+      "country": "中国",
+      "lat": 23.13,
+      "lng": 113.26,
+      "aliases": [
+        "guangzhou"
+      ]
+    },
+    {
+      "name": "成都",
+      "country": "中国",
+      "lat": 30.57,
+      "lng": 104.07,
+      "aliases": [
+        "chengdu"
+      ]
+    },
+    {
+      "name": "武汉",
+      "country": "中国",
+      "lat": 30.59,
+      "lng": 114.31,
+      "aliases": [
+        "wuhan"
+      ]
+    },
+    {
+      "name": "深圳",
+      "country": "中国",
+      "lat": 22.54,
+      "lng": 114.06,
+      "aliases": [
+        "shenzhen"
+      ]
+    },
+    {
+      "name": "西安",
+      "country": "中国",
+      "lat": 34.34,
+      "lng": 108.94,
+      "aliases": [
+        "xi'an",
+        "xian"
+      ]
+    },
+    {
+      "name": "台北",
+      "country": "中国台湾地区",
+      "lat": 25.03,
+      "lng": 121.57,
+      "aliases": [
+        "taipei"
+      ]
+    },
+    {
+      "name": "香港",
+      "country": "中国香港地区",
+      "lat": 22.32,
+      "lng": 114.17,
+      "aliases": [
+        "hong kong"
+      ]
+    },
+    {
+      "name": "哥本哈根",
+      "country": "丹麦",
+      "lat": 55.68,
+      "lng": 12.57,
+      "aliases": [
+        "copenhagen"
+      ]
+    },
+    {
+      "name": "哈尔科夫",
+      "country": "乌克兰",
+      "lat": 49.99,
+      "lng": 36.23,
+      "aliases": [
+        "kharkiv"
+      ]
+    },
+    {
+      "name": "基辅",
+      "country": "乌克兰",
+      "lat": 50.45,
+      "lng": 30.52,
+      "aliases": [
+        "kyiv",
+        "kiev"
+      ]
+    },
+    {
+      "name": "萨那",
+      "country": "也门",
+      "lat": 15.37,
+      "lng": 44.19,
+      "aliases": [
+        "sanaa",
+        "sana'a"
+      ]
+    },
+    {
+      "name": "埃里温",
+      "country": "亚美尼亚",
+      "lat": 40.18,
+      "lng": 44.51,
+      "aliases": [
+        "yerevan"
+      ]
+    },
+    {
+      "name": "特拉维夫",
+      "country": "以色列",
+      "lat": 32.09,
+      "lng": 34.78,
+      "aliases": [
+        "tel aviv"
+      ]
+    },
+    {
+      "name": "耶路撒冷",
+      "country": "以色列",
+      "lat": 31.77,
+      "lng": 35.21,
+      "aliases": [
+        "jerusalem"
+      ]
+    },
+    {
+      "name": "巴格达",
+      "country": "伊拉克",
+      "lat": 33.32,
+      "lng": 44.36,
+      "aliases": [
+        "baghdad"
+      ]
+    },
+    {
+      "name": "德黑兰",
+      "country": "伊朗",
+      "lat": 35.69,
+      "lng": 51.39,
+      "aliases": [
+        "tehran"
+      ]
+    },
+    {
+      "name": "圣彼得堡",
+      "country": "俄罗斯",
+      "lat": 59.93,
+      "lng": 30.34,
+      "aliases": [
+        "st. petersburg",
+        "saint petersburg"
+      ]
+    },
+    {
+      "name": "莫斯科",
+      "country": "俄罗斯",
+      "lat": 55.76,
+      "lng": 37.62,
+      "aliases": [
+        "moscow"
+      ]
+    },
+    {
+      "name": "的黎波里",
+      "country": "利比亚",
+      "lat": 32.89,
+      "lng": 13.19,
+      "aliases": [
+        "tripoli"
+      ]
+    },
+    {
+      "name": "多伦多",
+      "country": "加拿大",
+      "lat": 43.65,
+      "lng": -79.38,
+      "aliases": [
+        "toronto"
+      ]
+    },
+    {
+      "name": "渥太华",
+      "country": "加拿大",
+      "lat": 45.42,
+      "lng": -75.7,
+      "aliases": [
+        "ottawa"
+      ]
+    },
+    {
+      "name": "温哥华",
+      "country": "加拿大",
+      "lat": 49.28,
+      "lng": -123.12,
+      "aliases": [
+        "vancouver"
+      ]
+    },
+    {
+      "name": "布达佩斯",
+      "country": "匈牙利",
+      "lat": 47.5,
+      "lng": 19.04,
+      "aliases": [
+        "budapest"
+      ]
+    },
+    {
+      "name": "开普敦",
+      "country": "南非",
+      "lat": -33.92,
+      "lng": 18.42,
+      "aliases": [
+        "cape town"
+      ]
+    },
+    {
+      "name": "比勒陀利亚",
+      "country": "南非",
+      "lat": -25.75,
+      "lng": 28.19,
+      "aliases": [
+        "pretoria"
+      ]
+    },
+    {
+      "name": "约翰内斯堡",
+      "country": "南非",
+      "lat": -26.2,
+      "lng": 28.05,
+      "aliases": [
+        "johannesburg"
+      ]
+    },
+    {
+      "name": "多哈",
+      "country": "卡塔尔",
+      "lat": 25.29,
+      "lng": 51.53,
+      "aliases": [
+        "doha"
+      ]
+    },
+    {
+      "name": "孟买",
+      "country": "印度",
+      "lat": 19.08,
+      "lng": 72.88,
+      "aliases": [
+        "mumbai"
+      ]
+    },
+    {
+      "name": "新德里",
+      "country": "印度",
+      "lat": 28.61,
+      "lng": 77.21,
+      "aliases": [
+        "new delhi",
+        "delhi"
+      ]
+    },
+    {
+      "name": "雅加达",
+      "country": "印度尼西亚",
+      "lat": -6.21,
+      "lng": 106.85,
+      "aliases": [
+        "jakarta"
+      ]
+    },
+    {
+      "name": "大马士革",
+      "country": "叙利亚",
+      "lat": 33.51,
+      "lng": 36.28,
+      "aliases": [
+        "damascus"
+      ]
+    },
+    {
+      "name": "哈瓦那",
+      "country": "古巴",
+      "lat": 23.11,
+      "lng": -82.37,
+      "aliases": [
+        "havana"
+      ]
+    },
+    {
+      "name": "波哥大",
+      "country": "哥伦比亚",
+      "lat": 4.71,
+      "lng": -74.07,
+      "aliases": [
+        "bogota"
+      ]
+    },
+    {
+      "name": "伊斯坦布尔",
+      "country": "土耳其",
+      "lat": 41.01,
+      "lng": 28.98,
+      "aliases": [
+        "istanbul"
+      ]
+    },
+    {
+      "name": "安卡拉",
+      "country": "土耳其",
+      "lat": 39.93,
+      "lng": 32.86,
+      "aliases": [
+        "ankara"
+      ]
+    },
+    {
+      "name": "开罗",
+      "country": "埃及",
+      "lat": 30.04,
+      "lng": 31.24,
+      "aliases": [
+        "cairo"
+      ]
+    },
+    {
+      "name": "亚的斯亚贝巴",
+      "country": "埃塞俄比亚",
+      "lat": 9.03,
+      "lng": 38.74,
+      "aliases": [
+        "addis ababa"
+      ]
+    },
+    {
+      "name": "贝尔格莱德",
+      "country": "塞尔维亚",
+      "lat": 44.79,
+      "lng": 20.45,
+      "aliases": [
+        "belgrade"
+      ]
+    },
+    {
+      "name": "墨西哥城",
+      "country": "墨西哥",
+      "lat": 19.43,
+      "lng": -99.13,
+      "aliases": [
+        "mexico city"
+      ]
+    },
+    {
+      "name": "维也纳",
+      "country": "奥地利",
+      "lat": 48.21,
+      "lng": 16.37,
+      "aliases": [
+        "vienna"
+      ]
+    },
+    {
+      "name": "加拉加斯",
+      "country": "委内瑞拉",
+      "lat": 10.48,
+      "lng": -66.9,
+      "aliases": [
+        "caracas"
+      ]
+    },
+    {
+      "name": "达卡",
+      "country": "孟加拉国",
+      "lat": 23.81,
+      "lng": 90.41,
+      "aliases": [
+        "dhaka"
+      ]
+    },
+    {
+      "name": "拉各斯",
+      "country": "尼日利亚",
+      "lat": 6.52,
+      "lng": 3.38,
+      "aliases": [
+        "lagos"
+      ]
+    },
+    {
+      "name": "阿布贾",
+      "country": "尼日利亚",
+      "lat": 9.06,
+      "lng": 7.49,
+      "aliases": [
+        "abuja"
+      ]
+    },
+    {
+      "name": "加德满都",
+      "country": "尼泊尔",
+      "lat": 27.72,
+      "lng": 85.32,
+      "aliases": [
+        "kathmandu"
+      ]
+    },
+    {
+      "name": "加沙",
+      "country": "巴勒斯坦",
+      "lat": 31.5,
+      "lng": 34.47,
+      "aliases": [
+        "gaza"
+      ]
+    },
+    {
+      "name": "拉马拉",
+      "country": "巴勒斯坦",
+      "lat": 31.9,
+      "lng": 35.2,
+      "aliases": [
+        "ramallah"
+      ]
+    },
+    {
+      "name": "伊斯兰堡",
+      "country": "巴基斯坦",
+      "lat": 33.68,
+      "lng": 73.05,
+      "aliases": [
+        "islamabad"
+      ]
+    },
+    {
+      "name": "卡拉奇",
+      "country": "巴基斯坦",
+      "lat": 24.86,
+      "lng": 67.01,
+      "aliases": [
+        "karachi"
+      ]
+    },
+    {
+      "name": "圣保罗",
+      "country": "巴西",
+      "lat": -23.55,
+      "lng": -46.63,
+      "aliases": [
+        "sao paulo",
+        "são paulo"
+      ]
+    },
+    {
+      "name": "巴西利亚",
+      "country": "巴西",
+      "lat": -15.79,
+      "lng": -47.88,
+      "aliases": [
+        "brasilia"
+      ]
+    },
+    {
+      "name": "雅典",
+      "country": "希腊",
+      "lat": 37.98,
+      "lng": 23.73,
+      "aliases": [
+        "athens"
+      ]
+    },
+    {
+      "name": "慕尼黑",
+      "country": "德国",
+      "lat": 48.14,
+      "lng": 11.58,
+      "aliases": [
+        "munich"
+      ]
+    },
+    {
+      "name": "柏林",
+      "country": "德国",
+      "lat": 52.52,
+      "lng": 13.4,
+      "aliases": [
+        "berlin"
+      ]
+    },
+    {
+      "name": "法兰克福",
+      "country": "德国",
+      "lat": 50.11,
+      "lng": 8.68,
+      "aliases": [
+        "frankfurt"
+      ]
+    },
+    {
+      "name": "米兰",
+      "country": "意大利",
+      "lat": 45.46,
+      "lng": 9.19,
+      "aliases": [
+        "milan"
+      ]
+    },
+    {
+      "name": "罗马",
+      "country": "意大利",
+      "lat": 41.9,
+      "lng": 12.5,
+      "aliases": [
+        "rome"
+      ]
+    },
+    {
+      "name": "奥斯陆",
+      "country": "挪威",
+      "lat": 59.91,
+      "lng": 10.75,
+      "aliases": [
+        "oslo"
+      ]
+    },
+    {
+      "name": "布拉格",
+      "country": "捷克",
+      "lat": 50.08,
+      "lng": 14.44,
+      "aliases": [
+        "prague"
+      ]
+    },
+    {
+      "name": "拉巴特",
+      "country": "摩洛哥",
+      "lat": 34.02,
+      "lng": -6.84,
+      "aliases": [
+        "rabat"
+      ]
+    },
+    {
+      "name": "科伦坡",
+      "country": "斯里兰卡",
+      "lat": 6.93,
+      "lng": 79.86,
+      "aliases": [
+        "colombo"
+      ]
+    },
+    {
+      "name": "惠灵顿",
+      "country": "新西兰",
+      "lat": -41.29,
+      "lng": 174.78,
+      "aliases": [
+        "wellington"
+      ]
+    },
+    {
+      "name": "东京",
+      "country": "日本",
+      "lat": 35.68,
+      "lng": 139.69,
+      "aliases": [
+        "tokyo"
+      ]
+    },
+    {
+      "name": "大阪",
+      "country": "日本",
+      "lat": 34.69,
+      "lng": 135.5,
+      "aliases": [
+        "osaka"
+      ]
+    },
+    {
+      "name": "圣地亚哥",
+      "country": "智利",
+      "lat": -33.45,
+      "lng": -70.67,
+      "aliases": [
+        "santiago"
+      ]
+    },
+    {
+      "name": "平壤",
+      "country": "朝鲜",
+      "lat": 39.04,
+      "lng": 125.76,
+      "aliases": [
+        "pyongyang"
+      ]
+    },
+    {
+      "name": "第比利斯",
+      "country": "格鲁吉亚",
+      "lat": 41.72,
+      "lng": 44.79,
+      "aliases": [
+        "tbilisi"
+      ]
+    },
+    {
+      "name": "布鲁塞尔",
+      "country": "比利时",
+      "lat": 50.85,
+      "lng": 4.35,
+      "aliases": [
+        "brussels"
+      ]
+    },
+    {
+      "name": "利雅得",
+      "country": "沙特阿拉伯",
+      "lat": 24.71,
+      "lng": 46.68,
+      "aliases": [
+        "riyadh"
+      ]
+    },
+    {
+      "name": "吉达",
+      "country": "沙特阿拉伯",
+      "lat": 21.49,
+      "lng": 39.19,
+      "aliases": [
+        "jeddah"
+      ]
+    },
+    {
+      "name": "巴黎",
+      "country": "法国",
+      "lat": 48.86,
+      "lng": 2.35,
+      "aliases": [
+        "paris"
+      ]
+    },
+    {
+      "name": "华沙",
+      "country": "波兰",
+      "lat": 52.23,
+      "lng": 21.01,
+      "aliases": [
+        "warsaw"
+      ]
+    },
+    {
+      "name": "曼谷",
+      "country": "泰国",
+      "lat": 13.76,
+      "lng": 100.5,
+      "aliases": [
+        "bangkok"
+      ]
+    },
+    {
+      "name": "堪培拉",
+      "country": "澳大利亚",
+      "lat": -35.28,
+      "lng": 149.13,
+      "aliases": [
+        "canberra"
+      ]
+    },
+    {
+      "name": "墨尔本",
+      "country": "澳大利亚",
+      "lat": -37.81,
+      "lng": 144.96,
+      "aliases": [
+        "melbourne"
+      ]
+    },
+    {
+      "name": "悉尼",
+      "country": "澳大利亚",
+      "lat": -33.87,
+      "lng": 151.21,
+      "aliases": [
+        "sydney"
+      ]
+    },
+    {
+      "name": "都柏林",
+      "country": "爱尔兰",
+      "lat": 53.35,
+      "lng": -6.26,
+      "aliases": [
+        "dublin"
+      ]
+    },
+    {
+      "name": "斯德哥尔摩",
+      "country": "瑞典",
+      "lat": 59.33,
+      "lng": 18.07,
+      "aliases": [
+        "stockholm"
+      ]
+    },
+    {
+      "name": "日内瓦",
+      "country": "瑞士",
+      "lat": 46.2,
+      "lng": 6.14,
+      "aliases": [
+        "geneva"
+      ]
+    },
+    {
+      "name": "苏黎世",
+      "country": "瑞士",
+      "lat": 47.37,
+      "lng": 8.54,
+      "aliases": [
+        "zurich"
+      ]
+    },
+    {
+      "name": "明斯克",
+      "country": "白俄罗斯",
+      "lat": 53.9,
+      "lng": 27.57,
+      "aliases": [
+        "minsk"
+      ]
+    },
+    {
+      "name": "科威特城",
+      "country": "科威特",
+      "lat": 29.37,
+      "lng": 47.98,
+      "aliases": [
+        "kuwait city"
+      ]
+    },
+    {
+      "name": "突尼斯市",
+      "country": "突尼斯",
+      "lat": 36.81,
+      "lng": 10.18,
+      "aliases": [
+        "tunis"
+      ]
+    },
+    {
+      "name": "安曼",
+      "country": "约旦",
+      "lat": 31.95,
+      "lng": 35.93,
+      "aliases": [
+        "amman"
+      ]
+    },
+    {
+      "name": "仰光",
+      "country": "缅甸",
+      "lat": 16.87,
+      "lng": 96.2,
+      "aliases": [
+        "yangon",
+        "rangoon"
+      ]
+    },
+    {
+      "name": "内比都",
+      "country": "缅甸",
+      "lat": 19.75,
+      "lng": 96.1,
+      "aliases": [
+        "naypyidaw",
+        "nay pyi taw"
+      ]
+    },
+    {
+      "name": "布加勒斯特",
+      "country": "罗马尼亚",
+      "lat": 44.43,
+      "lng": 26.1,
+      "aliases": [
+        "bucharest"
+      ]
+    },
+    {
+      "name": "亚特兰大",
+      "country": "美国",
+      "lat": 33.75,
+      "lng": -84.39,
+      "aliases": [
+        "atlanta"
+      ]
+    },
+    {
+      "name": "休斯敦",
+      "country": "美国",
+      "lat": 29.76,
+      "lng": -95.37,
+      "aliases": [
+        "houston"
+      ]
+    },
+    {
+      "name": "华盛顿",
+      "country": "美国",
+      "lat": 38.91,
+      "lng": -77.04,
+      "aliases": [
+        "washington"
+      ]
+    },
+    {
+      "name": "底特律",
+      "country": "美国",
+      "lat": 42.33,
+      "lng": -83.05,
+      "aliases": [
+        "detroit"
+      ]
+    },
+    {
+      "name": "旧金山",
+      "country": "美国",
+      "lat": 37.77,
+      "lng": -122.42,
+      "aliases": [
+        "san francisco"
+      ]
+    },
+    {
+      "name": "波士顿",
+      "country": "美国",
+      "lat": 42.36,
+      "lng": -71.06,
+      "aliases": [
+        "boston"
+      ]
+    },
+    {
+      "name": "洛杉矶",
+      "country": "美国",
+      "lat": 34.05,
+      "lng": -118.24,
+      "aliases": [
+        "los angeles"
+      ]
+    },
+    {
+      "name": "纽约",
+      "country": "美国",
+      "lat": 40.71,
+      "lng": -74.01,
+      "aliases": [
+        "new york"
+      ]
+    },
+    {
+      "name": "芝加哥",
+      "country": "美国",
+      "lat": 41.88,
+      "lng": -87.63,
+      "aliases": [
+        "chicago"
+      ]
+    },
+    {
+      "name": "西雅图",
+      "country": "美国",
+      "lat": 47.61,
+      "lng": -122.33,
+      "aliases": [
+        "seattle"
+      ]
+    },
+    {
+      "name": "达拉斯",
+      "country": "美国",
+      "lat": 32.78,
+      "lng": -96.8,
+      "aliases": [
+        "dallas"
+      ]
+    },
+    {
+      "name": "迈阿密",
+      "country": "美国",
+      "lat": 25.76,
+      "lng": -80.19,
+      "aliases": [
+        "miami"
+      ]
+    },
+    {
+      "name": "内罗毕",
+      "country": "肯尼亚",
+      "lat": -1.29,
+      "lng": 36.82,
+      "aliases": [
+        "nairobi"
+      ]
+    },
+    {
+      "name": "赫尔辛基",
+      "country": "芬兰",
+      "lat": 60.17,
+      "lng": 24.94,
+      "aliases": [
+        "helsinki"
+      ]
+    },
+    {
+      "name": "喀土穆",
+      "country": "苏丹",
+      "lat": 15.5,
+      "lng": 32.56,
+      "aliases": [
+        "khartoum"
+      ]
+    },
+    {
+      "name": "伦敦",
+      "country": "英国",
+      "lat": 51.51,
+      "lng": -0.13,
+      "aliases": [
+        "london"
+      ]
+    },
+    {
+      "name": "阿姆斯特丹",
+      "country": "荷兰",
+      "lat": 52.37,
+      "lng": 4.9,
+      "aliases": [
+        "amsterdam"
+      ]
+    },
+    {
+      "name": "马尼拉",
+      "country": "菲律宾",
+      "lat": 14.6,
+      "lng": 120.98,
+      "aliases": [
+        "manila"
+      ]
+    },
+    {
+      "name": "里斯本",
+      "country": "葡萄牙",
+      "lat": 38.72,
+      "lng": -9.14,
+      "aliases": [
+        "lisbon"
+      ]
+    },
+    {
+      "name": "乌兰巴托",
+      "country": "蒙古",
+      "lat": 47.89,
+      "lng": 106.91,
+      "aliases": [
+        "ulaanbaatar"
+      ]
+    },
+    {
+      "name": "巴塞罗那",
+      "country": "西班牙",
+      "lat": 41.39,
+      "lng": 2.17,
+      "aliases": [
+        "barcelona"
+      ]
+    },
+    {
+      "name": "马德里",
+      "country": "西班牙",
+      "lat": 40.42,
+      "lng": -3.7,
+      "aliases": [
+        "madrid"
+      ]
+    },
+    {
+      "name": "河内",
+      "country": "越南",
+      "lat": 21.03,
+      "lng": 105.85,
+      "aliases": [
+        "hanoi"
+      ]
+    },
+    {
+      "name": "胡志明市",
+      "country": "越南",
+      "lat": 10.82,
+      "lng": 106.63,
+      "aliases": [
+        "ho chi minh"
+      ]
+    },
+    {
+      "name": "巴库",
+      "country": "阿塞拜疆",
+      "lat": 40.41,
+      "lng": 49.87,
+      "aliases": [
+        "baku"
+      ]
+    },
+    {
+      "name": "喀布尔",
+      "country": "阿富汗",
+      "lat": 34.56,
+      "lng": 69.21,
+      "aliases": [
+        "kabul"
+      ]
+    },
+    {
+      "name": "布宜诺斯艾利斯",
+      "country": "阿根廷",
+      "lat": -34.6,
+      "lng": -58.38,
+      "aliases": [
+        "buenos aires"
+      ]
+    },
+    {
+      "name": "迪拜",
+      "country": "阿联酋",
+      "lat": 25.2,
+      "lng": 55.27,
+      "aliases": [
+        "dubai"
+      ]
+    },
+    {
+      "name": "阿布扎比",
+      "country": "阿联酋",
+      "lat": 24.45,
+      "lng": 54.38,
+      "aliases": [
+        "abu dhabi"
+      ]
+    },
+    {
+      "name": "首尔",
+      "country": "韩国",
+      "lat": 37.57,
+      "lng": 126.98,
+      "aliases": [
+        "seoul"
+      ]
+    },
+    {
+      "name": "吉隆坡",
+      "country": "马来西亚",
+      "lat": 3.14,
+      "lng": 101.69,
+      "aliases": [
+        "kuala lumpur"
+      ]
+    },
+    {
+      "name": "贝鲁特",
+      "country": "黎巴嫩",
+      "lat": 33.89,
+      "lng": 35.5,
+      "aliases": [
+        "beirut"
+      ]
+    }
   ]
 }
