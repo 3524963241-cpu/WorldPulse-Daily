@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T01:13:34Z",
+  "updated_at": "2026-10-20T01:18:01Z",
   "news": [
     {
       "id": "47a59471f3d4",
@@ -65,6 +65,19 @@
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/10/18/oil-price-today-ukraine-russia-iran-strait-hormuz.html",
       "heat": 84
+    },
+    {
+      "id": "e30fde1b315f",
+      "title": "CNBC每日公开赛：科技投资者买入下跌—但债务仍令人担忧",
+      "summary": "纳斯达克综合指数上涨，但一些公司仍未进入投资者的菜单，如Coreweave ，而甲骨文债券正在接近垃圾领域。",
+      "category": "markets",
+      "country": null,
+      "lat": null,
+      "lng": null,
+      "published_at": "2026-10-20T01:13:25Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/20/cnbc-daily-open-tech-nasdaq-trump-ukraine-anthropic.html",
+      "heat": 83
     },
     {
       "id": "fb7fed92da91",
@@ -158,19 +171,6 @@
       "heat": 79
     },
     {
-      "id": "177821c4aaca",
-      "title": "中国CXMT股价下跌近8% ，因投资者忽略了芯片制造商的利润扭亏为盈",
-      "summary": "CXMT股价周一下跌近8% ，此前该公司发布了2026年前九个月的盈利预测。",
-      "category": "markets",
-      "country": "中国",
-      "lat": 35.86,
-      "lng": 104.19,
-      "published_at": "2026-10-19T07:48:53Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/10/19/china-cxmt-profit-outlook-shares.html",
-      "heat": 79
-    },
-    {
       "id": "62b2a024cbc3",
       "title": "美光和其他芯片股在挫伤性抛售后重新焕发活力",
       "summary": "这是科技股的关键一周，因为英伟达正在为欧洲会议做准备，而Meta正准备报告盈利情况。",
@@ -207,7 +207,7 @@
       "published_at": "2026-10-19T20:54:40Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/10/19/openai-bugging-suspect-alfozan-saudi-royal-family.html",
-      "heat": 77
+      "heat": 76
     },
     {
       "id": "c857ab4bdf72",

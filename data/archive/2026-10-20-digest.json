@@ -1,6 +1,6 @@
 {
   "date": "2026-10-20",
-  "updated_at": "2026-10-20T01:13:34Z",
+  "updated_at": "2026-10-20T01:18:01Z",
   "total": 20,
   "by_category": {
     "geopolitics": 5,
@@ -25,7 +25,7 @@
     }
   ],
   "geo": {
-    "located": 16,
+    "located": 15,
     "countries": 8,
     "top_country": "中国"
   },
