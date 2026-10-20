@@ -12,6 +12,7 @@
 """
 import json
 import os
+import re
 import sys
 import urllib.request
 
@@ -70,11 +71,35 @@ def check_news(name, payload):
             FATAL.append(f"{tag}: title 不是字符串")
         if not isinstance(n.get("url"), str) or not n.get("url", "").startswith("http"):
             FATAL.append(f"{tag}: url 非法")
+        # --- 定位字段一致性（A 的 P0：city / 坐标 / country 三者不能自相矛盾）---
+        has_lat = n.get("lat") is not None and n.get("lng") is not None
+        if n.get("city") and not has_lat:
+            FATAL.append(f"{tag}: 有 city 却没有坐标 —— 地图飞不过去")
+        if n.get("city") and not n.get("country"):
+            FATAL.append(f"{tag}: 有 city 却没有 country —— 前端两级回退会断")
+        if has_lat:
+            try:
+                la, ln = float(n["lat"]), float(n["lng"])
+                if not (-90 <= la <= 90 and -180 <= ln <= 180):
+                    FATAL.append(f"{tag}: 坐标越界 ({la}, {ln})")
+            except (TypeError, ValueError):
+                FATAL.append(f"{tag}: 坐标不是数字 -> {n.get('lat')!r}, {n.get('lng')!r}")
+        if n.get("image") is not None:
+            img = n["image"]
+            # 必须是绝对 URL：相对路径在 Pages 子路径下会 404
+            if not isinstance(img, str) or not img.startswith(("http://", "https://")):
+                FATAL.append(f"{tag}: image 不是绝对 URL -> {img!r}")
         # --- WARN：降级，不影响正文 ---
         if not n.get("summary"):
             WARN.append(f"{tag}: summary 为空（前端需兜底，属正常）")
-        if n.get("lat") is None or n.get("lng") is None:
+        if not has_lat:
             WARN.append(f"{tag}: 无坐标（不上地图，属正常）")
+        if not n.get("image"):
+            WARN.append(f"{tag}: 无封面图（前端需显占位图）")
+        if n.get("locate_basis") not in ("title", "summary", "source", None):
+            WARN.append(f"{tag}: locate_basis 取值陌生 -> {n.get('locate_basis')!r}")
+        if n.get("locate_basis") == "source":
+            WARN.append(f"{tag}: 地点为来源推断（非文中明说），前端建议淡显")
         if isinstance(n.get("title"), str) and n["title"].startswith("[EN]"):
             WARN.append(f"{tag}: 标题回退英文 [EN]（翻译配额问题）")
         if not isinstance(n.get("heat"), (int, float)):
@@ -96,6 +121,16 @@ def main():
     else:
         ids = check_news("news.json", news)
         print(f"news.json            : {len(ids)} 条")
+        # —— 当期标识三件套：generated_at / date_beijing / shift ——
+        # date_beijing 是"这份数据属于哪一天"的权威字段，等于归档文件名。
+        # 前端切日期时应该用它，不要用 updated_at 推日期（那是 UTC，
+        # 北京时间 00:00~08:00 这一班会被算成前一天）。
+        for k in ("generated_at", "date_beijing", "shift"):
+            if not news.get(k):
+                WARN.append(f"news.json: 缺 {k}（旧版数据，前端需回退到 digest.date）")
+        if news.get("date_beijing") and not re.fullmatch(r"\d{4}-\d{2}-\d{2}",
+                                                        str(news["date_beijing"])):
+            FATAL.append(f"news.json: date_beijing 格式错 -> {news['date_beijing']!r}")
 
     dg, err = load("digest.json")
     if err:
