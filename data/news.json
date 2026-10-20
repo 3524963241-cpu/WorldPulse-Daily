@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-20T13:57:30Z",
-  "generated_at": "2026-10-20T13:57:30Z",
+  "updated_at": "2026-10-20T14:07:49Z",
+  "generated_at": "2026-10-20T14:07:49Z",
   "date_beijing": "2026-10-20",
   "shift": "pm",
   "news": [
@@ -22,7 +22,7 @@
     },
     {
       "id": "da1ef6ccfeae",
-      "title": "[EN] Credit markets have entered uncharted territory as the riskiest junk bonds send a warning to investors",
+      "title": "随着风险最高的垃圾债券向投资者发出警告，信贷市场已进入未知领域",
       "summary": "信贷市场现在向投资者发出异常复杂的信息，这让一些人感到紧张。",
       "category": "markets",
       "country": "美国",
@@ -38,7 +38,7 @@
     },
     {
       "id": "83412812302c",
-      "title": "[EN] General Motors beats Wall Street's Q3 earnings expectations, narrows full-year guidance",
+      "title": "通用汽车超越华尔街第三季度盈利预期，收窄全年指引",
       "summary": "通用汽车在超过华尔街第三季度的预期后，收窄了2026年的盈利预期，并提高了调整后的汽车自由现金流前景。",
       "category": "markets",
       "country": "美国",
@@ -53,24 +53,8 @@
       "heat": 91
     },
     {
-      "id": "6fdb35e51762",
-      "title": "SpaceX财报实时更新： Starlink增长、人工智能收入和并购投机",
-      "summary": "Follow SpaceX’s Q3 2026 earnings live, with updates on revenue, Starlink, AI spending, Starship, guidance and SPCX stock.",
-      "category": "markets",
-      "country": "美国",
-      "city": null,
-      "lat": 38.91,
-      "lng": -77.04,
-      "locate_basis": "source",
-      "image": "https://image.cnbcfm.com/api/v1/image/108432660-1792419718910-gettyimages-2283937543-260703_dcfairbrand_199.jpeg?v=1792419742&w=1920&h=1080",
-      "published_at": "2026-10-20T13:33:06Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/10/20/spacex-spcx-earnings-live-updates-q3-2026html.html",
-      "heat": 91
-    },
-    {
       "id": "c8aa790019fa",
-      "title": "[EN] Salesforce gets a chilly investor response to a $6 billion deal at a 58% premium",
+      "title": "Salesforce以58%的溢价对60亿美元的交易做出了冷淡的投资者回应",
       "summary": "Salesforce周二表示，它将以58%的溢价进行近60亿美元的收购，但华尔街的反应冷淡。",
       "category": "markets",
       "country": "美国",
@@ -85,9 +69,25 @@
       "heat": 90
     },
     {
+      "id": "6fdb35e51762",
+      "title": "SpaceX财报实时更新： Starlink增长、人工智能收入和并购投机",
+      "summary": "关注SpaceX的2026年第三季度实时收益，包括收入、Starlink、AI支出、Starship、指导和SPCX股票的最新消息。",
+      "category": "markets",
+      "country": "美国",
+      "city": null,
+      "lat": 38.91,
+      "lng": -77.04,
+      "locate_basis": "source",
+      "image": "https://image.cnbcfm.com/api/v1/image/108432660-1792419718910-gettyimages-2283937543-260703_dcfairbrand_199.jpeg?v=1792419742&w=1920&h=1080",
+      "published_at": "2026-10-20T13:33:06Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/20/spacex-spcx-earnings-live-updates-q3-2026html.html",
+      "heat": 90
+    },
+    {
       "id": "07e0e0a0cf9d",
       "title": "英国部署战斗机保护沙特城市免受胡塞武装袭击",
-      "summary": "The U.K.'s Royal Air Force will deploy jets to assist with defensive operations, but will not engage in offensive strikes.",
+      "summary": "英国皇家空军将部署喷气式飞机协助防御行动，但不会进行进攻性打击。",
       "category": "geopolitics",
       "country": "英国",
       "city": null,
@@ -103,7 +103,7 @@
     {
       "id": "ba105382ed87",
       "title": "阿尔伯塔省选民拒绝在支持加拿大统一的公民投票中走向独立",
-      "summary": "Voters in Canada's oil-rich Alberta province overwhelmingly backed remaining in Canada, with early referendum results Tuesday delivering a boost to Prime Minister Carney's push for national unity.",
+      "summary": "加拿大石油资源丰富的阿尔伯塔省选民压倒性地支持留在加拿大，周二的早期公投结果推动了卡尼总理推动民族团结的努力。",
       "category": "politics",
       "country": "加拿大",
       "city": null,
@@ -133,6 +133,22 @@
       "heat": 87
     },
     {
+      "id": "96f2be141d55",
+      "title": "随着投资者重新评估人工智能行业，韩国的Elice在市场首次亮相时暴跌了30 ％",
+      "summary": "由于投资者对人工智能支出、云需求和数据中心IPO提出质疑，韩国Elice在首次亮相市场时下跌了30%。",
+      "category": "markets",
+      "country": "韩国",
+      "city": null,
+      "lat": 35.91,
+      "lng": 127.77,
+      "locate_basis": "title",
+      "image": "https://image.cnbcfm.com/api/v1/image/104336769-GettyImages-641646996.jpg?v=1532563893&w=1920&h=1080",
+      "published_at": "2026-10-20T07:03:02Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/10/20/south-korea-elice-plunges-in-market-debut.html",
+      "heat": 86
+    },
+    {
       "id": "25bbe8b519e3",
       "title": "在MSCI威胁引发市场崩溃后，印度尼西亚银行面临越来越大的加息压力",
       "summary": "在MSCI威胁将市场削减至独立状态引发股市崩盘、卢比走弱后，印尼央行面临着越来越大的加息压力。",
@@ -146,22 +162,6 @@
       "published_at": "2026-10-20T03:59:35Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/10/20/indonesia-msci-inflation-interest-rate-.html",
-      "heat": 87
-    },
-    {
-      "id": "96f2be141d55",
-      "title": "[EN] South Korea's Elice plunges 30% in market debut as investors reassess AI sector",
-      "summary": "由于投资者对人工智能支出、云需求和数据中心IPO提出质疑，韩国Elice在首次亮相市场时下跌了30%。",
-      "category": "markets",
-      "country": "韩国",
-      "city": null,
-      "lat": 35.91,
-      "lng": 127.77,
-      "locate_basis": "title",
-      "image": "https://image.cnbcfm.com/api/v1/image/104336769-GettyImages-641646996.jpg?v=1532563893&w=1920&h=1080",
-      "published_at": "2026-10-20T07:03:02Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/10/20/south-korea-elice-plunges-in-market-debut.html",
       "heat": 86
     },
     {
@@ -182,7 +182,7 @@
     },
     {
       "id": "0bff96f0f8a4",
-      "title": "[EN] Brent hits five-month high as attacks on ships, Saudi sites fuel supply worries",
+      "title": "布伦特原油价格触及五个月高位，因船舶遇袭，沙特现场燃油供应担忧",
       "summary": "随着贸易商对胡塞武装袭击沙特基础设施和海湾船只袭击报道的地缘政治风险溢价进行定价，石油价格上涨。",
       "category": "geopolitics",
       "country": "沙特阿拉伯",
@@ -274,12 +274,12 @@
       "published_at": "2026-10-20T12:32:19Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/10/20/alberta-canada-vote-remain.html",
-      "heat": 80
+      "heat": 79
     },
     {
       "id": "6480d3c0fc5f",
       "title": "JD Vance不支持以色列领导人内塔尼亚胡，因为特朗普表示赞赏",
-      "summary": "Vice President JD Vance declined to follow Trump in endorsing Netanyahu, saying he’s “not getting involved in Israeli elections” a week before Israelis vote.",
+      "summary": "副总统万斯拒绝跟随特朗普支持内塔尼亚胡，称他在以色列投票前一周“不参与以色列选举”。",
       "category": "politics",
       "country": "以色列",
       "city": null,
@@ -295,7 +295,7 @@
     {
       "id": "47a59471f3d4",
       "title": "阿尔伯塔省选民决定是否采取步骤脱离加拿大",
-      "summary": "In Canada, the oil-rich province of Alberta votes in a referendum that could set it on a path toward separation, as Prime Minister Mark Carney warns of threats to Canadian unity.",
+      "summary": "在加拿大，石油资源丰富的阿尔伯塔省在一次公投中投票，这可能使它走上分离的道路，因为总理马克·卡尼警告说，加拿大的统一受到威胁。",
       "category": "politics",
       "country": "加拿大",
       "city": null,
@@ -322,7 +322,7 @@
       "published_at": "2026-10-19T10:38:03Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/10/19/nx-s1-6007371/ukraine-and-russia-exchange-strikes-as-relations-between-trump-and-zelenskyy-sour",
-      "heat": 68
+      "heat": 67
     }
   ]
 }

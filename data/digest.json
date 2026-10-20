@@ -1,6 +1,6 @@
 {
   "date": "2026-10-20",
-  "updated_at": "2026-10-20T13:57:30Z",
+  "updated_at": "2026-10-20T14:07:49Z",
   "total": 20,
   "by_category": {
     "geopolitics": 4,
@@ -15,12 +15,12 @@
     },
     {
       "id": "da1ef6ccfeae",
-      "title": "Credit markets have entered uncharted territory as the riskiest junk bonds send a warning to investors",
+      "title": "随着风险最高的垃圾债券向投资者发出警告，信贷市场已进入未知领域",
       "heat": 92
     },
     {
       "id": "83412812302c",
-      "title": "General Motors beats Wall Street's Q3 earnings expectations, narrows full-year guidance",
+      "title": "通用汽车超越华尔街第三季度盈利预期，收窄全年指引",
       "heat": 91
     }
   ],
