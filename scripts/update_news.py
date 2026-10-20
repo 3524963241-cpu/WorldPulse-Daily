@@ -250,6 +250,46 @@ def fetch_url_with_timeout(url, timeout=20):
 # 三、流水线各步骤
 # ============================================================
 
+def _pick_feed_image(entry, base_url=""):
+    """从 RSS 条目里取封面图，取不到返回空串。
+
+    实测三个源的差别（2026-10 实测）：
+      · MarketWatch：带 media:content，直接就有 1400px 大图；
+      · NPR / CNBC：条目里完全没图，只能事后去抓页面 og:image。
+    所以这里只处理"RSS 里就有图"的情况，没有的留给 step1b。
+    """
+    cands = []
+    for key in ("media_content", "media_thumbnail"):
+        for m in entry.get(key) or []:
+            u = (m.get("url") or "").strip()
+            if u:
+                # medium=image 的才算图，避免把音频/视频地址当封面
+                if m.get("medium") in (None, "", "image") and m.get("type", "").startswith(("image", "")):
+                    cands.append(u)
+    for e in entry.get("enclosures") or []:
+        u = (e.get("href") or e.get("url") or "").strip()
+        t = (e.get("type") or "")
+        if u and (t.startswith("image") or not t):
+            cands.append(u)
+    # 有些源的图藏在 summary 的 <img src> 里
+    if not cands:
+        m = re.search(r'<img[^>]+src=["\']([^"\']+)', entry.get("summary", "") or "", re.I)
+        if m:
+            cands.append(m.group(1))
+    for u in cands:
+        u = u.strip()
+        # 协议相对地址补全：//img.xx.com/a.jpg → https://img.xx.com/a.jpg
+        if u.startswith("//"):
+            u = "https:" + u
+        # 相对路径按条目域名补全
+        if u.startswith("/") and base_url:
+            from urllib.parse import urljoin
+            u = urljoin(base_url, u)
+        if u.startswith(("http://", "https://")):
+            return u
+    return ""
+
+
 def step1_fetch():
     """获取：从所有 RSS 源抓取新闻，返回原始条目列表。"""
     all_raw = []
@@ -265,13 +305,16 @@ def step1_fetch():
                 ok_sources += 1
                 log("获取", f"✓ {src['name']} 取得 {len(parsed.entries)} 条")
                 for e in parsed.entries:
+                    link = e.get("link", "")
                     all_raw.append({
                         "source": src["name"],
                         "source_score": src["score"],
                         "title": strip_html(e.get("title", "")),
                         "summary": strip_html(e.get("summary", ""))[:300],  # 只要短摘要
-                        "url": e.get("link", ""),
+                        "url": link,
                         "published_at": entry_time_utc(e),
+                        # RSS 里自带封面图就顺手拿上（MarketWatch 有，NPR/CNBC 没有）
+                        "image": _pick_feed_image(e, link),
                     })
             time.sleep(REQUEST_INTERVAL)  # 礼貌间隔
         except Exception as ex:
@@ -487,36 +530,261 @@ def step5_translate(items):
                    "fail_ratio": round(ratio, 4), "skipped": False}
 
 
-def step6_locate(items):
-    """定位：用本地地名词典匹配国家；匹配不到就输出 null，不放地图点。"""
+# —— 定位专用：哪些"地理词"其实是机构/组织，不能当作事件地点 ——
+# 例："White House says..." 的事件地未必是华盛顿；"Wall Street" 泛指美股。
+# 命中这些词时只作为兜底证据，不单独决定地点。
+GEO_WEAK_ALIASES = {
+    "white house", "wall street", "state department", "kremlin", "pentagon",
+    "west bank", "silicon valley", "hollywood", "capital hill", "capitol hill",
+}
+
+# —— 纯市场/公司报道的兜底国家 ——
+# A 指出有 5 条新闻完全没有地点（信贷垃圾债、CNBC 每日公开赛、科技股反弹、
+# 美光芯片股、目标日期基金），这些报道确实没有"事件发生国"这一属性，
+# 但它们是美国的市场与公司新闻，前端地图上空着反而更奇怪。
+# 规则：定位失败 + 分类为 markets + 来源是美股媒体 → 记 country="美国"，但标记
+# locate_basis="source"（推断，不是文中明说），前端可以决定是淡显还是不显示。
+SOURCE_DEFAULT_COUNTRY = {
+    "MarketWatch Top": ("美国", 38.91, -77.04),
+    "MarketWatch Markets": ("美国", 38.91, -77.04),
+    "CNBC World News": ("美国", 38.91, -77.04),
+    "NPR Business": ("美国", 38.91, -77.04),
+}
+
+
+def _alias_match(alias, text):
+    """单个别名在文本里是否出现。
+
+    词典里带空格/标点的别名（如 "united states"、"u.s."）直接子串匹配；
+    单词别名用词边界匹配，避免 india 命中 indianapolis 这类误报。
+    """
+    a = alias.strip().lower()
+    if not a:
+        return False
+    if " " in a or "." in a:
+        return a in text
+    return re.search(r"\b" + re.escape(a) + r"\b", text) is not None
+
+
+def _load_gazetteer():
+    """读取地名词典：返回 (国家表, 城市表)。城市带 country 字段指向国家名。"""
     try:
         with open(LOCATIONS_JSON_PATH, "r", encoding="utf-8") as f:
-            locs = json.load(f)["locations"]
+            data = json.load(f)
+        country_tbl = data.get("locations", []) or []
+        city_tbl = data.get("cities", []) or []
+        # 兼容旧版词典（没有 cities 字段）：把国家表里的城市型别名当不了城市用，
+        # 此时城市表为空，只做国家级定位，不会报错。
+        return country_tbl, city_tbl
     except Exception as ex:
         log("定位", f"⚠ 读取 locations.json 失败：{ex}，全部输出 null 坐标")
-        locs = []
+        return [], []
 
-    located = 0
-    for it in items:
-        text = (it["title"] + " " + it["summary"]).lower()
-        country, lat, lng = None, None, None
-        for loc in locs:
-            for alias in loc["aliases"]:
-                # 词典里带空格/标点的别名（如 "united states"）直接子串匹配；
-                # 单词别名用词边界匹配，避免 india 命中 indianapolis 这类误报
-                if " " in alias or alias.endswith((".", " ")) or alias.startswith(" "):
-                    matched = alias in text
-                else:
-                    matched = re.search(r"\b" + re.escape(alias.strip()) + r"\b", text) is not None
-                if matched:
-                    country, lat, lng = loc["name"], loc["lat"], loc["lng"]
-                    break
-            if country:
+
+def _scan(text, country_tbl, city_tbl):
+    """在一段文本里找出所有命中的城市和国家，按出现位置排序。"""
+    city_hits, country_hits = [], []
+
+    for c in city_tbl:
+        for alias in c.get("aliases", []):
+            if _alias_match(alias, text):
+                pos = text.find(alias.strip().lower())
+                city_hits.append({
+                    "city": c["name"], "country": c["country"],
+                    "lat": c["lat"], "lng": c["lng"],
+                    "alias": alias, "pos": pos if pos >= 0 else 10 ** 6,
+                })
                 break
-        it["country"], it["lat"], it["lng"] = country, lat, lng
-        if country:
-            located += 1
-    log("定位", f"{len(items)} 条中 {located} 条匹配到地点，其余 {len(items) - located} 条坐标为 null（不上地图）")
+
+    for loc in country_tbl:
+        for alias in loc.get("aliases", []):
+            if _alias_match(alias, text):
+                # 弱证据（white house / wall street 这类）单独记，优先级更低
+                weak = alias.strip().lower() in GEO_WEAK_ALIASES
+                pos = text.find(alias.strip().lower())
+                country_hits.append({
+                    "country": loc["name"], "lat": loc["lat"], "lng": loc["lng"],
+                    "alias": alias, "pos": pos if pos >= 0 else 10 ** 6,
+                    "weak": weak,
+                })
+                break
+
+    city_hits.sort(key=lambda x: x["pos"])
+    # 强证据排在弱证据前面，同强度按出现位置
+    country_hits.sort(key=lambda x: (x["weak"], x["pos"]))
+    return city_hits, country_hits
+
+
+def step6_locate(items):
+    """定位：城市 → 国家，两级匹配，并做"同一地点"一致性校验。
+
+    为什么要重写（A 在联调里实测出的两个真实错误）：
+      · "IMF-世界银行会议" 实际在曼谷，摘要里有一句
+        "while China, the focus in 2018, slipped into the background"，
+        旧逻辑按词典顺序先撞上 china，于是整条被判成中国；
+      · 类似的还有把顺带提到的城市当成事件发生地。
+
+    新规则（防的正是"顺带提及"）：
+      1. 只有标题命中 → 直接采用，可信度高（locate_basis="title"）；
+      2. 标题没命中、摘要命中 → 采用但要过两关（locate_basis="summary"）：
+         a. 摘要里若有**多个不同城市** → 判为矛盾，放弃（不猜）；
+         b. 摘要里只有一个城市、但同时出现多个国家 → 取**最靠前**的那个地名。
+            理由：新闻导语的句式是"主要事实在前、背景对比在后"。
+            曼谷会议那条正是 "meetings in Bangkok, while China ... slipped
+            into the background" —— 曼谷在前是真事件地，中国在后是背景。
+      3. 城市优先于国家：标题里既有城市又有国家时，用城市坐标，
+         country 取该城市所属国家（不用标题里那个可能只是顺带提到的国家）；
+      4. 都没有 → 纯市场报道按来源兜底记美国，并标记 locate_basis="source"，
+         让前端知道这是推断值。
+    """
+    country_tbl, city_tbl = _load_gazetteer()
+
+    city_cnt = country_cnt = source_cnt = null_cnt = 0
+    conflict = 0
+
+    for it in items:
+        title = (it["title"] or "").lower()
+        summary = (it.get("summary") or "").lower()
+
+        t_cities, t_countries = _scan(title, country_tbl, city_tbl)
+        country = city = None
+        lat = lng = None
+        basis = None
+
+        # —— 规则 1：标题命中城市，最精确 ——
+        if t_cities:
+            c = t_cities[0]
+            city, country = c["city"], c["country"]
+            lat, lng = c["lat"], c["lng"]
+            # 标题里若还提到**别的**国家，说明可能是"X 国领导人在巴黎会谈"，
+            # 事件地仍是巴黎，country 保持城市所属国 —— 这正是要修的 bug。
+            basis = "title"
+
+        # —— 规则 2：标题只命中（强证据）国家 ——
+        elif t_countries:
+            strong = [x for x in t_countries if not x["weak"]]
+            pick = strong[0] if strong else t_countries[0]
+            country, lat, lng = pick["country"], pick["lat"], pick["lng"]
+            basis = "title"
+
+        # —— 规则 3：标题没中，退回摘要 ——
+        else:
+            s_cities, s_countries = _scan(summary, country_tbl, city_tbl)
+            city_names = {c["city"] for c in s_cities}
+            strong_c = [x for x in s_countries if not x["weak"]]
+            c_names = {x["country"] for x in strong_c}
+
+            if len(city_names) == 1:
+                # 摘要里只有一个城市 → 采用它。
+                # 此时若还提到别的国家，按"谁先出现"决断（见规则 2b 的说明）。
+                c = s_cities[0]
+                city, country = c["city"], c["country"]
+                lat, lng = c["lat"], c["lng"]
+                basis = "summary"
+            elif len(city_names) > 1:
+                # 多个城市互相打架 → 典型'多地基综述'，不猜
+                conflict += 1
+            elif len(c_names) == 1:
+                pick = strong_c[0]
+                country, lat, lng = pick["country"], pick["lat"], pick["lng"]
+                basis = "summary"
+            elif len(c_names) > 1:
+                # 多个国家、没有城市 → 取最先出现的那个（通常是导语主语）
+                pick = strong_c[0]
+                country, lat, lng = pick["country"], pick["lat"], pick["lng"]
+                basis = "summary"
+
+        # —— 规则 4：纯市场报道兜底 ——
+        if not country and it.get("category") == "markets":
+            dft = SOURCE_DEFAULT_COUNTRY.get(it.get("source"))
+            if dft:
+                country, lat, lng = dft
+                basis = "source"
+                city = None
+
+        it["country"], it["city"] = country, city
+        it["lat"], it["lng"] = lat, lng
+        it["locate_basis"] = basis
+
+        if not country:
+            null_cnt += 1
+        elif basis == "source":
+            source_cnt += 1
+        elif city:
+            city_cnt += 1
+        else:
+            country_cnt += 1
+
+    log("定位", f"{len(items)} 条：城市级 {city_cnt}｜国家级 {country_cnt}｜来源推断 {source_cnt}"
+               f"｜无地点 {null_cnt}（摘要里多个城市互相矛盾而放弃 {conflict} 条）")
+    return items
+
+
+def _fetch_og_image(url, timeout=12):
+    """抓页面里的 og:image / twitter:image。取不到返回空串。
+
+    为什么需要这一步：NPR 和 CNBC 的 RSS 条目里根本没有图字段（实测确认），
+    只能打开文章页读 meta 标签。代价是每条一个 HTTP 请求，
+    NPR 约 2.7s、CNBC 约 6s —— 串行抓 20 条要多花 1~2 分钟，所以必须并发。
+    """
+    import urllib.request
+    try:
+        req = urllib.request.Request(url, headers={
+            # 用浏览器 UA：部分站点对非浏览器 UA 直接返回精简页/403
+            "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                           "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"),
+            "Accept-Language": "en-US,en;q=0.9",
+        })
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            # 只读前 400KB：og:image 都在 <head> 里，没必要下整页
+            html = resp.read(400 * 1024).decode("utf-8", "ignore")
+    except Exception:
+        return ""
+    pats = [
+        r'<meta[^>]+property=["\']og:image(?::secure_url)?["\'][^>]+content=["\']([^"\']+)',
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image(?::secure_url)?["\']',
+        r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)',
+    ]
+    for p in pats:
+        m = re.search(p, html, re.I)
+        if m:
+            u = unescape(m.group(1)).strip()
+            if u.startswith("//"):
+                u = "https:" + u
+            if u.startswith(("http://", "https://")):
+                return u
+    return ""
+
+
+def step4b_fetch_images(items, max_workers=6):
+    """给入选的新闻补封面图（并发，只补 RSS 里没图的那几条）。
+
+    放在"挑选之后"执行：只为最终 20 条发请求，不做无用功。
+    任何一条失败都只是 image=null，不影响主流程 —— 图片是增强项。
+    """
+    need = [it for it in items if not it.get("image")]
+    if not need:
+        log("封面图", f"全部 {len(items)} 条在 RSS 里已带图，无需补抓")
+        return items
+
+    got = 0
+    t0 = time.time()
+    try:
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            results = list(pool.map(lambda it: _fetch_og_image(it["url"]), need))
+        for it, img in zip(need, results):
+            it["image"] = img or None
+            if img:
+                got += 1
+    except Exception as ex:
+        log("封面图", f"⚠ 并发补图失败：{ex}，这些条目的 image 留空")
+        for it in need:
+            it.setdefault("image", None)
+
+    with_img = sum(1 for it in items if it.get("image"))
+    log("封面图", f"{len(items)} 条中 {with_img} 条有封面图"
+                 f"（本次补抓 {len(need)} 条，成功 {got} 条，耗时 {time.time() - t0:.1f}s）")
     return items
 
 
@@ -524,15 +792,18 @@ def step7_heat(items, now):
     """热度评分（透明规则，0-100）：
          新鲜度   0-50 分：48 小时内线性衰减（越新分越高）
          主题相关 0-20 分：分类关键词命中数 × 4，封顶 20
-         地理定位 0-10 分：有可信坐标 +10
+         地理定位 0-10 分：有可信坐标 +10（城市级或标题命中满分，来源推断只给 4 分）
          来源基础 0-20 分：每个源固定分（NPR/MarketWatch 主源分高）
        这是'编辑规则热度'，不是全网真实搜索热度。
     """
+    # 不同定位可信度给不同地理分：避免"按来源推断为美国"的条目
+    # 跟"标题明写在巴黎"的条目拿一样的分，把真实事件挤下去。
+    GEO_POINTS = {"title": 10, "summary": 7, "source": 4, None: 0}
     for it in items:
         age_h = max(0.0, (now - it["published_at"]).total_seconds() / 3600)
         fresh = 50 * max(0.0, 1 - age_h / MAX_HOURS)
         topic = min(20, it["category_hits"] * 4)
-        geo = 10 if it["lat"] is not None else 0
+        geo = GEO_POINTS.get(it.get("locate_basis"), 0) if it["lat"] is not None else 0
         it["heat"] = int(round(min(100, fresh + topic + geo + it["source_score"])))
     items.sort(key=lambda x: (-x["heat"], -x["published_at"].timestamp()))
     return items
@@ -636,15 +907,39 @@ def step8_output(items, now):
             "title": it["title_cn"],
             "summary": it["summary_cn"],
             "category": it["category"],
+            # —— 定位三件套：country / city / 坐标 ——
+            # country 是国家名；city 命中城市时才有值（多数为 null）
             "country": it["country"],
+            "city": it.get("city"),
             "lat": it["lat"],
             "lng": it["lng"],
+            # locate_basis 告诉前端这个地点有多可信：
+            #   "title"   标题里明确出现 —— 可信
+            #   "summary" 只在摘要里出现、且摘要没有互相矛盾的地名 —— 一般
+            #   "source"  文中没有任何地点，按"美股市场新闻"推断为美国 —— 仅参考
+            "locate_basis": it.get("locate_basis"),
+            # 封面图：RSS enclosure / media:content 优先，其次页面 og:image；
+            # 都取不到时为 null（前端需要处理无图情况）
+            "image": it.get("image"),
             "published_at": it["published_at"].strftime("%Y-%m-%dT%H:%M:%SZ"),
             "source": it["source"],
             "url": it["url"],
             "heat": it["heat"],
         })
-    payload = {"updated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "news": news_list}
+    payload = {
+        "updated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        # —— 给 A 的交叉校验用 ——
+        # updated_at 是 UTC 时间戳，而归档文件名是北京时间日期，两者在
+        # 00:00–08:00（北京）这一班会对不上（UTC 还停在前一天）。
+        # 这里补三个字段，前端就不用自己猜：
+        #   generated_at   本次生成时间（UTC，ISO8601）
+        #   date_beijing   本次运行对应的北京日期，等于归档文件名
+        #   shift          班次 am / pm
+        "generated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "date_beijing": now.astimezone(BEIJING_TZ).strftime("%Y-%m-%d"),
+        "shift": "am" if now.astimezone(BEIJING_TZ).hour < 12 else "pm",
+        "news": news_list,
+    }
 
     write_json_atomic(NEWS_JSON_PATH, payload)
     log("输出", f"已写入 {NEWS_JSON_PATH}（{len(news_list)} 条新闻，id 为 URL 哈希）")
@@ -695,16 +990,33 @@ def step9_build_digest(payload, now_bj):
     top3 = [{"id": n["id"], "title": clean(n["title"]), "heat": n["heat"]} for n in news[:3]]
 
     # 地理覆盖
+    # located 口径说明（A 提的协议问题 1）：
+    #   历史实现里 located 用的是"有坐标的条数"。城市表上线后，坐标一定来自
+    #   country 或 city，所以"有坐标"和"有国家"仍然相等，A 无法区分。
+    #   这里直接拆开写清楚，不留歧义：
+    #     located      = 有条数的定位结果（等价于有坐标）
+    #     has_country  = 有国家名的条数
+    #     has_city     = 有城市名的条数（更精确）
+    #   正常情况下 located == has_country >= has_city。
     located = [n for n in news if n["lat"] is not None]
     countries = [n["country"] for n in located if n["country"]]
+    city_list = [n["city"] for n in news if n.get("city")]
     counter = {}
     for c in countries:
         counter[c] = counter.get(c, 0) + 1
     top_country = max(counter, key=counter.get) if counter else None
+    # 城市分布（前端"重点城市"面板可直接用）
+    city_counter = {}
+    for c in city_list:
+        city_counter[c] = city_counter.get(c, 0) + 1
     geo = {
         "located": len(located),
+        "has_country": len(countries),
+        "has_city": len(city_list),
         "countries": len(set(countries)),
         "top_country": top_country,
+        "cities": [{"city": c, "count": n} for c, n in
+                   sorted(city_counter.items(), key=lambda kv: (-kv[1], kv[0]))],
     }
 
     # 各领域一句小结：句式固定，只拼接客观事实
@@ -722,6 +1034,28 @@ def step9_build_digest(payload, now_bj):
             text += "其余报道来自 {}。".format("、".join([s for s in sources if s != head["source"]]))
         sections.append({"category": cat, "count": len(cat_news), "text": text})
 
+    # —— paragraphs：给前端的"每日综述"段落（A 提的 P2） ——
+    # 纯模板拼接，每一句都能回溯到某条数据，不含任何主观判断。
+    # 前端如果嫌长可以只取前 N 段；不用这个字段也不影响任何现有功能。
+    paragraphs = [f"本期共收录 {total} 条国际新闻，来自 "
+                  f"{len({n['source'] for n in news})} 个来源。"]
+    cat_sentence = "、".join(f"{CATEGORY_CN[c]} {by_category[c]} 条"
+                             for c in ("geopolitics", "politics", "markets")
+                             if by_category[c])
+    if cat_sentence:
+        paragraphs.append(f"按领域分布为：{cat_sentence}。")
+    if top_country:
+        paragraphs.append(f"地理上看，{top_country}出现最多，共 {counter[top_country]} 条；"
+                          f"{len(set(countries))} 个国家/地区被提及。")
+    if city_counter:
+        top_cities = sorted(city_counter.items(), key=lambda kv: (-kv[1], kv[0]))[:3]
+        paragraphs.append("涉及城市共 {} 个，其中 {}。".format(
+            len(city_counter),
+            "、".join(f"{c} {n} 条" for c, n in top_cities)))
+    for s in sections:
+        if s["text"]:
+            paragraphs.append(s["text"])
+
     return {
         "date": now_bj.strftime("%Y-%m-%d"),
         "updated_at": payload["updated_at"],
@@ -730,6 +1064,7 @@ def step9_build_digest(payload, now_bj):
         "top3": top3,
         "geo": geo,
         "sections": sections,
+        "paragraphs": paragraphs,
     }
 
 
@@ -851,7 +1186,7 @@ def main():
         "ok_sources": 0, "total_sources": len(RSS_SOURCES),
         "raw_count": 0, "dedup_count": 0, "time_filtered_count": 0,
         "classified_count": 0, "dropped_by_category": 0,
-        "located_count": 0, "final_count": 0,
+        "located_count": 0, "city_count": 0, "with_image": 0, "final_count": 0,
         "category_dist": {}, "source_dist": {},
         "translate": {}, "status": "unknown", "message": "",
     }
@@ -894,6 +1229,7 @@ def main():
     # 5. 定位（必须排在评分前：热度里的「地理定位分」依赖这一步的结果）
     items = step6_locate(items)
     stats["located_count"] = sum(1 for i in items if i["lat"] is not None)
+    stats["city_count"] = sum(1 for i in items if i.get("city"))
 
     # 6. 评分 + 按配额挑选出最终入选的新闻
     items = step7b_quota(step7_heat(items, now))
@@ -909,6 +1245,11 @@ def main():
     #    等于白烧掉约 60% 的免费翻译配额，还让单次运行慢了 3 倍。
     items, translate_stats = step5_translate(items)
     stats["translate"] = translate_stats
+
+    # 7a. 补封面图（只给入选的 20 条抓，RSS 自带图的跳过）
+    #     放在翻译之后：翻译可能整期放弃（exit 3），那样就没必要再去抓图。
+    items = step4b_fetch_images(items)
+    stats["with_image"] = sum(1 for i in items if i.get("image"))
 
     # 7b. 【B3】翻译整体异常检查
     #     失败率超阈值时，不覆盖线上数据。注意要排除 PROVIDER=none 的调试场景。
