@@ -539,7 +539,27 @@ def step7_heat(items, now):
 
 
 def step7b_quota(items):
-    """配额挑选：先满足各领域名额，剩余席位按热度补位，最后统一重排。"""
+    """配额挑选：先满足各领域名额，剩余席位按热度补位，最后统一重排。
+
+    【与 id 契约相关】这里同时做一次"按规范化 URL 去重"。
+    step2_dedup 已经去过一次，但那是按标题/URL 双规则；而 id 是按 URL 哈希算的，
+    只要两条新闻的规范化 URL 相同，它们就会算出同一个 id。
+    在挑选阶段就按 URL 去重，输出端就不可能出现重复 id，
+    也不会因为丢掉重复条目而凑不满 20 条 —— 名额会让给下一条候选。
+    """
+    items = list(items)          # 不改动调用方的列表
+    seen_url = set()
+    deduped = []
+    for it in items:
+        key = normalize_url(it["url"]) or it["url"] or ""
+        if key in seen_url:
+            continue
+        seen_url.add(key)
+        deduped.append(it)
+    if len(deduped) != len(items):
+        log("配额", f"按 URL 去掉 {len(items) - len(deduped)} 条重复候选项（保证 id 唯一）")
+    items = deduped
+
     used = [False] * len(items)
     picked = []
     log_count = {}
@@ -574,16 +594,43 @@ def step8_output(items, now):
 
     【B1】id 用 make_stable_id(url) 生成，不再用 news-001 这种序号。
     排名会变，id 不变 —— 这是归档、热度对比、前端收藏功能的地基。
+
+    【id 契约】两条硬要求：
+      ① 同一期内 id 唯一；
+      ② 同一条新闻跨期必须是同一个 id。
+    这两条能同时成立，靠的是一个前提：**id 只由 URL 决定，不掺杂任何位置信息**。
+
+    早期版本在撞哈希时写的是 `nid[:10] + "%02x" % len(seen_ids)`，
+    后缀取的是"当前处理到第几条"。同一条新闻换一期排位变了，后缀就跟着变 ——
+    等于把位置信息偷偷塞回了 id，跨期稳定性当场失效。这个坑由前端同学指出
+    （前端不得不用"加后缀 + warn"兜底，本身就说明生成端有问题），已修正。
+
+    现在撞哈希只剩一种可能：**规范化 URL 不同，但哈希前 12 位相同**
+    （约 1e-12，20 条时实际不可能）。处理方式是用 URL 指纹替换后 4 位 ——
+    指纹只与 URL 有关、与排位无关，跨期依然稳定。
+    "同一条新闻被重复收录"这种情况已经在 step7b_quota 按 URL 去掉了，不会走到这里。
     """
     news_list = []
-    seen_ids = set()
+    id_owner = {}   # id -> 规范化 URL，用于识别真正的哈希碰撞
     for it in items[:MAX_NEWS]:
+        key = normalize_url(it["url"]) or it["url"] or ""
         nid = make_stable_id(it["url"])
-        # 极端情况下两条新闻 URL 规范化后仍碰撞（概率极低），加后缀区分，
-        # 避免出现重复 id 让前端的按 id 查找拿到错的条目
-        if nid in seen_ids:
-            nid = nid[:10] + "%02x" % len(seen_ids)
-        seen_ids.add(nid)
+
+        if nid in id_owner and id_owner[nid] != key:
+            # 不同 URL 算出同一个 id。用 URL 指纹替换后 4 位，与排位无关。
+            first = id_owner[nid]          # 先存下原主，改完 nid 就查不到了
+            fp = hashlib.sha1(key.encode("utf-8")).hexdigest()
+            cand = nid[:8] + fp[:4]
+            i = 4
+            # 加了指纹也可能恰好又撞（概率极低），再往后取几位继续试。
+            # 取的是 URL 指纹的连续片段，仍然只跟 URL 有关，跨期稳定。
+            while cand in id_owner and id_owner[cand] != key and i + 4 <= len(fp):
+                cand = nid[:8] + fp[i:i + 4]
+                i += 4
+            nid = cand
+            log("输出", f"⚠ id 碰撞（{first[:40]}），已用 URL 指纹区分：{nid}")
+
+        id_owner[nid] = key
         news_list.append({
             "id": nid,
             "title": it["title_cn"],
