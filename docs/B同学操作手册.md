@@ -201,16 +201,22 @@ data/archive/
 
 ```json
 {
-  "updated_at": "2026-10-12T14:28:17Z",
+  "updated_at": "2026-10-20T13:57:12Z",
+  "generated_at": "2026-10-20T13:57:12Z",
+  "date_beijing": "2026-10-20",
+  "shift": "am | pm",
   "news": [
     {
       "id": "46ee43f3cce0",
       "title": "中文标题（翻译失败时为 [EN] 英文原文）",
       "summary": "中文短摘要（同上回退规则）",
       "category": "geopolitics | politics | markets 之一",
-      "country": "匹配到的中文地名，匹配不到为 null",
+      "country": "中文国家/地区名，定位不到为 null",
+      "city": "中文城市名，多数为 null（见下方说明）",
       "lat": 35.86,
       "lng": 104.19,
+      "locate_basis": "title | summary | source | null",
+      "image": "https://... 封面图绝对 URL，取不到为 null",
       "published_at": "2026-10-12T13:12:00Z（UTC，前端负责转北京时间）",
       "source": "NPR World",
       "url": "https://... 原文链接",
@@ -226,6 +232,89 @@ data/archive/
 - 20 条按**三领域软配额**分配（地缘 5 / 政治 7 / 市场 8），某领域当天条数不足时名额让给其他领域；
 - `lat/lng` 允许为 null —— 该新闻仍显示在列表，但不上地图；
 - `heat` 是**编辑规则热度**（见第六节），不是全网真实搜索热度，A 需在页面标注。
+
+### 三个当期标识字段（2026-10-21 新增）
+
+| 字段 | 作用 |
+|---|---|
+| `generated_at` | 与 `updated_at` 同值，名字对齐归档索引里的同名字段 |
+| `date_beijing` | **本次数据属于哪一天（北京时间），恒等于归档文件名** |
+| `shift` | `am`（北京 08:30 班）/ `pm`（北京 20:30 班） |
+
+> 为什么非要加 `date_beijing`：`updated_at` 是 UTC，归档文件名是北京时间，
+> 北京时间 00:00–08:00 这一班两者会差一天。定时任务在 08:30 / 20:30 跑不受影响，
+> 但手动触发可能撞上。加了这字段，前端就不用自己推日期了。
+
+### 定位结果怎么读
+
+| 字段 | 含义 |
+|---|---|
+| `country` | 国家/地区名。**绝大多数条目都有**（纯市场报道按来源兜底记"美国"） |
+| `city` | 城市名。**多数为 null，这是正常的**，见下 |
+| `locate_basis` | 地点可信度，决定前端怎么画点，见下 |
+
+`locate_basis` 四个取值：
+
+| 值 | 含义 | 地理分 |
+|---|---|---|
+| `title` | 标题里明确出现地名 | 10 |
+| `summary` | 标题没写，摘要里出现且没矛盾 | 7 |
+| `source` | 文中没有任何地名，按"美股市场新闻"推断为美国 | 4 |
+| `null` | 没定位到 | 0 |
+
+> **为什么 `city` 大多是 null**：实测 100 条原始新闻里，标题含城市名的只有 1 条。
+> NPR / CNBC 的标题写的是"某国内部发生了什么"，几乎不点城市名（如
+> `Alberta voters reject a move toward independence`）。
+> 词典已备好 121 个城市，新闻自己带出城市名时会自动生效。
+> 这不是缺陷，是国际新闻标题的写作习惯。
+
+### 定位的两级词典（`data/locations.json`）
+
+```
+locations  国家/地区 88 条  → 国家代表点，zoom 5~6
+cities     城市     121 条  → 城市中心点，zoom 9
+```
+
+匹配顺序（`step6_locate`）：
+
+1. **标题命中城市** → 用城市坐标，`country` 取该城市所属国（城市优先于国家）；
+2. **标题命中（强证据）国家** → 用国家坐标；
+3. **标题没中，退回摘要**：
+   - 摘要里只有一个城市 → 采用；
+   - 摘要里多个城市互相打架 → **放弃，输出 null 不猜**；
+   - 摘要里多个国家 → 取**最先出现**的那个（导语主语通常是真事件地）；
+4. **都没有**，且分类是 `markets`、来源是美股媒体 → 兜底记美国，`locate_basis="source"`。
+
+**弱证据词**（`white house` / `wall street` / `kremlin` / `pentagon` 等）单独处理，
+不单独决定地点 —— 白宫发言不必然发生在华盛顿。
+
+### 踩过的坑：曼谷会议被判成中国（真实 bug，已修）
+
+原实现把城市名混在国家 `aliases` 里，且"谁先匹配到用谁"。于是：
+
+> 原文摘要：`Debt, AI and Ukraine dominated the conversation at the IMF-World Bank
+> meetings in Bangkok, while China, the focus in 2018, slipped into the background.`
+>
+> `china` 在词典里排在 `thailand` 前面 → 整条被判成**中国**，而会议实际在**曼谷**。
+
+修法：城市单独成表 + 城市优先 + 摘要多城市时不猜。
+这个案例已固化在 `scripts/test_locate.py`，改定位逻辑后**必须**跑一遍：
+
+```bash
+python3 scripts/test_locate.py      # 8 条用例，应该全过
+```
+
+### 封面图是怎么来的
+
+| 源 | RSS 里有图吗 | 取法 | 耗时 |
+|---|---|---|---|
+| MarketWatch | 有 `media:content` | 直接读 | 0 |
+| NPR | 没有 | 抓页面 `og:image` | ~2.7s/条 |
+| CNBC | 没有 | 抓页面 `og:image` | ~6s/条 |
+
+放在**挑选出 20 条之后**执行，只为最终条目发请求，6 线程并发。
+实测 17 条补抓 **10~19 秒**（串行要 1~2 分钟）。全部是绝对 URL。
+
 
 > 为什么要有配额：财经源每次吐的条目远多于政治源（30 vs 10），
 > 纯按热度排会让首页 60% 都是财经新闻，地图上也只剩美国一个点。
