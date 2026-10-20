@@ -93,20 +93,79 @@ jobs:
       #   data/logs/          运行日志（长期排障线索）
       # 早期版本只 add 了 news.json，导致归档和概览在 Actions 上跑完就丢了 ——
       # 本地能看到的文件，线上仓库里没有。这里必须整体加上。
+      #
+      # 【为什么要 pull --rebase 再 push】
+      # 这个 job 拿到的是"触发那一刻"的 main 快照。但在它跑的这一分多钟里，
+      # 远程 main 完全可能又前进了：前端推了个样式、有人在网页上改了个文件、
+      # 或者别的自动化提交了一次。这时候直接 git push 会被拒：
+      #     ! [rejected]  main -> main (fetch first)
+      # 结果是一次本来成功的数据更新整个失败，归档和概览都没发布出去。
+      # 实测就撞到过这种情况（一次通过 API 删除文件的操作导致的）。
+      #
+      # 处理方式：先 rebase 到最新 main 再重试。数据文件是本 job 刚生成的，
+      # rebase 时以本地为准（-X theirs 在我们的提交上生效），不会把新数据丢掉。
+      # 重试 3 次，仍失败则如实报错——说明是权限或仓库设置问题，不该硬撑。
       - name: 提交新的数据文件
         run: |
           git config user.name  "news-bot"
           git config user.email "actions@github.com"
 
-          # 保留空目录占位（rm 掉过期归档后目录可能变空）
-          git add -A data/news.json data/digest.json data/archive data/logs
-
+          # 【重要】必须逐个 add，不能让一个不存在的文件连累其他文件。
+          # git add 只要有一个 pathspec 匹配不到就整体报错（fatal: pathspec ... did not match），
+          # 这一行就一个文件都没暂存。实测踩过：digest.json 尚不存在时，
+          # 连 news.json 都没被 add，最后提交里是旧的新闻数据 —— 静默丢数据，最难发现的那种 bug。
+          mkdir -p data/archive data/logs
+          for f in data/news.json data/digest.json data/archive data/logs; do
+            [ -e "$f" ] && git add -A "$f"
+          done
+          # 先判"有没有变化"：完全没变化是正常情况（同一期跑了两次），安静退出即可
           if git diff --cached --quiet; then
             echo "数据没有变化，跳过提交。"
-          else
-            git commit -m "自动更新新闻 $(date -u '+%Y-%m-%d %H:%M') UTC"
-            git push
+            exit 0
           fi
+
+          # 有变化时再核对新闻数据是否真的在暂存区里。
+          # 这一条是防"其他文件变了、但 news.json 没被 add 上"的静默推旧数据。
+          if ! git diff --cached --name-only | grep -q '^data/news.json$'; then
+            echo "新闻数据未被暂存，中止提交（避免推送旧数据）"
+            exit 1
+          fi
+
+          git commit -m "自动更新新闻 $(date -u '+%Y-%m-%d %H:%M') UTC"
+          MY_COMMIT=$(git rev-parse HEAD)
+
+          for i in 1 2 3; do
+            if git push; then
+              echo "推送成功（第 $i 次尝试）"
+              exit 0
+            fi
+            echo "推送被拒（远程有新提交），第 $i 次重试前先同步远程 ..."
+
+            # 先把本地重置到最新远程，再把本次的数据提交接上去。
+            # 为什么用 cherry-pick 而不是 rebase -X theirs：
+            #   -X 是一刀切，远程对 data/ 之外文件的正常改动也会被覆盖；
+            #   cherry-pick 只重放我们这一个提交，遇到冲突时我们明确知道
+            #   该保留谁——data/ 用我们的（刚抓的最新数据），其余用远程的。
+            git fetch origin main
+            git reset --hard origin/main
+            if ! git cherry-pick "$MY_COMMIT" 2>/dev/null; then
+              echo "cherry-pick 冲突，data/ 下取本地版本，其余取远程版本 ..."
+              git checkout --theirs -- data/ 2>/dev/null || true
+              git add data/ 2>/dev/null || true
+              # 若还有别的冲突文件，说明不是数据问题，放弃这次重试
+              if ! git diff --name-only --diff-filter=U | grep -qv '^data/'; then
+                GIT_EDITOR=true git cherry-pick --continue || { git cherry-pick --abort; exit 1; }
+              else
+                echo "非数据文件冲突，放弃重试"
+                git cherry-pick --abort
+                exit 1
+              fi
+            fi
+            sleep 3
+          done
+
+          echo "连续 3 次推送失败，请检查仓库权限设置"
+          exit 1
 
       # ---------- 4. 打包并发布（打包的是本 job 更新后的工作目录）----------
       - name: 配置 Pages
