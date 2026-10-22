@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-22",
+  "updated_at": "2026-10-22T01:12:06Z",
+  "total": 20,
+  "by_category": {
+    "geopolitics": 5,
+    "politics": 7,
+    "markets": 8
+  },
+  "top3": [
+    {
+      "id": "9897021311fa",
+      "title": "随着投资者消化Meta和特斯拉的收益：实时更新，股票期货下跌",
+      "heat": 91
+    },
+    {
+      "id": "d9f15cdbabaa",
+      "title": "为什么投资者应该对Tesla-SpaceX的潜在合并持怀疑态度",
+      "heat": 90
+    },
+    {
+      "id": "8bc6e0b93a6b",
+      "title": "7只医疗保健股在投资者为该行业买单时脱颖而出",
+      "heat": 90
+    }
+  ],
+  "geo": {
+    "located": 14,
+    "has_country": 14,
+    "has_city": 1,
+    "countries": 6,
+    "top_country": "美国",
+    "cities": [
+      {
+        "city": "香港",
+        "count": 1
+      }
+    ]
+  },
+  "sections": [
+    {
+      "category": "geopolitics",
+      "count": 5,
+      "text": "地缘冲突 5 条，最受关注的是《像伊朗战争之前一样，石油现在正从波斯湾流出。为什么价格可能不会很快下降。》（热度 84），来自 MarketWatch Top。其余报道来自 NPR Politics、NPR World。"
+    },
+    {
+      "category": "politics",
+      "count": 7,
+      "text": "国际政治 7 条，最受关注的是《普京从俄罗斯监狱释放美国人斯蒂芬·哈伯德》（热度 85），来自 NPR World。其余报道来自 CNBC World News、MarketWatch Top、NPR Politics。"
+    },
+    {
+      "category": "markets",
+      "count": 8,
+      "text": "金融市场 8 条，最受关注的是《随着投资者消化Meta和特斯拉的收益：实时更新，股票期货下跌》（热度 91），来自 CNBC World News。其余报道来自 MarketWatch Top。"
+    }
+  ],
+  "paragraphs": [
+    "本期共收录 20 条国际新闻，来自 4 个来源。",
+    "按领域分布为：地缘冲突 5 条、国际政治 7 条、金融市场 8 条。",
+    "地理上看，美国出现最多，共 8 条；6 个国家/地区被提及。",
+    "涉及城市共 1 个，其中 香港 1 条。",
+    "地缘冲突 5 条，最受关注的是《像伊朗战争之前一样，石油现在正从波斯湾流出。为什么价格可能不会很快下降。》（热度 84），来自 MarketWatch Top。其余报道来自 NPR Politics、NPR World。",
+    "国际政治 7 条，最受关注的是《普京从俄罗斯监狱释放美国人斯蒂芬·哈伯德》（热度 85），来自 NPR World。其余报道来自 CNBC World News、MarketWatch Top、NPR Politics。",
+    "金融市场 8 条，最受关注的是《随着投资者消化Meta和特斯拉的收益：实时更新，股票期货下跌》（热度 91），来自 CNBC World News。其余报道来自 MarketWatch Top。"
+  ]
+}
