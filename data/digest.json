@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-22",
-  "updated_at": "2026-10-22T13:17:10Z",
+  "date": "2026-10-23",
+  "updated_at": "2026-10-23T01:17:07Z",
   "total": 20,
   "by_category": {
     "geopolitics": 5,
@@ -9,52 +9,58 @@
   },
   "top3": [
     {
-      "id": "1a56914e4544",
-      "title": "IBM股价下跌，因投资者难以摆脱7月盈利失误",
-      "heat": 93
+      "id": "6d307cf17c18",
+      "title": "美国股市正在分裂为两个阵营，它给投资者留下了一个残酷的鞭打案例",
+      "heat": 97
     },
     {
-      "id": "5da9c18c8aa1",
-      "title": "BMO表示，美国国债收益率可能有望突破，美联储会议将成为催化剂",
+      "id": "1f2a1e98f835",
+      "title": "随着油轮价格飙升引发第二次能源紧缩，油价逼近伊朗战争高点",
+      "heat": 91
+    },
+    {
+      "id": "410b20fc4926",
+      "title": "SK海力士在芯片制造商取消Solidigm IPO计划后股价下滑",
       "heat": 90
-    },
-    {
-      "id": "46165f3ed7c1",
-      "title": "布伦特原油价格突破112 $ ，因据报道美国和以色列权衡新的伊朗罢工",
-      "heat": 89
     }
   ],
   "geo": {
     "located": 17,
     "has_country": 17,
-    "has_city": 0,
-    "countries": 5,
+    "has_city": 1,
+    "countries": 6,
     "top_country": "美国",
-    "cities": []
+    "cities": [
+      {
+        "city": "纽约",
+        "count": 1
+      }
+    ]
   },
   "sections": [
     {
       "category": "geopolitics",
       "count": 5,
-      "text": "地缘冲突 5 条，最受关注的是《布伦特原油价格突破112 $ ，因据报道美国和以色列权衡新的伊朗罢工》（热度 89），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR World。"
+      "text": "地缘冲突 5 条，最受关注的是《特朗普对媒体的攻击已成为一场战争》（热度 80），来自 NPR Politics。其余报道来自 CNBC World News、NPR World。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《西班牙指责特朗普盟友米莱“可耻”地干涉选举》（热度 89），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。"
+      "text": "国际政治 7 条，最受关注的是《我们对特朗普和内塔尼亚胡正在制定的战争计划的了解》（热度 86），来自 NPR World。其余报道来自 CNBC World News、NPR Politics。"
     },
     {
       "category": "markets",
       "count": 8,
-      "text": "金融市场 8 条，最受关注的是《IBM股价下跌，因投资者难以摆脱7月盈利失误》（热度 93），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+      "text": "金融市场 8 条，最受关注的是《美国股市正在分裂为两个阵营，它给投资者留下了一个残酷的鞭打案例》（热度 97），来自 MarketWatch Top。其余报道来自 CNBC World News。"
     }
   ],
   "paragraphs": [
     "本期共收录 20 条国际新闻，来自 4 个来源。",
     "按领域分布为：地缘冲突 5 条、国际政治 7 条、金融市场 8 条。",
-    "地理上看，美国出现最多，共 13 条；5 个国家/地区被提及。",
-    "地缘冲突 5 条，最受关注的是《布伦特原油价格突破112 $ ，因据报道美国和以色列权衡新的伊朗罢工》（热度 89），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR World。",
-    "国际政治 7 条，最受关注的是《西班牙指责特朗普盟友米莱“可耻”地干涉选举》（热度 89），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。",
-    "金融市场 8 条，最受关注的是《IBM股价下跌，因投资者难以摆脱7月盈利失误》（热度 93），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+    "地理上看，美国出现最多，共 11 条；6 个国家/地区被提及。",
+    "涉及城市共 1 个，其中 纽约 1 条。",
+    "地缘冲突 5 条，最受关注的是《特朗普对媒体的攻击已成为一场战争》（热度 80），来自 NPR Politics。其余报道来自 CNBC World News、NPR World。",
+    "国际政治 7 条，最受关注的是《我们对特朗普和内塔尼亚胡正在制定的战争计划的了解》（热度 86），来自 NPR World。其余报道来自 CNBC World News、NPR Politics。",
+    "金融市场 8 条，最受关注的是《美国股市正在分裂为两个阵营，它给投资者留下了一个残酷的鞭打案例》（热度 97），来自 MarketWatch Top。其余报道来自 CNBC World News。"
   ]
 }
