@@ -1,0 +1,39 @@
+{
+  "run_at": "2026-10-25T09:10:31+08:00",
+  "ok_sources": 6,
+  "total_sources": 6,
+  "raw_count": 100,
+  "dedup_count": 99,
+  "time_filtered_count": 59,
+  "classified_count": 36,
+  "dropped_by_category": 23,
+  "located_count": 29,
+  "city_count": 2,
+  "with_image": 20,
+  "final_count": 20,
+  "category_dist": {
+    "geopolitics": 5,
+    "politics": 7,
+    "markets": 8
+  },
+  "source_dist": {
+    "NPR World": 6,
+    "NPR Business": 1,
+    "CNBC World News": 7,
+    "MarketWatch Top": 3,
+    "NPR Politics": 3
+  },
+  "translate": {
+    "provider": "mymemory",
+    "provider_final": "mymemory",
+    "switched": false,
+    "title_ok": 20,
+    "title_fail": 0,
+    "summary_ok": 20,
+    "summary_fail": 0,
+    "fail_ratio": 0.0,
+    "skipped": false
+  },
+  "status": "success",
+  "message": "本次更新完成"
+}
