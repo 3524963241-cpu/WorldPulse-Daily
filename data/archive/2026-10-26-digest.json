@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-26",
+  "updated_at": "2026-10-26T01:23:23Z",
+  "total": 20,
+  "by_category": {
+    "geopolitics": 4,
+    "politics": 7,
+    "markets": 9
+  },
+  "top3": [
+    {
+      "id": "5e9d6cca1bc6",
+      "title": "这位中右翼的前将军可能会取代内塔尼亚胡担任以色列总理",
+      "heat": 96
+    },
+    {
+      "id": "7a27886ce0cf",
+      "title": "美国在拉丁美洲的影响力在巴西的第二轮选举中受到威胁",
+      "heat": 88
+    },
+    {
+      "id": "d4946f64ebcc",
+      "title": "巴西左翼总统卢拉当选第四任总统",
+      "heat": 87
+    }
+  ],
+  "geo": {
+    "located": 19,
+    "has_country": 19,
+    "has_city": 0,
+    "countries": 8,
+    "top_country": "美国",
+    "cities": []
+  },
+  "sections": [
+    {
+      "category": "geopolitics",
+      "count": 4,
+      "text": "地缘冲突 4 条，最受关注的是《乌克兰对埃隆·马斯克（ Elon Musk ）声称其军队在无人机行动中违反了Starlink条款的说法提出》（热度 86），来自 CNBC World News。其余报道来自 NPR World。"
+    },
+    {
+      "category": "politics",
+      "count": 7,
+      "text": "国际政治 7 条，最受关注的是《这位中右翼的前将军可能会取代内塔尼亚胡担任以色列总理》（热度 96），来自 NPR World。其余报道来自 CNBC World News、NPR Politics。"
+    },
+    {
+      "category": "markets",
+      "count": 9,
+      "text": "金融市场 9 条，最受关注的是《在大众重组和关税期间，奥迪为40 $ Georgia工厂的计划辩护》（热度 84），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR Business。"
+    }
+  ],
+  "paragraphs": [
+    "本期共收录 20 条国际新闻，来自 5 个来源。",
+    "按领域分布为：地缘冲突 4 条、国际政治 7 条、金融市场 9 条。",
+    "地理上看，美国出现最多，共 7 条；8 个国家/地区被提及。",
+    "地缘冲突 4 条，最受关注的是《乌克兰对埃隆·马斯克（ Elon Musk ）声称其军队在无人机行动中违反了Starlink条款的说法提出》（热度 86），来自 CNBC World News。其余报道来自 NPR World。",
+    "国际政治 7 条，最受关注的是《这位中右翼的前将军可能会取代内塔尼亚胡担任以色列总理》（热度 96），来自 NPR World。其余报道来自 CNBC World News、NPR Politics。",
+    "金融市场 9 条，最受关注的是《在大众重组和关税期间，奥迪为40 $ Georgia工厂的计划辩护》（热度 84），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR Business。"
+  ]
+}
