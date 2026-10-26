@@ -1,60 +1,60 @@
 {
   "date": "2026-10-26",
-  "updated_at": "2026-10-26T01:23:23Z",
+  "updated_at": "2026-10-26T15:02:01Z",
   "total": 20,
   "by_category": {
-    "geopolitics": 4,
+    "geopolitics": 5,
     "politics": 7,
-    "markets": 9
+    "markets": 8
   },
   "top3": [
     {
-      "id": "5e9d6cca1bc6",
-      "title": "这位中右翼的前将军可能会取代内塔尼亚胡担任以色列总理",
-      "heat": 96
+      "id": "16acd63a5614",
+      "title": "在市场最需要股票的时候，散户投资者对股票感到冷淡",
+      "heat": 93
     },
     {
-      "id": "7a27886ce0cf",
-      "title": "美国在拉丁美洲的影响力在巴西的第二轮选举中受到威胁",
-      "heat": 88
+      "id": "b5fa4296b738",
+      "title": "Nvidia、AMD和Broadcom可以收购Meta股票，作为350亿美元股票发行的一部分",
+      "heat": 91
     },
     {
-      "id": "d4946f64ebcc",
-      "title": "巴西左翼总统卢拉当选第四任总统",
-      "heat": 87
+      "id": "407a93573a86",
+      "title": "Meta宣布发行950亿美元股票，为人工智能扩张提供资金",
+      "heat": 90
     }
   ],
   "geo": {
-    "located": 19,
-    "has_country": 19,
+    "located": 20,
+    "has_country": 20,
     "has_city": 0,
-    "countries": 8,
+    "countries": 9,
     "top_country": "美国",
     "cities": []
   },
   "sections": [
     {
       "category": "geopolitics",
-      "count": 4,
-      "text": "地缘冲突 4 条，最受关注的是《乌克兰对埃隆·马斯克（ Elon Musk ）声称其军队在无人机行动中违反了Starlink条款的说法提出》（热度 86），来自 CNBC World News。其余报道来自 NPR World。"
+      "count": 5,
+      "text": "地缘冲突 5 条，最受关注的是《特朗普表示，他将很快决定是与伊朗“达成协议”还是“完成协议”》（热度 81），来自 CNBC World News。其余报道来自 NPR World。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《这位中右翼的前将军可能会取代内塔尼亚胡担任以色列总理》（热度 96），来自 NPR World。其余报道来自 CNBC World News、NPR Politics。"
+      "text": "国际政治 7 条，最受关注的是《据报道，随着卢拉赢得总统大选，巴西股市震荡，博尔索纳罗拒绝让步》（热度 84），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR Politics、NPR World。"
     },
     {
       "category": "markets",
-      "count": 9,
-      "text": "金融市场 9 条，最受关注的是《在大众重组和关税期间，奥迪为40 $ Georgia工厂的计划辩护》（热度 84），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR Business。"
+      "count": 8,
+      "text": "金融市场 8 条，最受关注的是《在市场最需要股票的时候，散户投资者对股票感到冷淡》（热度 93），来自 MarketWatch Top。其余报道来自 CNBC World News。"
     }
   ],
   "paragraphs": [
-    "本期共收录 20 条国际新闻，来自 5 个来源。",
-    "按领域分布为：地缘冲突 4 条、国际政治 7 条、金融市场 9 条。",
-    "地理上看，美国出现最多，共 7 条；8 个国家/地区被提及。",
-    "地缘冲突 4 条，最受关注的是《乌克兰对埃隆·马斯克（ Elon Musk ）声称其军队在无人机行动中违反了Starlink条款的说法提出》（热度 86），来自 CNBC World News。其余报道来自 NPR World。",
-    "国际政治 7 条，最受关注的是《这位中右翼的前将军可能会取代内塔尼亚胡担任以色列总理》（热度 96），来自 NPR World。其余报道来自 CNBC World News、NPR Politics。",
-    "金融市场 9 条，最受关注的是《在大众重组和关税期间，奥迪为40 $ Georgia工厂的计划辩护》（热度 84），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR Business。"
+    "本期共收录 20 条国际新闻，来自 4 个来源。",
+    "按领域分布为：地缘冲突 5 条、国际政治 7 条、金融市场 8 条。",
+    "地理上看，美国出现最多，共 9 条；9 个国家/地区被提及。",
+    "地缘冲突 5 条，最受关注的是《特朗普表示，他将很快决定是与伊朗“达成协议”还是“完成协议”》（热度 81），来自 CNBC World News。其余报道来自 NPR World。",
+    "国际政治 7 条，最受关注的是《据报道，随着卢拉赢得总统大选，巴西股市震荡，博尔索纳罗拒绝让步》（热度 84），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR Politics、NPR World。",
+    "金融市场 8 条，最受关注的是《在市场最需要股票的时候，散户投资者对股票感到冷淡》（热度 93），来自 MarketWatch Top。其余报道来自 CNBC World News。"
   ]
 }
