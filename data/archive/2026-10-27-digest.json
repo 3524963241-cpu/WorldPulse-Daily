@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-27",
+  "updated_at": "2026-10-27T01:18:40Z",
+  "total": 20,
+  "by_category": {
+    "geopolitics": 3,
+    "politics": 7,
+    "markets": 10
+  },
+  "top3": [
+    {
+      "id": "ac4a891d8e39",
+      "title": "以色列大选吸引成千上万公民返回投票站",
+      "heat": 90
+    },
+    {
+      "id": "b5fa4296b738",
+      "title": "Nvidia、AMD和Broadcom可以收购Meta股票，作为350亿美元股票发行的一部分",
+      "heat": 90
+    },
+    {
+      "id": "2189fab79a26",
+      "title": "华尔街本周开盘后，股票期货几乎没有变化：实时更新",
+      "heat": 86
+    }
+  ],
+  "geo": {
+    "located": 20,
+    "has_country": 20,
+    "has_city": 1,
+    "countries": 8,
+    "top_country": "美国",
+    "cities": [
+      {
+        "city": "德黑兰",
+        "count": 1
+      }
+    ]
+  },
+  "sections": [
+    {
+      "category": "geopolitics",
+      "count": 3,
+      "text": "地缘冲突 3 条，最受关注的是《俄罗斯表示将开放通往乌克兰城镇的人道主义走廊》（热度 71），来自 NPR World。其余报道来自 CNBC World News。"
+    },
+    {
+      "category": "politics",
+      "count": 7,
+      "text": "国际政治 7 条，最受关注的是《以色列大选吸引成千上万公民返回投票站》（热度 90），来自 CNBC World News。其余报道来自 NPR World。"
+    },
+    {
+      "category": "markets",
+      "count": 10,
+      "text": "金融市场 10 条，最受关注的是《Nvidia、AMD和Broadcom可以收购Meta股票，作为350亿美元股票发行的一部分》（热度 90），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+    }
+  ],
+  "paragraphs": [
+    "本期共收录 20 条国际新闻，来自 3 个来源。",
+    "按领域分布为：地缘冲突 3 条、国际政治 7 条、金融市场 10 条。",
+    "地理上看，美国出现最多，共 8 条；8 个国家/地区被提及。",
+    "涉及城市共 1 个，其中 德黑兰 1 条。",
+    "地缘冲突 3 条，最受关注的是《俄罗斯表示将开放通往乌克兰城镇的人道主义走廊》（热度 71），来自 NPR World。其余报道来自 CNBC World News。",
+    "国际政治 7 条，最受关注的是《以色列大选吸引成千上万公民返回投票站》（热度 90），来自 CNBC World News。其余报道来自 NPR World。",
+    "金融市场 10 条，最受关注的是《Nvidia、AMD和Broadcom可以收购Meta股票，作为350亿美元股票发行的一部分》（热度 90），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+  ]
+}
