@@ -1,60 +1,66 @@
 {
   "date": "2026-10-28",
-  "updated_at": "2026-10-28T01:31:44Z",
+  "updated_at": "2026-10-28T13:30:03Z",
   "total": 20,
   "by_category": {
-    "geopolitics": 2,
+    "geopolitics": 1,
     "politics": 7,
-    "markets": 11
+    "markets": 12
   },
   "top3": [
     {
-      "id": "cdf1df118bb9",
-      "title": "随着本地交易应用程序推出对美国股票的访问，印度投资者纷纷涌向英伟达、SpaceX、苹果",
+      "id": "7479ab2c73fc",
+      "title": "在央行无视市场几乎肯定会加息之后，新西兰元贬值",
       "heat": 96
     },
     {
-      "id": "b455bff606d5",
-      "title": "零售商购买芯片下跌股票—但Robinhood被加密市场烧毁",
-      "heat": 91
+      "id": "3ebc2ee24a92",
+      "title": "人工智能热潮开始打破久经考验的股市信号",
+      "heat": 92
     },
     {
-      "id": "ecdb20565190",
-      "title": "以色列选举投票率飙升，提升了反对派击败内塔尼亚胡的希望",
-      "heat": 91
+      "id": "b6b3a5c5e5db",
+      "title": "据报道，由于美国告诉海湾国家为中期选举后的伊朗罢工做准备，油价上涨",
+      "heat": 89
     }
   ],
   "geo": {
-    "located": 19,
-    "has_country": 19,
-    "has_city": 0,
+    "located": 20,
+    "has_country": 20,
+    "has_city": 1,
     "countries": 8,
     "top_country": "美国",
-    "cities": []
+    "cities": [
+      {
+        "city": "莫斯科",
+        "count": 1
+      }
+    ]
   },
   "sections": [
     {
       "category": "geopolitics",
-      "count": 2,
-      "text": "地缘冲突 2 条，最受关注的是《由梅拉尼娅·特朗普斡旋的当地停火在乌克兰南部开始》（热度 75），来自 NPR World。"
+      "count": 1,
+      "text": "地缘冲突 1 条，最受关注的是《特朗普表示，伊朗战争将在“我想要的时候”结束，据报道，成本激增至470亿美元（ $ 470亿）》（热度 84），来自 CNBC World News。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《以色列选举投票率飙升，提升了反对派击败内塔尼亚胡的希望》（热度 91），来自 NPR World。其余报道来自 CNBC World News、MarketWatch Top。"
+      "text": "国际政治 7 条，最受关注的是《以色列债券，谢克尔下跌，因为选举使内塔尼亚胡和其他人远远低于多数》（热度 88），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。"
     },
     {
       "category": "markets",
-      "count": 11,
-      "text": "金融市场 11 条，最受关注的是《随着本地交易应用程序推出对美国股票的访问，印度投资者纷纷涌向英伟达、SpaceX、苹果》（热度 96），来自 CNBC World News。其余报道来自 MarketWatch Top。"
+      "count": 12,
+      "text": "金融市场 12 条，最受关注的是《在央行无视市场几乎肯定会加息之后，新西兰元贬值》（热度 96），来自 CNBC World News。其余报道来自 MarketWatch Top。"
     }
   ],
   "paragraphs": [
-    "本期共收录 20 条国际新闻，来自 3 个来源。",
-    "按领域分布为：地缘冲突 2 条、国际政治 7 条、金融市场 11 条。",
-    "地理上看，美国出现最多，共 10 条；8 个国家/地区被提及。",
-    "地缘冲突 2 条，最受关注的是《由梅拉尼娅·特朗普斡旋的当地停火在乌克兰南部开始》（热度 75），来自 NPR World。",
-    "国际政治 7 条，最受关注的是《以色列选举投票率飙升，提升了反对派击败内塔尼亚胡的希望》（热度 91），来自 NPR World。其余报道来自 CNBC World News、MarketWatch Top。",
-    "金融市场 11 条，最受关注的是《随着本地交易应用程序推出对美国股票的访问，印度投资者纷纷涌向英伟达、SpaceX、苹果》（热度 96），来自 CNBC World News。其余报道来自 MarketWatch Top。"
+    "本期共收录 20 条国际新闻，来自 4 个来源。",
+    "按领域分布为：地缘冲突 1 条、国际政治 7 条、金融市场 12 条。",
+    "地理上看，美国出现最多，共 9 条；8 个国家/地区被提及。",
+    "涉及城市共 1 个，其中 莫斯科 1 条。",
+    "地缘冲突 1 条，最受关注的是《特朗普表示，伊朗战争将在“我想要的时候”结束，据报道，成本激增至470亿美元（ $ 470亿）》（热度 84），来自 CNBC World News。",
+    "国际政治 7 条，最受关注的是《以色列债券，谢克尔下跌，因为选举使内塔尼亚胡和其他人远远低于多数》（热度 88），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。",
+    "金融市场 12 条，最受关注的是《在央行无视市场几乎肯定会加息之后，新西兰元贬值》（热度 96），来自 CNBC World News。其余报道来自 MarketWatch Top。"
   ]
 }
