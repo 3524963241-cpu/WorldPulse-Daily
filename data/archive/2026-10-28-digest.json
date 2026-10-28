@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-28",
+  "updated_at": "2026-10-28T01:31:44Z",
+  "total": 20,
+  "by_category": {
+    "geopolitics": 2,
+    "politics": 7,
+    "markets": 11
+  },
+  "top3": [
+    {
+      "id": "cdf1df118bb9",
+      "title": "随着本地交易应用程序推出对美国股票的访问，印度投资者纷纷涌向英伟达、SpaceX、苹果",
+      "heat": 96
+    },
+    {
+      "id": "b455bff606d5",
+      "title": "零售商购买芯片下跌股票—但Robinhood被加密市场烧毁",
+      "heat": 91
+    },
+    {
+      "id": "ecdb20565190",
+      "title": "以色列选举投票率飙升，提升了反对派击败内塔尼亚胡的希望",
+      "heat": 91
+    }
+  ],
+  "geo": {
+    "located": 19,
+    "has_country": 19,
+    "has_city": 0,
+    "countries": 8,
+    "top_country": "美国",
+    "cities": []
+  },
+  "sections": [
+    {
+      "category": "geopolitics",
+      "count": 2,
+      "text": "地缘冲突 2 条，最受关注的是《由梅拉尼娅·特朗普斡旋的当地停火在乌克兰南部开始》（热度 75），来自 NPR World。"
+    },
+    {
+      "category": "politics",
+      "count": 7,
+      "text": "国际政治 7 条，最受关注的是《以色列选举投票率飙升，提升了反对派击败内塔尼亚胡的希望》（热度 91），来自 NPR World。其余报道来自 CNBC World News、MarketWatch Top。"
+    },
+    {
+      "category": "markets",
+      "count": 11,
+      "text": "金融市场 11 条，最受关注的是《随着本地交易应用程序推出对美国股票的访问，印度投资者纷纷涌向英伟达、SpaceX、苹果》（热度 96），来自 CNBC World News。其余报道来自 MarketWatch Top。"
+    }
+  ],
+  "paragraphs": [
+    "本期共收录 20 条国际新闻，来自 3 个来源。",
+    "按领域分布为：地缘冲突 2 条、国际政治 7 条、金融市场 11 条。",
+    "地理上看，美国出现最多，共 10 条；8 个国家/地区被提及。",
+    "地缘冲突 2 条，最受关注的是《由梅拉尼娅·特朗普斡旋的当地停火在乌克兰南部开始》（热度 75），来自 NPR World。",
+    "国际政治 7 条，最受关注的是《以色列选举投票率飙升，提升了反对派击败内塔尼亚胡的希望》（热度 91），来自 NPR World。其余报道来自 CNBC World News、MarketWatch Top。",
+    "金融市场 11 条，最受关注的是《随着本地交易应用程序推出对美国股票的访问，印度投资者纷纷涌向英伟达、SpaceX、苹果》（热度 96），来自 CNBC World News。其余报道来自 MarketWatch Top。"
+  ]
+}
