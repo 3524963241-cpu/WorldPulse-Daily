@@ -1,69 +1,60 @@
 {
   "date": "2026-10-29",
-  "updated_at": "2026-10-29T01:32:00Z",
+  "updated_at": "2026-10-29T13:33:55Z",
   "total": 20,
   "by_category": {
-    "geopolitics": 0,
+    "geopolitics": 1,
     "politics": 7,
-    "markets": 13
+    "markets": 12
   },
   "top3": [
     {
-      "id": "eeda43363ea5",
-      "title": "ServiceNow的股票下跌，因为盈利下滑掩盖了上涨的人工智能前景",
+      "id": "cfb369b74e72",
+      "title": "PCE显示，通货膨胀激增。由于价格仍在上涨，美联储暂停加息不太可能持续很长时间。",
+      "heat": 93
+    },
+    {
+      "id": "ab8e49c47e0b",
+      "title": "人工智能无人机如何影响乌克兰战争的进程",
       "heat": 91
     },
     {
-      "id": "5525c8574c19",
-      "title": "为什么Alphabet的股价在最新业绩公布后可能出现多年来最严重的下跌",
-      "heat": 89
-    },
-    {
-      "id": "ed7e8685d8ba",
-      "title": "纳斯达克100指数期货下跌， Alphabet股票在财报后抛售：实时更新",
-      "heat": 86
+      "id": "a3e2ceae8f02",
+      "title": "GDP报告将在选举日之前提供见解。而且，以色列的选举陷入僵局",
+      "heat": 90
     }
   ],
   "geo": {
-    "located": 18,
-    "has_country": 18,
-    "has_city": 2,
+    "located": 17,
+    "has_country": 17,
+    "has_city": 0,
     "countries": 5,
     "top_country": "美国",
-    "cities": [
-      {
-        "city": "新德里",
-        "count": 1
-      },
-      {
-        "city": "莫斯科",
-        "count": 1
-      }
-    ]
+    "cities": []
   },
   "sections": [
     {
       "category": "geopolitics",
-      "count": 0,
-      "text": ""
+      "count": 1,
+      "text": "地缘冲突 1 条，最受关注的是《人工智能无人机如何影响乌克兰战争的进程》（热度 91），来自 NPR World。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《该组织在追踪中国黑客方面的突破》（热度 78），来自 NPR Politics。其余报道来自 CNBC World News、NPR World。"
+      "text": "国际政治 7 条，最受关注的是《DoorDash和Instacart希望联合起来。美国政府会妨碍他们吗？》（热度 83），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Politics、NPR World。"
     },
     {
       "category": "markets",
-      "count": 13,
-      "text": "金融市场 13 条，最受关注的是《ServiceNow的股票下跌，因为盈利下滑掩盖了上涨的人工智能前景》（热度 91），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Business。"
+      "count": 12,
+      "text": "金融市场 12 条，最受关注的是《PCE显示，通货膨胀激增。由于价格仍在上涨，美联储暂停加息不太可能持续很长时间。》（热度 93），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Business、NPR World。"
     }
   ],
   "paragraphs": [
     "本期共收录 20 条国际新闻，来自 5 个来源。",
-    "按领域分布为：国际政治 7 条、金融市场 13 条。",
+    "按领域分布为：地缘冲突 1 条、国际政治 7 条、金融市场 12 条。",
     "地理上看，美国出现最多，共 13 条；5 个国家/地区被提及。",
-    "涉及城市共 2 个，其中 新德里 1 条、莫斯科 1 条。",
-    "国际政治 7 条，最受关注的是《该组织在追踪中国黑客方面的突破》（热度 78），来自 NPR Politics。其余报道来自 CNBC World News、NPR World。",
-    "金融市场 13 条，最受关注的是《ServiceNow的股票下跌，因为盈利下滑掩盖了上涨的人工智能前景》（热度 91），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Business。"
+    "地缘冲突 1 条，最受关注的是《人工智能无人机如何影响乌克兰战争的进程》（热度 91），来自 NPR World。",
+    "国际政治 7 条，最受关注的是《DoorDash和Instacart希望联合起来。美国政府会妨碍他们吗？》（热度 83），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Politics、NPR World。",
+    "金融市场 12 条，最受关注的是《PCE显示，通货膨胀激增。由于价格仍在上涨，美联储暂停加息不太可能持续很长时间。》（热度 93），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Business、NPR World。"
   ]
 }
