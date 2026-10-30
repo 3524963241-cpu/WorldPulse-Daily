@@ -1,60 +1,66 @@
 {
   "date": "2026-10-30",
-  "updated_at": "2026-10-30T01:34:44Z",
+  "updated_at": "2026-10-30T13:30:54Z",
   "total": 20,
   "by_category": {
-    "geopolitics": 4,
+    "geopolitics": 5,
     "politics": 7,
-    "markets": 9
+    "markets": 8
   },
   "top3": [
     {
-      "id": "ac91edab3a78",
-      "title": "亚马逊股价下跌—即使面对大胆的新云预测",
-      "heat": 89
+      "id": "6fbe5df8ff30",
+      "title": "俄罗斯罢工使乌克兰城市陷入停电，因为泽伦斯基警告说会有更多的导弹袭击",
+      "heat": 95
     },
     {
-      "id": "23e325c13788",
-      "title": "周五的大股票故事：在下一交易时段可能推动市场走势的因素",
-      "heat": 89
+      "id": "7845354e7d71",
+      "title": "比特币在加密货币的噩梦场景之后下滑：历史性的63亿美元抢劫",
+      "heat": 94
     },
     {
-      "id": "0b0ca8d56d68",
-      "title": "Sandisk的收入几乎增长了五倍—股票分割即将到来",
-      "heat": 88
+      "id": "f5396fa3e811",
+      "title": "这张图表显示了您需要了解的关于埃克森美孚、雪佛龙和英国石油公司超前盈利的所有信息",
+      "heat": 93
     }
   ],
   "geo": {
-    "located": 16,
-    "has_country": 16,
-    "has_city": 0,
-    "countries": 4,
+    "located": 17,
+    "has_country": 17,
+    "has_city": 1,
+    "countries": 7,
     "top_country": "美国",
-    "cities": []
+    "cities": [
+      {
+        "city": "洛杉矶",
+        "count": 1
+      }
+    ]
   },
   "sections": [
     {
       "category": "geopolitics",
-      "count": 4,
-      "text": "地缘冲突 4 条，最受关注的是《人工智能无人机如何影响乌克兰战争的进程》（热度 79），来自 NPR World。"
+      "count": 5,
+      "text": "地缘冲突 5 条，最受关注的是《俄罗斯罢工使乌克兰城市陷入停电，因为泽伦斯基警告说会有更多的导弹袭击》（热度 95），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR World。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《随着参议院竞选收紧，特朗普回到南卡罗来纳州》（热度 84），来自 NPR Politics。其余报道来自 CNBC World News。"
+      "text": "国际政治 7 条，最受关注的是《以下是参议院在选举日之前要观看的比赛》（热度 86），来自 NPR Politics。其余报道来自 CNBC World News、NPR World。"
     },
     {
       "category": "markets",
-      "count": 9,
-      "text": "金融市场 9 条，最受关注的是《亚马逊股价下跌—即使面对大胆的新云预测》（热度 89），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+      "count": 8,
+      "text": "金融市场 8 条，最受关注的是《比特币在加密货币的噩梦场景之后下滑：历史性的63亿美元抢劫》（热度 94），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR World。"
     }
   ],
   "paragraphs": [
     "本期共收录 20 条国际新闻，来自 4 个来源。",
-    "按领域分布为：地缘冲突 4 条、国际政治 7 条、金融市场 9 条。",
-    "地理上看，美国出现最多，共 13 条；4 个国家/地区被提及。",
-    "地缘冲突 4 条，最受关注的是《人工智能无人机如何影响乌克兰战争的进程》（热度 79），来自 NPR World。",
-    "国际政治 7 条，最受关注的是《随着参议院竞选收紧，特朗普回到南卡罗来纳州》（热度 84），来自 NPR Politics。其余报道来自 CNBC World News。",
-    "金融市场 9 条，最受关注的是《亚马逊股价下跌—即使面对大胆的新云预测》（热度 89），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+    "按领域分布为：地缘冲突 5 条、国际政治 7 条、金融市场 8 条。",
+    "地理上看，美国出现最多，共 10 条；7 个国家/地区被提及。",
+    "涉及城市共 1 个，其中 洛杉矶 1 条。",
+    "地缘冲突 5 条，最受关注的是《俄罗斯罢工使乌克兰城市陷入停电，因为泽伦斯基警告说会有更多的导弹袭击》（热度 95），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR World。",
+    "国际政治 7 条，最受关注的是《以下是参议院在选举日之前要观看的比赛》（热度 86），来自 NPR Politics。其余报道来自 CNBC World News、NPR World。",
+    "金融市场 8 条，最受关注的是《比特币在加密货币的噩梦场景之后下滑：历史性的63亿美元抢劫》（热度 94），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR World。"
   ]
 }
