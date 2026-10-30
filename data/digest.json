@@ -1,60 +1,60 @@
 {
-  "date": "2026-10-29",
-  "updated_at": "2026-10-29T13:33:55Z",
+  "date": "2026-10-30",
+  "updated_at": "2026-10-30T01:34:44Z",
   "total": 20,
   "by_category": {
-    "geopolitics": 1,
+    "geopolitics": 4,
     "politics": 7,
-    "markets": 12
+    "markets": 9
   },
   "top3": [
     {
-      "id": "cfb369b74e72",
-      "title": "PCE显示，通货膨胀激增。由于价格仍在上涨，美联储暂停加息不太可能持续很长时间。",
-      "heat": 93
+      "id": "ac91edab3a78",
+      "title": "亚马逊股价下跌—即使面对大胆的新云预测",
+      "heat": 89
     },
     {
-      "id": "ab8e49c47e0b",
-      "title": "人工智能无人机如何影响乌克兰战争的进程",
-      "heat": 91
+      "id": "23e325c13788",
+      "title": "周五的大股票故事：在下一交易时段可能推动市场走势的因素",
+      "heat": 89
     },
     {
-      "id": "a3e2ceae8f02",
-      "title": "GDP报告将在选举日之前提供见解。而且，以色列的选举陷入僵局",
-      "heat": 90
+      "id": "0b0ca8d56d68",
+      "title": "Sandisk的收入几乎增长了五倍—股票分割即将到来",
+      "heat": 88
     }
   ],
   "geo": {
-    "located": 17,
-    "has_country": 17,
+    "located": 16,
+    "has_country": 16,
     "has_city": 0,
-    "countries": 5,
+    "countries": 4,
     "top_country": "美国",
     "cities": []
   },
   "sections": [
     {
       "category": "geopolitics",
-      "count": 1,
-      "text": "地缘冲突 1 条，最受关注的是《人工智能无人机如何影响乌克兰战争的进程》（热度 91），来自 NPR World。"
+      "count": 4,
+      "text": "地缘冲突 4 条，最受关注的是《人工智能无人机如何影响乌克兰战争的进程》（热度 79），来自 NPR World。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《DoorDash和Instacart希望联合起来。美国政府会妨碍他们吗？》（热度 83），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Politics、NPR World。"
+      "text": "国际政治 7 条，最受关注的是《随着参议院竞选收紧，特朗普回到南卡罗来纳州》（热度 84），来自 NPR Politics。其余报道来自 CNBC World News。"
     },
     {
       "category": "markets",
-      "count": 12,
-      "text": "金融市场 12 条，最受关注的是《PCE显示，通货膨胀激增。由于价格仍在上涨，美联储暂停加息不太可能持续很长时间。》（热度 93），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Business、NPR World。"
+      "count": 9,
+      "text": "金融市场 9 条，最受关注的是《亚马逊股价下跌—即使面对大胆的新云预测》（热度 89），来自 MarketWatch Top。其余报道来自 CNBC World News。"
     }
   ],
   "paragraphs": [
-    "本期共收录 20 条国际新闻，来自 5 个来源。",
-    "按领域分布为：地缘冲突 1 条、国际政治 7 条、金融市场 12 条。",
-    "地理上看，美国出现最多，共 13 条；5 个国家/地区被提及。",
-    "地缘冲突 1 条，最受关注的是《人工智能无人机如何影响乌克兰战争的进程》（热度 91），来自 NPR World。",
-    "国际政治 7 条，最受关注的是《DoorDash和Instacart希望联合起来。美国政府会妨碍他们吗？》（热度 83），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Politics、NPR World。",
-    "金融市场 12 条，最受关注的是《PCE显示，通货膨胀激增。由于价格仍在上涨，美联储暂停加息不太可能持续很长时间。》（热度 93），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Business、NPR World。"
+    "本期共收录 20 条国际新闻，来自 4 个来源。",
+    "按领域分布为：地缘冲突 4 条、国际政治 7 条、金融市场 9 条。",
+    "地理上看，美国出现最多，共 13 条；4 个国家/地区被提及。",
+    "地缘冲突 4 条，最受关注的是《人工智能无人机如何影响乌克兰战争的进程》（热度 79），来自 NPR World。",
+    "国际政治 7 条，最受关注的是《随着参议院竞选收紧，特朗普回到南卡罗来纳州》（热度 84），来自 NPR Politics。其余报道来自 CNBC World News。",
+    "金融市场 9 条，最受关注的是《亚马逊股价下跌—即使面对大胆的新云预测》（热度 89），来自 MarketWatch Top。其余报道来自 CNBC World News。"
   ]
 }
