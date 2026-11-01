@@ -1,13 +1,15 @@
 {
-  "run_at": "2026-10-20T21:14:37+08:00",
+  "run_at": "2026-11-01T21:21:44+08:00",
   "ok_sources": 6,
   "total_sources": 6,
   "raw_count": 100,
   "dedup_count": 98,
-  "time_filtered_count": 63,
-  "classified_count": 45,
-  "dropped_by_category": 18,
+  "time_filtered_count": 56,
+  "classified_count": 43,
+  "dropped_by_category": 13,
   "located_count": 30,
+  "city_count": 3,
+  "with_image": 20,
   "final_count": 20,
   "category_dist": {
     "geopolitics": 5,
@@ -15,9 +17,11 @@
     "markets": 8
   },
   "source_dist": {
-    "CNBC World News": 13,
-    "MarketWatch Top": 3,
-    "NPR World": 4
+    "CNBC World News": 5,
+    "NPR Politics": 7,
+    "MarketWatch Top": 1,
+    "NPR Business": 2,
+    "NPR World": 5
   },
   "translate": {
     "provider": "mymemory",
