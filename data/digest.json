@@ -1,6 +1,6 @@
 {
   "date": "2026-11-06",
-  "updated_at": "2026-11-06T01:44:36Z",
+  "updated_at": "2026-11-06T13:39:19Z",
   "total": 20,
   "by_category": {
     "geopolitics": 4,
@@ -9,32 +9,28 @@
   },
   "top3": [
     {
-      "id": "88dc96be3fad",
-      "title": "股票期货在纳斯达克指数调整后下跌；日本日经225指数进入熊市：实时更新",
+      "id": "0c9b098cd02d",
+      "title": "在生物技术提高销售前景后， Moderna的股票上涨",
       "heat": 93
+    },
+    {
+      "id": "d987cd6c8cd8",
+      "title": "随着投资者权衡伊朗冲突风险，油价将在中期选举后每周大幅下跌",
+      "heat": 89
     },
     {
       "id": "4fbe7747124b",
       "title": "纳斯达克抛售重创亚洲芯片股， SK海力士、三星、软银、台积电下跌",
-      "heat": 91
-    },
-    {
-      "id": "4d4b84d354de",
-      "title": "随着人工智能行业出现大屠杀，科技股创下2020年以来最糟糕的一天",
-      "heat": 91
+      "heat": 88
     }
   ],
   "geo": {
-    "located": 19,
-    "has_country": 19,
-    "has_city": 2,
-    "countries": 10,
+    "located": 17,
+    "has_country": 17,
+    "has_city": 1,
+    "countries": 8,
     "top_country": "美国",
     "cities": [
-      {
-        "city": "华盛顿",
-        "count": 1
-      },
       {
         "city": "圣地亚哥",
         "count": 1
@@ -45,26 +41,26 @@
     {
       "category": "geopolitics",
       "count": 4,
-      "text": "地缘冲突 4 条，最受关注的是《梅拉尼娅·特朗普吹捧她在俄罗斯和乌克兰之间达成的罕见协议》（热度 80），来自 NPR Politics。其余报道来自 CNBC World News、NPR World。"
+      "text": "地缘冲突 4 条，最受关注的是《无人机正在改变战争。但国防巨头仍在从老式武器中赚取数十亿美元》（热度 80），来自 CNBC World News。其余报道来自 NPR Politics。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《巴拉圭总统在银行倒闭后辞职几分钟后被弹劾》（热度 89），来自 NPR World。其余报道来自 CNBC World News、NPR Politics。"
+      "text": "国际政治 7 条，最受关注的是《密歇根州迪尔伯恩市长，该市的投票率创下历史新高，阿卜杜勒·赛义德当选市长》（热度 87），来自 NPR Politics。其余报道来自 CNBC World News、MarketWatch Top、NPR World。"
     },
     {
       "category": "markets",
       "count": 9,
-      "text": "金融市场 9 条，最受关注的是《股票期货在纳斯达克指数调整后下跌；日本日经225指数进入熊市：实时更新》（热度 93），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR Business。"
+      "text": "金融市场 9 条，最受关注的是《在生物技术提高销售前景后， Moderna的股票上涨》（热度 93），来自 MarketWatch Top。其余报道来自 CNBC World News。"
     }
   ],
   "paragraphs": [
-    "本期共收录 20 条国际新闻，来自 5 个来源。",
+    "本期共收录 20 条国际新闻，来自 4 个来源。",
     "按领域分布为：地缘冲突 4 条、国际政治 7 条、金融市场 9 条。",
-    "地理上看，美国出现最多，共 9 条；10 个国家/地区被提及。",
-    "涉及城市共 2 个，其中 华盛顿 1 条、圣地亚哥 1 条。",
-    "地缘冲突 4 条，最受关注的是《梅拉尼娅·特朗普吹捧她在俄罗斯和乌克兰之间达成的罕见协议》（热度 80），来自 NPR Politics。其余报道来自 CNBC World News、NPR World。",
-    "国际政治 7 条，最受关注的是《巴拉圭总统在银行倒闭后辞职几分钟后被弹劾》（热度 89），来自 NPR World。其余报道来自 CNBC World News、NPR Politics。",
-    "金融市场 9 条，最受关注的是《股票期货在纳斯达克指数调整后下跌；日本日经225指数进入熊市：实时更新》（热度 93），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR Business。"
+    "地理上看，美国出现最多，共 7 条；8 个国家/地区被提及。",
+    "涉及城市共 1 个，其中 圣地亚哥 1 条。",
+    "地缘冲突 4 条，最受关注的是《无人机正在改变战争。但国防巨头仍在从老式武器中赚取数十亿美元》（热度 80），来自 CNBC World News。其余报道来自 NPR Politics。",
+    "国际政治 7 条，最受关注的是《密歇根州迪尔伯恩市长，该市的投票率创下历史新高，阿卜杜勒·赛义德当选市长》（热度 87），来自 NPR Politics。其余报道来自 CNBC World News、MarketWatch Top、NPR World。",
+    "金融市场 9 条，最受关注的是《在生物技术提高销售前景后， Moderna的股票上涨》（热度 93），来自 MarketWatch Top。其余报道来自 CNBC World News。"
   ]
 }
