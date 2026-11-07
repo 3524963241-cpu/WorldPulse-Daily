@@ -1,9 +1,121 @@
 {
-  "updated_at": "2026-11-07T01:33:58Z",
-  "generated_at": "2026-11-07T01:33:58Z",
+  "updated_at": "2026-11-07T13:23:56Z",
+  "generated_at": "2026-11-07T13:23:56Z",
   "date_beijing": "2026-11-07",
-  "shift": "am",
+  "shift": "pm",
   "news": [
+    {
+      "id": "5cd98d44aef0",
+      "title": "蔑视市长迈克·麦肯（ Mike McCann ）谈共和党人如何在中期亏损后重组",
+      "summary": "共和党人在中期选举中落败。NPR的斯科特·西蒙（ Scott Simon ）与俄亥俄州反抗市市长迈克·麦肯（ Mike McCann ）就共和党如何赢回支持进行了交谈。",
+      "category": "politics",
+      "country": null,
+      "city": null,
+      "lat": null,
+      "lng": null,
+      "locate_basis": null,
+      "image": "https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg",
+      "published_at": "2026-11-07T12:41:01Z",
+      "source": "NPR Politics",
+      "url": "https://www.npr.org/2026/11/07/nx-s1-6029755/defiance-mayor-mike-mccann-on-how-republicans-can-regroup-after-midterm-losses",
+      "heat": 83
+    },
+    {
+      "id": "d374899819d0",
+      "title": "Deb Haaland的新墨西哥挑战",
+      "summary": "Deb Haaland是新墨西哥州的第一位美洲原住民州长。她面临着巨大的期望和挑战，但也面临着深蓝色的机遇，拥有丰富的石油收入。",
+      "category": "politics",
+      "country": "墨西哥",
+      "city": null,
+      "lat": 23.63,
+      "lng": -102.55,
+      "locate_basis": "title",
+      "image": "https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg",
+      "published_at": "2026-11-07T12:41:02Z",
+      "source": "NPR Politics",
+      "url": "https://www.npr.org/2026/11/07/nx-s1-5995646/deb-haalands-new-mexico-challenge",
+      "heat": 81
+    },
+    {
+      "id": "fb30c972dfd0",
+      "title": "特朗普表示，随着导弹袭击格什姆岛，美国对伊朗进行了“小规模打击”",
+      "summary": "特朗普表示，在伊朗媒体报道两枚导弹袭击霍尔木兹海峡附近的格什姆岛后，美国对伊朗进行了“小规模打击”。",
+      "category": "geopolitics",
+      "country": "美国",
+      "city": null,
+      "lat": 37.09,
+      "lng": -95.71,
+      "locate_basis": "title",
+      "image": "https://image.cnbcfm.com/api/v1/image/108539426-1794035113546-gettyimages-2303901733-sc1_6555_6vbyy1aj.jpeg?v=1794035124&w=1920&h=1080",
+      "published_at": "2026-11-07T07:37:36Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/11/07/trump-us-minor-strikes-iran-qeshm-island.html",
+      "heat": 79
+    },
+    {
+      "id": "f9eb6e0642bc",
+      "title": "新参议院多数党如何转变对联邦司法机构的控制",
+      "summary": "参议院多数党的变化意味着，从1月3日开始，民主党将担任联邦司法任命，并可能至少持续到2030年。",
+      "category": "politics",
+      "country": null,
+      "city": null,
+      "lat": null,
+      "lng": null,
+      "locate_basis": null,
+      "image": "https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg",
+      "published_at": "2026-11-07T12:41:11Z",
+      "source": "NPR Politics",
+      "url": "https://www.npr.org/2026/11/07/nx-s1-6032757/how-the-new-senate-majority-shifts-control-over-the-federal-judiciary",
+      "heat": 75
+    },
+    {
+      "id": "9bcea3a639a9",
+      "title": "共和党的跛脚鸭时钟正在滴答作响",
+      "summary": "在共和党占多数的情况下，本届国会必须解决国防授权法案和政府拨款法案，因为民主党人等待接管。",
+      "category": "politics",
+      "country": null,
+      "city": null,
+      "lat": null,
+      "lng": null,
+      "locate_basis": null,
+      "image": "https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg",
+      "published_at": "2026-11-07T12:41:10Z",
+      "source": "NPR Politics",
+      "url": "https://www.npr.org/2026/11/07/nx-s1-6032594/gops-lame-duck-clock-is-ticking",
+      "heat": 75
+    },
+    {
+      "id": "6a11415094de",
+      "title": "一位意想不到的活动家出现，帮助阻止马里兰州一个价值50亿美元的数据中心",
+      "summary": "美国各地有数千人参与反对数据中心。其中一位是马里兰州的女性，她在减薪后被驱逐，并成为社区工作的领导者，阻止了一个庞大的项目。",
+      "category": "markets",
+      "country": "美国",
+      "city": null,
+      "lat": 37.09,
+      "lng": -95.71,
+      "locate_basis": "summary",
+      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5000x2813+0+261/resize/1400/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fdc%2Fd6%2F9429fa5a4e848885d1ed84dab3ce%2F261016-data-center-turner-04.JPG",
+      "published_at": "2026-11-07T10:00:00Z",
+      "source": "NPR Politics",
+      "url": "https://www.npr.org/2026/11/07/nx-s1-6007770/data-centers-activist-moratorium",
+      "heat": 75
+    },
+    {
+      "id": "868b6b652623",
+      "title": "“全球最佳航空公司”正在更新其商务和头等舱体验",
+      "summary": "新加坡航空公司正在推出新的机上座位、餐饮和娱乐选择，这是超过20亿新元投资的一部分。",
+      "category": "markets",
+      "country": "新加坡",
+      "city": null,
+      "lat": 1.35,
+      "lng": 103.82,
+      "locate_basis": "summary",
+      "image": "https://image.cnbcfm.com/api/v1/image/108525500-1793885177679-First_Class_Double_Bed_2.png?v=1794020405&w=1920&h=1080",
+      "published_at": "2026-11-07T03:11:28Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/11/06/singapore-airlines-new-first-business-class-a350-starlink.html",
+      "heat": 75
+    },
     {
       "id": "d987cd6c8cd8",
       "title": "随着投资者在中期选举后权衡伊朗冲突风险，油价本周暴跌",
@@ -18,7 +130,7 @@
       "published_at": "2026-11-06T19:54:30Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/11/06/oil-price-today-brent-wti.html",
-      "heat": 87
+      "heat": 75
     },
     {
       "id": "1f65a6b29c86",
@@ -34,7 +146,7 @@
       "published_at": "2026-11-06T20:58:00Z",
       "source": "MarketWatch Top",
       "url": "https://www.marketwatch.com/story/microns-stock-is-dirt-cheap-and-thats-igniting-a-fierce-online-debate-0626791d?mod=mw_rss_topstories",
-      "heat": 85
+      "heat": 73
     },
     {
       "id": "808d98537454",
@@ -50,7 +162,23 @@
       "published_at": "2026-11-06T21:58:09Z",
       "source": "NPR Business",
       "url": "https://www.npr.org/2026/11/06/nx-s1-6032695/this-was-the-week-the-ai-trade-cracked-so-whats-next",
-      "heat": 84
+      "heat": 72
+    },
+    {
+      "id": "82a79116efba",
+      "title": "政治周：特朗普任命米勒为幕僚长；加倍反对特朗普主义",
+      "summary": "特朗普总统决定让斯蒂芬·米勒（ Stephen Miller ）担任新的幕僚长，是对中期结果的指责，也是对特朗普主义的双重打击。",
+      "category": "politics",
+      "country": null,
+      "city": null,
+      "lat": null,
+      "lng": null,
+      "locate_basis": null,
+      "image": "https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg",
+      "published_at": "2026-11-07T12:41:07Z",
+      "source": "NPR Politics",
+      "url": "https://www.npr.org/2026/11/07/nx-s1-6030908/week-in-politics-trump-taps-miller-for-chief-of-staff-doubles-down-on-trumpism",
+      "heat": 71
     },
     {
       "id": "88dc96be3fad",
@@ -66,7 +194,7 @@
       "published_at": "2026-11-06T21:22:40Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/11/05/stock-market-today-live-updates.html",
-      "heat": 83
+      "heat": 70
     },
     {
       "id": "9819550d7b18",
@@ -82,39 +210,7 @@
       "published_at": "2026-11-06T21:07:07Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/11/06/investors-brace-for-anthropic-valuation-1point5-trillion-a-stretch.html",
-      "heat": 82
-    },
-    {
-      "id": "7c51b19e598b",
-      "title": "斯蒂芬·米勒接替苏茜·怀尔斯出任白宫办公厅主任",
-      "summary": "特朗普总统周五表示，白宫办公厅主任苏茜·怀尔斯（ Susie Wiles ）将被斯蒂芬·米勒（ Step这一变化发生在共和党人在中期选举中被赶下台之后。",
-      "category": "politics",
-      "country": null,
-      "city": null,
-      "lat": null,
-      "lng": null,
-      "locate_basis": null,
-      "image": "https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg",
-      "published_at": "2026-11-06T22:21:35Z",
-      "source": "NPR Politics",
-      "url": "https://www.npr.org/2026/11/06/nx-s1-6032810/stephen-miller-replaces-susie-wiles-as-white-house-chief-of-staff",
-      "heat": 81
-    },
-    {
-      "id": "e4f448734a06",
-      "title": "即将上任的美国参议员阶层充满了历史性的第一",
-      "summary": "从第一位当选美国参议院的美国原住民女性，到第一位加入上议院的穆斯林，再到参议院的第一位残奥会选手，选民们周二选出了历史性的候选人。",
-      "category": "politics",
-      "country": "美国",
-      "city": null,
-      "lat": 37.09,
-      "lng": -95.71,
-      "locate_basis": "title",
-      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3000x1688+0+156/resize/1400/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F89%2F45%2Fec329b15426b8f905036518cfcae%2Fdems-senate-history.jpg",
-      "published_at": "2026-11-06T20:21:13Z",
-      "source": "NPR Politics",
-      "url": "https://www.npr.org/2026/11/06/nx-s1-6032814/senate-history-election-pappas-andrews-el-sayed",
-      "heat": 81
+      "heat": 70
     },
     {
       "id": "7b69296aec77",
@@ -130,7 +226,23 @@
       "published_at": "2026-11-06T19:00:21Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/11/06/nx-s1-6032602/cyberattack-blood-bank-healthcare",
-      "heat": 81
+      "heat": 69
+    },
+    {
+      "id": "7c51b19e598b",
+      "title": "斯蒂芬·米勒接替苏茜·怀尔斯出任白宫办公厅主任",
+      "summary": "特朗普总统周五表示，白宫办公厅主任苏茜·怀尔斯（ Susie Wiles ）将被斯蒂芬·米勒（ Step这一变化发生在共和党人在中期选举中被赶下台之后。",
+      "category": "politics",
+      "country": null,
+      "city": null,
+      "lat": null,
+      "lng": null,
+      "locate_basis": null,
+      "image": "https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg",
+      "published_at": "2026-11-06T22:21:35Z",
+      "source": "NPR Politics",
+      "url": "https://www.npr.org/2026/11/06/nx-s1-6032810/stephen-miller-replaces-susie-wiles-as-white-house-chief-of-staff",
+      "heat": 68
     },
     {
       "id": "e29f292cc555",
@@ -146,7 +258,7 @@
       "published_at": "2026-11-06T22:33:11Z",
       "source": "NPR Politics",
       "url": "https://www.npr.org/2026/11/06/nx-s1-6029750/american-democracy-was-a-big-winner-in-the-midterms",
-      "heat": 79
+      "heat": 67
     },
     {
       "id": "389b46270e37",
@@ -162,7 +274,7 @@
       "published_at": "2026-11-06T20:42:51Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/11/06/g-s1-152138/israel-election-palestinian-arab-parties",
-      "heat": 79
+      "heat": 67
     },
     {
       "id": "137649352426",
@@ -178,7 +290,7 @@
       "published_at": "2026-11-06T16:06:59Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/11/06/jobs-report-october-2026.html",
-      "heat": 79
+      "heat": 67
     },
     {
       "id": "4a68b09ce74d",
@@ -194,71 +306,7 @@
       "published_at": "2026-11-06T21:37:00Z",
       "source": "MarketWatch Top",
       "url": "https://www.marketwatch.com/story/data-centers-run-on-debt-that-was-a-problem-for-bonds-this-year-and-its-only-going-to-get-worse-09c03be6?mod=mw_rss_topstories",
-      "heat": 78
-    },
-    {
-      "id": "0ca137083b93",
-      "title": "没有人知道密西西比州参议院竞选中还有多少选票",
-      "summary": "共和党参议员辛迪·海德-史密斯(Cindy Hyde-Smith)和民主党参议员斯科特·科洛姆(Scott Colom)之间的微不足道的差距正在凸显密西西比州的选举进程，密西西比州是美国最慢、最分散的选举进程之一。",
-      "category": "politics",
-      "country": "美国",
-      "city": null,
-      "lat": 37.09,
-      "lng": -95.71,
-      "locate_basis": "summary",
-      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4981x2802+0+15/resize/1400/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F37%2F99%2F2d61aae94ab9843e5fad2fe5274f%2Fgettyimages-2303247634.jpg",
-      "published_at": "2026-11-06T19:50:14Z",
-      "source": "NPR Politics",
-      "url": "https://www.npr.org/2026/11/06/nx-s1-6030645/mississippi-senate-results-provisional-ballots",
-      "heat": 77
-    },
-    {
-      "id": "4fbe7747124b",
-      "title": "纳斯达克抛售重创亚洲芯片股， SK海力士、三星、软银、台积电下跌",
-      "summary": "亚洲科技股周五大跌，追踪华尔街一夜之间的大幅抛售，导致科技股巨头纳斯达克综合指数(Nasdaq Composite)进入修正区间。",
-      "category": "markets",
-      "country": "美国",
-      "city": null,
-      "lat": 38.91,
-      "lng": -77.04,
-      "locate_basis": "source",
-      "image": "https://image.cnbcfm.com/api/v1/image/108256608-1769204635647-gettyimages-1237668341-TAIWAN_TSMC.jpeg?v=1775649989&w=1920&h=1080",
-      "published_at": "2026-11-06T11:06:58Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/11/06/tech-stocks-sk-hynix-samsung-softbank.html",
-      "heat": 76
-    },
-    {
-      "id": "b01cb2a19c6f",
-      "title": "关于德克萨斯州首位拉丁裔州长Gina Hinojosa的须知",
-      "summary": "来自里奥格兰德河谷的州代表吉娜·伊诺霍萨（ Gina Hinojosa ）的立法重点是促进公共教育系统，她将成为德克萨斯州第一位拉丁裔州长。",
-      "category": "politics",
-      "country": null,
-      "city": null,
-      "lat": null,
-      "lng": null,
-      "locate_basis": null,
-      "image": "https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg",
-      "published_at": "2026-11-06T22:26:00Z",
-      "source": "NPR Politics",
-      "url": "https://www.npr.org/2026/11/06/nx-s1-6030822/what-to-know-about-gina-hinojosa-texas-first-latina-governor-elect",
-      "heat": 73
-    },
-    {
-      "id": "278f36fe9a87",
-      "title": "经济推动民主党取得胜利。他们实际上能做些什么？",
-      "summary": "民主党在中期选举中的巨大胜利可以归结为对高生活成本和天然气价格的挫败感。但在分裂的政府中，民主党人能做多少？",
-      "category": "politics",
-      "country": null,
-      "city": null,
-      "lat": null,
-      "lng": null,
-      "locate_basis": null,
-      "image": "https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg",
-      "published_at": "2026-11-06T21:53:10Z",
-      "source": "NPR Politics",
-      "url": "https://www.npr.org/2026/11/06/nx-s1-6026662/the-economy-propelled-democrats-to-victory-what-can-they-actually-do-about-it",
-      "heat": 68
+      "heat": 66
     },
     {
       "id": "6e614a2bab6d",
@@ -274,55 +322,7 @@
       "published_at": "2026-11-06T10:39:51Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/11/06/defense-military-tech-earnings.html",
-      "heat": 67
-    },
-    {
-      "id": "72c837945906",
-      "title": "“他必须走了” ： Hakeem Jeffries呼吁罢免Hegseth ，但没有弹劾",
-      "summary": "在接受晨报采访时，哈基姆·杰弗里斯（ Hakeem Jeffries ）讨论了结束伊朗战争，追究特朗普的责任，并呼吁建立新的民主党领导层，但没有提供民主党将如何实现的具体细节。",
-      "category": "geopolitics",
-      "country": "伊朗",
-      "city": null,
-      "lat": 35.41,
-      "lng": 51.37,
-      "locate_basis": "summary",
-      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/794x447+0+53/resize/1400/quality/85/format/webp/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fd3%2F6c%2F7289955b4f2a806ae70f6509114f%2Fgettyimages-2303508610.jpg",
-      "published_at": "2026-11-06T11:58:56Z",
-      "source": "NPR Politics",
-      "url": "https://www.npr.org/2026/11/06/nx-s1-6030799/democrats-ran-on-affordability-how-will-the-party-make-it-happen",
-      "heat": 65
-    },
-    {
-      "id": "66fec0a8ef17",
-      "title": "从坦克到无人机：韩国国防公司面临新的战场考验",
-      "summary": "韩国国防库存在过去两年中经历了一波全球重整军备的浪潮，但它们在2026年暴跌。",
-      "category": "geopolitics",
-      "country": "韩国",
-      "city": null,
-      "lat": 35.91,
-      "lng": 127.77,
-      "locate_basis": "title",
-      "image": "https://image.cnbcfm.com/api/v1/image/108521824-1793834191775-gettyimages-2297445294-jung-78thanni260929_npdlt.jpeg?v=1793834263&w=1920&h=1080",
-      "published_at": "2026-11-05T08:07:43Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/11/05/south-korea-defense-weapon-war-stocks-fall.html",
-      "heat": 38
-    },
-    {
-      "id": "3d86b3d15784",
-      "title": "芯片人才大战的内幕：商业秘密与崛起的中国竞争对手",
-      "summary": "随着中国芯片制造商取得进展，对半导体人才的竞争日益激烈，加剧了对商业秘密的争夺。",
-      "category": "geopolitics",
-      "country": "中国",
-      "city": null,
-      "lat": 35.86,
-      "lng": 104.19,
-      "locate_basis": "title",
-      "image": "https://image.cnbcfm.com/api/v1/image/108069758-1733118336505-2024-12-02T050134Z_2373890_RC2VCZ9ITXAP_RTRMADP_3_USA-CHINA-CHIPS.JPG?v=1733118398&w=1920&h=1080",
-      "published_at": "2026-11-05T03:53:18Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/11/05/semiconductor-china-korea-talents-rivalry.html",
-      "heat": 33
+      "heat": 55
     }
   ]
 }

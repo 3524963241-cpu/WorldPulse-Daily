@@ -1,32 +1,32 @@
 {
   "date": "2026-11-07",
-  "updated_at": "2026-11-07T01:33:58Z",
+  "updated_at": "2026-11-07T13:23:56Z",
   "total": 20,
   "by_category": {
-    "geopolitics": 4,
-    "politics": 7,
-    "markets": 9
+    "geopolitics": 2,
+    "politics": 8,
+    "markets": 10
   },
   "top3": [
     {
-      "id": "d987cd6c8cd8",
-      "title": "随着投资者在中期选举后权衡伊朗冲突风险，油价本周暴跌",
-      "heat": 87
+      "id": "5cd98d44aef0",
+      "title": "蔑视市长迈克·麦肯（ Mike McCann ）谈共和党人如何在中期亏损后重组",
+      "heat": 83
     },
     {
-      "id": "1f65a6b29c86",
-      "title": "美光的股票非常便宜—这引发了激烈的在线辩论",
-      "heat": 85
+      "id": "d374899819d0",
+      "title": "Deb Haaland的新墨西哥挑战",
+      "heat": 81
     },
     {
-      "id": "808d98537454",
-      "title": "这是人工智能交易破裂的一周。那么接下来呢？",
-      "heat": 84
+      "id": "fb30c972dfd0",
+      "title": "特朗普表示，随着导弹袭击格什姆岛，美国对伊朗进行了“小规模打击”",
+      "heat": 79
     }
   ],
   "geo": {
-    "located": 16,
-    "has_country": 16,
+    "located": 14,
+    "has_country": 14,
     "has_city": 0,
     "countries": 6,
     "top_country": "美国",
@@ -35,26 +35,26 @@
   "sections": [
     {
       "category": "geopolitics",
-      "count": 4,
-      "text": "地缘冲突 4 条，最受关注的是《无人机正在改变战争。但国防巨头仍在从老式武器中赚取数十亿美元》（热度 67），来自 CNBC World News。其余报道来自 NPR Politics。"
+      "count": 2,
+      "text": "地缘冲突 2 条，最受关注的是《特朗普表示，随着导弹袭击格什姆岛，美国对伊朗进行了“小规模打击”》（热度 79），来自 CNBC World News。"
     },
     {
       "category": "politics",
-      "count": 7,
-      "text": "国际政治 7 条，最受关注的是《斯蒂芬·米勒接替苏茜·怀尔斯出任白宫办公厅主任》（热度 81），来自 NPR Politics。其余报道来自 NPR World。"
+      "count": 8,
+      "text": "国际政治 8 条，最受关注的是《蔑视市长迈克·麦肯（ Mike McCann ）谈共和党人如何在中期亏损后重组》（热度 83），来自 NPR Politics。其余报道来自 NPR World。"
     },
     {
       "category": "markets",
-      "count": 9,
-      "text": "金融市场 9 条，最受关注的是《随着投资者在中期选举后权衡伊朗冲突风险，油价本周暴跌》（热度 87），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR Business、NPR World。"
+      "count": 10,
+      "text": "金融市场 10 条，最受关注的是《一位意想不到的活动家出现，帮助阻止马里兰州一个价值50亿美元的数据中心》（热度 75），来自 NPR Politics。其余报道来自 CNBC World News、MarketWatch Top、NPR Business、NPR World。"
     }
   ],
   "paragraphs": [
     "本期共收录 20 条国际新闻，来自 5 个来源。",
-    "按领域分布为：地缘冲突 4 条、国际政治 7 条、金融市场 9 条。",
-    "地理上看，美国出现最多，共 10 条；6 个国家/地区被提及。",
-    "地缘冲突 4 条，最受关注的是《无人机正在改变战争。但国防巨头仍在从老式武器中赚取数十亿美元》（热度 67），来自 CNBC World News。其余报道来自 NPR Politics。",
-    "国际政治 7 条，最受关注的是《斯蒂芬·米勒接替苏茜·怀尔斯出任白宫办公厅主任》（热度 81），来自 NPR Politics。其余报道来自 NPR World。",
-    "金融市场 9 条，最受关注的是《随着投资者在中期选举后权衡伊朗冲突风险，油价本周暴跌》（热度 87），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR Business、NPR World。"
+    "按领域分布为：地缘冲突 2 条、国际政治 8 条、金融市场 10 条。",
+    "地理上看，美国出现最多，共 9 条；6 个国家/地区被提及。",
+    "地缘冲突 2 条，最受关注的是《特朗普表示，随着导弹袭击格什姆岛，美国对伊朗进行了“小规模打击”》（热度 79），来自 CNBC World News。",
+    "国际政治 8 条，最受关注的是《蔑视市长迈克·麦肯（ Mike McCann ）谈共和党人如何在中期亏损后重组》（热度 83），来自 NPR Politics。其余报道来自 NPR World。",
+    "金融市场 10 条，最受关注的是《一位意想不到的活动家出现，帮助阻止马里兰州一个价值50亿美元的数据中心》（热度 75），来自 NPR Politics。其余报道来自 CNBC World News、MarketWatch Top、NPR Business、NPR World。"
   ]
 }
