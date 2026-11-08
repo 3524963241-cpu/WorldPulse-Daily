@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-08",
+  "updated_at": "2026-11-08T01:41:23Z",
+  "total": 20,
+  "by_category": {
+    "geopolitics": 5,
+    "politics": 7,
+    "markets": 8
+  },
+  "top3": [
+    {
+      "id": "d28f9d856987",
+      "title": "以色列总统任命反对派候选人，而不是内塔尼亚胡组建政府",
+      "heat": 94
+    },
+    {
+      "id": "5829d9d78a07",
+      "title": "以色列总统邀请内塔尼亚胡反对派领导人促成新政府",
+      "heat": 92
+    },
+    {
+      "id": "1ba7c603d63e",
+      "title": "以色列总统利用反对派候选人艾森科特组建政府，给内塔尼亚胡带来挫折",
+      "heat": 90
+    }
+  ],
+  "geo": {
+    "located": 17,
+    "has_country": 17,
+    "has_city": 2,
+    "countries": 7,
+    "top_country": "美国",
+    "cities": [
+      {
+        "city": "圣地亚哥",
+        "count": 1
+      },
+      {
+        "city": "基辅",
+        "count": 1
+      }
+    ]
+  },
+  "sections": [
+    {
+      "category": "geopolitics",
+      "count": 5,
+      "text": "地缘冲突 5 条，最受关注的是《部长说，在克拉科夫杀害6人的波兰枪手有“极端民族主义”观点》（热度 78），来自 CNBC World News。"
+    },
+    {
+      "category": "politics",
+      "count": 7,
+      "text": "国际政治 7 条，最受关注的是《以色列总统任命反对派候选人，而不是内塔尼亚胡组建政府》（热度 94），来自 NPR World。其余报道来自 CNBC World News、NPR Politics。"
+    },
+    {
+      "category": "markets",
+      "count": 8,
+      "text": "金融市场 8 条，最受关注的是《再猜猜我的顾问：年金在这个市场上是正确的举动吗？》（热度 73），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Politics。"
+    }
+  ],
+  "paragraphs": [
+    "本期共收录 20 条国际新闻，来自 4 个来源。",
+    "按领域分布为：地缘冲突 5 条、国际政治 7 条、金融市场 8 条。",
+    "地理上看，美国出现最多，共 9 条；7 个国家/地区被提及。",
+    "涉及城市共 2 个，其中 圣地亚哥 1 条、基辅 1 条。",
+    "地缘冲突 5 条，最受关注的是《部长说，在克拉科夫杀害6人的波兰枪手有“极端民族主义”观点》（热度 78），来自 CNBC World News。",
+    "国际政治 7 条，最受关注的是《以色列总统任命反对派候选人，而不是内塔尼亚胡组建政府》（热度 94），来自 NPR World。其余报道来自 CNBC World News、NPR Politics。",
+    "金融市场 8 条，最受关注的是《再猜猜我的顾问：年金在这个市场上是正确的举动吗？》（热度 73），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Politics。"
+  ]
+}
