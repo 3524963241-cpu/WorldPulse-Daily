@@ -1,70 +1,60 @@
 {
   "date": "2026-11-11",
-  "updated_at": "2026-11-11T01:39:41Z",
+  "updated_at": "2026-11-11T13:42:35Z",
   "total": 20,
   "by_category": {
-    "geopolitics": 4,
+    "geopolitics": 5,
     "politics": 7,
-    "markets": 9
+    "markets": 8
   },
   "top3": [
     {
-      "id": "3bbd319f62a6",
-      "title": "随着人工智能审查的加强， Anthopic开放澳大利亚零售IPO发行",
-      "heat": 97
+      "id": "88424691366e",
+      "title": "随着人工智能交易的绊脚石，市场焦虑正在将投资者推向低波动性股票",
+      "heat": 95
     },
     {
-      "id": "7290b0c33712",
-      "title": "随着市场试图从英伟达主导的下跌中恢复过来，股票期货略有上涨：实时更新",
-      "heat": 91
+      "id": "16acc59220e3",
+      "title": "官员说，俄罗斯和乌克兰同意大规模交换战俘",
+      "heat": 92
     },
     {
-      "id": "22aea30bc784",
-      "title": "随着新的融资剧本缓解债务担忧， CoreWeave的股票弹出",
-      "heat": 90
+      "id": "4482bc3c74e5",
+      "title": "随着首席执行官概述反击计划，日产再次下调对中国困境的销售预测",
+      "heat": 89
     }
   ],
   "geo": {
-    "located": 17,
-    "has_country": 17,
-    "has_city": 4,
-    "countries": 6,
+    "located": 19,
+    "has_country": 19,
+    "has_city": 0,
+    "countries": 11,
     "top_country": "美国",
-    "cities": [
-      {
-        "city": "华盛顿",
-        "count": 2
-      },
-      {
-        "city": "阿布扎比",
-        "count": 2
-      }
-    ]
+    "cities": []
   },
   "sections": [
     {
       "category": "geopolitics",
-      "count": 4,
-      "text": "地缘冲突 4 条，最受关注的是《布伦特原油自8月以来首次短暂跌破90 $》（热度 76），来自 CNBC World News。其余报道来自 NPR Business、NPR World。"
+      "count": 5,
+      "text": "地缘冲突 5 条，最受关注的是《官员说，俄罗斯和乌克兰同意大规模交换战俘》（热度 92），来自 NPR World。其余报道来自 CNBC World News。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《众议院共和党人选举吉姆·乔丹为下一任领导人》（热度 78），来自 NPR Politics。其余报道来自 CNBC World News、NPR World。"
+      "text": "国际政治 7 条，最受关注的是《西班牙14年来首次总罢工要求解决住房危机》（热度 84），来自 NPR World。其余报道来自 CNBC World News、NPR Business、NPR Politics。"
     },
     {
       "category": "markets",
-      "count": 9,
-      "text": "金融市场 9 条，最受关注的是《随着人工智能审查的加强， Anthopic开放澳大利亚零售IPO发行》（热度 97），来自 CNBC World News。其余报道来自 MarketWatch Top。"
+      "count": 8,
+      "text": "金融市场 8 条，最受关注的是《随着人工智能交易的绊脚石，市场焦虑正在将投资者推向低波动性股票》（热度 95），来自 MarketWatch Top。其余报道来自 CNBC World News。"
     }
   ],
   "paragraphs": [
     "本期共收录 20 条国际新闻，来自 5 个来源。",
-    "按领域分布为：地缘冲突 4 条、国际政治 7 条、金融市场 9 条。",
-    "地理上看，美国出现最多，共 10 条；6 个国家/地区被提及。",
-    "涉及城市共 2 个，其中 华盛顿 2 条、阿布扎比 2 条。",
-    "地缘冲突 4 条，最受关注的是《布伦特原油自8月以来首次短暂跌破90 $》（热度 76），来自 CNBC World News。其余报道来自 NPR Business、NPR World。",
-    "国际政治 7 条，最受关注的是《众议院共和党人选举吉姆·乔丹为下一任领导人》（热度 78），来自 NPR Politics。其余报道来自 CNBC World News、NPR World。",
-    "金融市场 9 条，最受关注的是《随着人工智能审查的加强， Anthopic开放澳大利亚零售IPO发行》（热度 97），来自 CNBC World News。其余报道来自 MarketWatch Top。"
+    "按领域分布为：地缘冲突 5 条、国际政治 7 条、金融市场 8 条。",
+    "地理上看，美国出现最多，共 6 条；11 个国家/地区被提及。",
+    "地缘冲突 5 条，最受关注的是《官员说，俄罗斯和乌克兰同意大规模交换战俘》（热度 92），来自 NPR World。其余报道来自 CNBC World News。",
+    "国际政治 7 条，最受关注的是《西班牙14年来首次总罢工要求解决住房危机》（热度 84），来自 NPR World。其余报道来自 CNBC World News、NPR Business、NPR Politics。",
+    "金融市场 8 条，最受关注的是《随着人工智能交易的绊脚石，市场焦虑正在将投资者推向低波动性股票》（热度 95），来自 MarketWatch Top。其余报道来自 CNBC World News。"
   ]
 }
