@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-12",
+  "updated_at": "2026-11-12T01:49:55Z",
+  "total": 20,
+  "by_category": {
+    "geopolitics": 5,
+    "politics": 7,
+    "markets": 8
+  },
+  "top3": [
+    {
+      "id": "50fb4fd017ab",
+      "title": "纳斯达克期货下跌，英伟达盘后股价大跌8%，原因是传出董事会可能罢免黄仁勋的消息",
+      "heat": 93
+    },
+    {
+      "id": "3a7234e850d1",
+      "title": "加拿大驻美大使警告称，特朗普的关税正在推高成本，威胁美国投资",
+      "heat": 90
+    },
+    {
+      "id": "9025751a9769",
+      "title": "油价下跌已不足以降低全球最重要的债券市场的借贷成本",
+      "heat": 90
+    }
+  ],
+  "geo": {
+    "located": 17,
+    "has_country": 17,
+    "has_city": 0,
+    "countries": 7,
+    "top_country": "美国",
+    "cities": []
+  },
+  "sections": [
+    {
+      "category": "geopolitics",
+      "count": 5,
+      "text": "地缘冲突 5 条，最受关注的是《大选竞选活动前，抗议者与警方发生冲突，西班牙因大罢工陷入瘫痪》（热度 77），来自 CNBC World News。其余报道来自 NPR World。"
+    },
+    {
+      "category": "politics",
+      "count": 7,
+      "text": "国际政治 7 条，最受关注的是《民主党人斯科特·科洛姆赢得密西西比州参议员选举》（热度 84），来自 NPR Politics。其余报道来自 CNBC World News、MarketWatch Top。"
+    },
+    {
+      "category": "markets",
+      "count": 8,
+      "text": "金融市场 8 条，最受关注的是《纳斯达克期货下跌，英伟达盘后股价大跌8%，原因是传出董事会可能罢免黄仁勋的消息》（热度 93），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+    }
+  ],
+  "paragraphs": [
+    "本期共收录 20 条国际新闻，来自 4 个来源。",
+    "按领域分布为：地缘冲突 5 条、国际政治 7 条、金融市场 8 条。",
+    "地理上看，美国出现最多，共 9 条；7 个国家/地区被提及。",
+    "地缘冲突 5 条，最受关注的是《大选竞选活动前，抗议者与警方发生冲突，西班牙因大罢工陷入瘫痪》（热度 77），来自 CNBC World News。其余报道来自 NPR World。",
+    "国际政治 7 条，最受关注的是《民主党人斯科特·科洛姆赢得密西西比州参议员选举》（热度 84），来自 NPR Politics。其余报道来自 CNBC World News、MarketWatch Top。",
+    "金融市场 8 条，最受关注的是《纳斯达克期货下跌，英伟达盘后股价大跌8%，原因是传出董事会可能罢免黄仁勋的消息》（热度 93），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+  ]
+}
