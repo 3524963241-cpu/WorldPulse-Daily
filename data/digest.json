@@ -1,40 +1,36 @@
 {
-  "date": "2026-11-14",
-  "updated_at": "2026-11-14T06:55:34Z",
+  "date": "2026-11-15",
+  "updated_at": "2026-11-14T18:24:20Z",
   "total": 20,
   "by_category": {
-    "geopolitics": 5,
+    "geopolitics": 2,
     "politics": 7,
-    "markets": 8
+    "markets": 11
   },
   "top3": [
     {
-      "id": "22e25ab09049",
-      "title": "比特币目前价格低于69,000美元，如果投资者套现以购买Anthropic的IPO，其价格可能会进一步下跌。",
-      "heat": 84
+      "id": "5a17e111c7ee",
+      "title": "美国企业在退休问题上犯下的万亿美元错误",
+      "heat": 95
     },
     {
-      "id": "669c23ed07c3",
-      "title": "精选 14 只具有长期增长潜力的分红股",
-      "heat": 81
+      "id": "86cee693d648",
+      "title": "燃料危机和抗议活动给智利极右翼总统带来压力",
+      "heat": 94
     },
     {
-      "id": "6265171fc13e",
-      "title": "英伟达的股价正经历14年来未曾有过的连跌。接下来会怎样？",
-      "heat": 81
+      "id": "9a2034b63080",
+      "title": "两位主要投资者敦促英伟达董事会考虑“黄仁勋可能回归”",
+      "heat": 86
     }
   ],
   "geo": {
     "located": 16,
     "has_country": 16,
-    "has_city": 2,
+    "has_city": 1,
     "countries": 5,
     "top_country": "美国",
     "cities": [
-      {
-        "city": "华盛顿",
-        "count": 1
-      },
       {
         "city": "芝加哥",
         "count": 1
@@ -44,27 +40,27 @@
   "sections": [
     {
       "category": "geopolitics",
-      "count": 5,
-      "text": "地缘冲突 5 条，最受关注的是《特朗普现在对伊朗的策略是什么？维持现状》（热度 76），来自 NPR World。其余报道来自 CNBC World News、MarketWatch Top、NPR Business。"
+      "count": 2,
+      "text": "地缘冲突 2 条，最受关注的是《特朗普现在对伊朗的策略是什么？维持现状》（热度 64），来自 NPR World。其余报道来自 NPR Business。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《民主党人乔纳森·克莱斯-汤姆金斯赢得阿拉斯加州州长竞选，接替共和党人》（热度 74），来自 NPR Politics。其余报道来自 CNBC World News、NPR Business。"
+      "text": "国际政治 7 条，最受关注的是《燃料危机和抗议活动给智利极右翼总统带来压力》（热度 94），来自 NPR World。其余报道来自 CNBC World News、MarketWatch Top、NPR Politics。"
     },
     {
       "category": "markets",
-      "count": 8,
-      "text": "金融市场 8 条，最受关注的是《比特币目前价格低于69,000美元，如果投资者套现以购买Anthropic的IPO，其价格可能会进一步下跌。》（热度 84），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+      "count": 11,
+      "text": "金融市场 11 条，最受关注的是《美国企业在退休问题上犯下的万亿美元错误》（热度 95），来自 MarketWatch Top。其余报道来自 CNBC World News。"
     }
   ],
   "paragraphs": [
     "本期共收录 20 条国际新闻，来自 5 个来源。",
-    "按领域分布为：地缘冲突 5 条、国际政治 7 条、金融市场 8 条。",
-    "地理上看，美国出现最多，共 11 条；5 个国家/地区被提及。",
-    "涉及城市共 2 个，其中 华盛顿 1 条、芝加哥 1 条。",
-    "地缘冲突 5 条，最受关注的是《特朗普现在对伊朗的策略是什么？维持现状》（热度 76），来自 NPR World。其余报道来自 CNBC World News、MarketWatch Top、NPR Business。",
-    "国际政治 7 条，最受关注的是《民主党人乔纳森·克莱斯-汤姆金斯赢得阿拉斯加州州长竞选，接替共和党人》（热度 74），来自 NPR Politics。其余报道来自 CNBC World News、NPR Business。",
-    "金融市场 8 条，最受关注的是《比特币目前价格低于69,000美元，如果投资者套现以购买Anthropic的IPO，其价格可能会进一步下跌。》（热度 84），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+    "按领域分布为：地缘冲突 2 条、国际政治 7 条、金融市场 11 条。",
+    "地理上看，美国出现最多，共 12 条；5 个国家/地区被提及。",
+    "涉及城市共 1 个，其中 芝加哥 1 条。",
+    "地缘冲突 2 条，最受关注的是《特朗普现在对伊朗的策略是什么？维持现状》（热度 64），来自 NPR World。其余报道来自 NPR Business。",
+    "国际政治 7 条，最受关注的是《燃料危机和抗议活动给智利极右翼总统带来压力》（热度 94），来自 NPR World。其余报道来自 CNBC World News、MarketWatch Top、NPR Politics。",
+    "金融市场 11 条，最受关注的是《美国企业在退休问题上犯下的万亿美元错误》（热度 95），来自 MarketWatch Top。其余报道来自 CNBC World News。"
   ]
 }
