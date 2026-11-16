@@ -1,27 +1,27 @@
 {
   "date": "2026-11-16",
-  "updated_at": "2026-11-15T19:01:37Z",
+  "updated_at": "2026-11-16T07:09:05Z",
   "total": 20,
   "by_category": {
     "geopolitics": 2,
-    "politics": 10,
-    "markets": 8
+    "politics": 7,
+    "markets": 11
   },
   "top3": [
     {
-      "id": "b72b37f4b8e5",
-      "title": "也门反胡塞武装撤退，伊朗袭击巴林，对美国基地发动袭击",
-      "heat": 92
+      "id": "857ef7e49678",
+      "title": "随着交易员本周为英伟达的财报和Anthropic的IPO做好准备，股指期货走低：实时更新",
+      "heat": 91
     },
     {
-      "id": "8956f4d4e1c4",
-      "title": "如今，中国最热门的股票有一个共同点：名字听起来像羊。",
-      "heat": 88
+      "id": "fd6ebbed2fe0",
+      "title": "中国确认习近平-特朗普-普京历史性峰会。议程上将有哪些内容？",
+      "heat": 86
     },
     {
-      "id": "66ac70ca0fa6",
-      "title": "在呼吁结束伊朗战争时，万斯与特朗普的立场微妙相仿",
-      "heat": 84
+      "id": "25181e535952",
+      "title": "对特朗普和习近平即将举行的中国会晤有何期待",
+      "heat": 83
     }
   ],
   "geo": {
@@ -41,26 +41,26 @@
     {
       "category": "geopolitics",
       "count": 2,
-      "text": "地缘冲突 2 条，最受关注的是《也门反胡塞武装撤退，伊朗袭击巴林，对美国基地发动袭击》（热度 92），来自 CNBC World News。其余报道来自 NPR World。"
+      "text": "地缘冲突 2 条，最受关注的是《中国确认习近平-特朗普-普京历史性峰会。议程上将有哪些内容？》（热度 86），来自 CNBC World News。"
     },
     {
       "category": "politics",
-      "count": 10,
-      "text": "国际政治 10 条，最受关注的是《在呼吁结束伊朗战争时，万斯与特朗普的立场微妙相仿》（热度 84），来自 NPR Politics。其余报道来自 CNBC World News、MarketWatch Top、NPR Business、NPR World。"
+      "count": 7,
+      "text": "国际政治 7 条，最受关注的是《对特朗普和习近平即将举行的中国会晤有何期待》（热度 83），来自 NPR World。其余报道来自 CNBC World News、NPR Business、NPR Politics。"
     },
     {
       "category": "markets",
-      "count": 8,
-      "text": "金融市场 8 条，最受关注的是《如今，中国最热门的股票有一个共同点：名字听起来像羊。》（热度 88），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+      "count": 11,
+      "text": "金融市场 11 条，最受关注的是《随着交易员本周为英伟达的财报和Anthropic的IPO做好准备，股指期货走低：实时更新》（热度 91），来自 CNBC World News。其余报道来自 MarketWatch Top。"
     }
   ],
   "paragraphs": [
     "本期共收录 20 条国际新闻，来自 5 个来源。",
-    "按领域分布为：地缘冲突 2 条、国际政治 10 条、金融市场 8 条。",
+    "按领域分布为：地缘冲突 2 条、国际政治 7 条、金融市场 11 条。",
     "地理上看，美国出现最多，共 10 条；6 个国家/地区被提及。",
     "涉及城市共 1 个，其中 华盛顿 1 条。",
-    "地缘冲突 2 条，最受关注的是《也门反胡塞武装撤退，伊朗袭击巴林，对美国基地发动袭击》（热度 92），来自 CNBC World News。其余报道来自 NPR World。",
-    "国际政治 10 条，最受关注的是《在呼吁结束伊朗战争时，万斯与特朗普的立场微妙相仿》（热度 84），来自 NPR Politics。其余报道来自 CNBC World News、MarketWatch Top、NPR Business、NPR World。",
-    "金融市场 8 条，最受关注的是《如今，中国最热门的股票有一个共同点：名字听起来像羊。》（热度 88），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+    "地缘冲突 2 条，最受关注的是《中国确认习近平-特朗普-普京历史性峰会。议程上将有哪些内容？》（热度 86），来自 CNBC World News。",
+    "国际政治 7 条，最受关注的是《对特朗普和习近平即将举行的中国会晤有何期待》（热度 83），来自 NPR World。其余报道来自 CNBC World News、NPR Business、NPR Politics。",
+    "金融市场 11 条，最受关注的是《随着交易员本周为英伟达的财报和Anthropic的IPO做好准备，股指期货走低：实时更新》（热度 91），来自 CNBC World News。其余报道来自 MarketWatch Top。"
   ]
 }
