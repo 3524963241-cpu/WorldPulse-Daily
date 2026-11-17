@@ -1,14 +1,14 @@
 {
-  "run_at": "2026-11-02T09:42:01+08:00",
+  "run_at": "2026-11-18T05:12:30+08:00",
   "ok_sources": 6,
   "total_sources": 6,
   "raw_count": 100,
-  "dedup_count": 99,
+  "dedup_count": 95,
   "time_filtered_count": 58,
-  "classified_count": 43,
-  "dropped_by_category": 15,
-  "located_count": 30,
-  "city_count": 3,
+  "classified_count": 41,
+  "dropped_by_category": 17,
+  "located_count": 35,
+  "city_count": 1,
   "with_image": 20,
   "final_count": 20,
   "category_dist": {
@@ -17,11 +17,10 @@
     "markets": 8
   },
   "source_dist": {
-    "MarketWatch Top": 2,
-    "CNBC World News": 11,
-    "NPR World": 3,
-    "NPR Politics": 3,
-    "NPR Business": 1
+    "MarketWatch Top": 6,
+    "NPR World": 5,
+    "CNBC World News": 8,
+    "NPR Politics": 1
   },
   "translate": {
     "provider": "mymemory",
