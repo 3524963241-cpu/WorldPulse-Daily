@@ -1,38 +1,38 @@
 {
-  "date": "2026-11-16",
-  "updated_at": "2026-11-16T07:09:05Z",
+  "date": "2026-11-17",
+  "updated_at": "2026-11-17T08:22:37Z",
   "total": 20,
   "by_category": {
-    "geopolitics": 2,
+    "geopolitics": 4,
     "politics": 7,
-    "markets": 11
+    "markets": 9
   },
   "top3": [
     {
-      "id": "857ef7e49678",
-      "title": "随着交易员本周为英伟达的财报和Anthropic的IPO做好准备，股指期货走低：实时更新",
-      "heat": 91
+      "id": "96dcbcfad7c4",
+      "title": "伯克希尔增加了对陷入困境的美国房地产市场的押注，同时对这些银行股的态度转为悲观",
+      "heat": 90
     },
     {
-      "id": "fd6ebbed2fe0",
-      "title": "中国确认习近平-特朗普-普京历史性峰会。议程上将有哪些内容？",
+      "id": "582e3b317aaa",
+      "title": "Payward联席首席执行官表示，随着代币化股票的增长，股市将转向全天候交易",
+      "heat": 87
+    },
+    {
+      "id": "b32037c1f57c",
+      "title": "美元受人工智能驱动的突破性走势可能成为股市的破坏性因素",
       "heat": 86
-    },
-    {
-      "id": "25181e535952",
-      "title": "对特朗普和习近平即将举行的中国会晤有何期待",
-      "heat": 83
     }
   ],
   "geo": {
-    "located": 18,
-    "has_country": 18,
+    "located": 17,
+    "has_country": 17,
     "has_city": 1,
-    "countries": 6,
+    "countries": 4,
     "top_country": "美国",
     "cities": [
       {
-        "city": "华盛顿",
+        "city": "日内瓦",
         "count": 1
       }
     ]
@@ -40,27 +40,27 @@
   "sections": [
     {
       "category": "geopolitics",
-      "count": 2,
-      "text": "地缘冲突 2 条，最受关注的是《中国确认习近平-特朗普-普京历史性峰会。议程上将有哪些内容？》（热度 86），来自 CNBC World News。"
+      "count": 4,
+      "text": "地缘冲突 4 条，最受关注的是《随着第三艘美国航母抵达中东以及油轮在霍尔木兹海峡遇袭，伊朗的威胁升级。》（热度 78），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《对特朗普和习近平即将举行的中国会晤有何期待》（热度 83），来自 NPR World。其余报道来自 CNBC World News、NPR Business、NPR Politics。"
+      "text": "国际政治 7 条，最受关注的是《黄仁勋丑闻如何使国会成为中美关系更大的风险》（热度 79），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR Politics、NPR World。"
     },
     {
       "category": "markets",
-      "count": 11,
-      "text": "金融市场 11 条，最受关注的是《随着交易员本周为英伟达的财报和Anthropic的IPO做好准备，股指期货走低：实时更新》（热度 91），来自 CNBC World News。其余报道来自 MarketWatch Top。"
+      "count": 9,
+      "text": "金融市场 9 条，最受关注的是《伯克希尔增加了对陷入困境的美国房地产市场的押注，同时对这些银行股的态度转为悲观》（热度 90），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR World。"
     }
   ],
   "paragraphs": [
-    "本期共收录 20 条国际新闻，来自 5 个来源。",
-    "按领域分布为：地缘冲突 2 条、国际政治 7 条、金融市场 11 条。",
-    "地理上看，美国出现最多，共 10 条；6 个国家/地区被提及。",
-    "涉及城市共 1 个，其中 华盛顿 1 条。",
-    "地缘冲突 2 条，最受关注的是《中国确认习近平-特朗普-普京历史性峰会。议程上将有哪些内容？》（热度 86），来自 CNBC World News。",
-    "国际政治 7 条，最受关注的是《对特朗普和习近平即将举行的中国会晤有何期待》（热度 83），来自 NPR World。其余报道来自 CNBC World News、NPR Business、NPR Politics。",
-    "金融市场 11 条，最受关注的是《随着交易员本周为英伟达的财报和Anthropic的IPO做好准备，股指期货走低：实时更新》（热度 91），来自 CNBC World News。其余报道来自 MarketWatch Top。"
+    "本期共收录 20 条国际新闻，来自 4 个来源。",
+    "按领域分布为：地缘冲突 4 条、国际政治 7 条、金融市场 9 条。",
+    "地理上看，美国出现最多，共 10 条；4 个国家/地区被提及。",
+    "涉及城市共 1 个，其中 日内瓦 1 条。",
+    "地缘冲突 4 条，最受关注的是《随着第三艘美国航母抵达中东以及油轮在霍尔木兹海峡遇袭，伊朗的威胁升级。》（热度 78），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。",
+    "国际政治 7 条，最受关注的是《黄仁勋丑闻如何使国会成为中美关系更大的风险》（热度 79），来自 CNBC World News。其余报道来自 MarketWatch Top、NPR Politics、NPR World。",
+    "金融市场 9 条，最受关注的是《伯克希尔增加了对陷入困境的美国房地产市场的押注，同时对这些银行股的态度转为悲观》（热度 90），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR World。"
   ]
 }
