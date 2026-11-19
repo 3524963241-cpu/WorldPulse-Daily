@@ -1,6 +1,12 @@
 {
   "dates": [
     {
+      "date": "2026-11-20",
+      "count": 20,
+      "generated_at": "2026-11-19T20:53:24Z",
+      "has_digest": true
+    },
+    {
       "date": "2026-11-19",
       "count": 20,
       "generated_at": "2026-11-18T20:48:02Z",
