@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-21",
+  "updated_at": "2026-11-20T20:38:59Z",
+  "total": 20,
+  "by_category": {
+    "geopolitics": 5,
+    "politics": 7,
+    "markets": 8
+  },
+  "top3": [
+    {
+      "id": "8bf1339f28ae",
+      "title": "策略师警告称，如果华尔街低估经济衰退的风险，股市可能会陷入“恶性循环”",
+      "heat": 96
+    },
+    {
+      "id": "b9618c609f31",
+      "title": "英伟达的股价正走向2008年以来未曾出现过的连续周跌幅",
+      "heat": 93
+    },
+    {
+      "id": "7bbdc82bf9fc",
+      "title": "美联储忙于抗通胀，无暇拯救股市",
+      "heat": 93
+    }
+  ],
+  "geo": {
+    "located": 17,
+    "has_country": 17,
+    "has_city": 0,
+    "countries": 6,
+    "top_country": "美国",
+    "cities": []
+  },
+  "sections": [
+    {
+      "category": "geopolitics",
+      "count": 5,
+      "text": "地缘冲突 5 条，最受关注的是《共和党参议员约翰逊拒绝将政府拨款与结束伊朗战争挂钩》（热度 79），来自 NPR World。其余报道来自 CNBC World News、NPR Business。"
+    },
+    {
+      "category": "politics",
+      "count": 7,
+      "text": "国际政治 7 条，最受关注的是《特朗普誓言阻止美国公司在海外建设数据中心，并威胁要征收“巨额税款”》（热度 92），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。"
+    },
+    {
+      "category": "markets",
+      "count": 8,
+      "text": "金融市场 8 条，最受关注的是《策略师警告称，如果华尔街低估经济衰退的风险，股市可能会陷入“恶性循环”》（热度 96），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+    }
+  ],
+  "paragraphs": [
+    "本期共收录 20 条国际新闻，来自 5 个来源。",
+    "按领域分布为：地缘冲突 5 条、国际政治 7 条、金融市场 8 条。",
+    "地理上看，美国出现最多，共 9 条；6 个国家/地区被提及。",
+    "地缘冲突 5 条，最受关注的是《共和党参议员约翰逊拒绝将政府拨款与结束伊朗战争挂钩》（热度 79），来自 NPR World。其余报道来自 CNBC World News、NPR Business。",
+    "国际政治 7 条，最受关注的是《特朗普誓言阻止美国公司在海外建设数据中心，并威胁要征收“巨额税款”》（热度 92），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。",
+    "金融市场 8 条，最受关注的是《策略师警告称，如果华尔街低估经济衰退的风险，股市可能会陷入“恶性循环”》（热度 96），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+  ]
+}

@@ -1,70 +1,60 @@
 {
-  "date": "2026-11-20",
-  "updated_at": "2026-11-20T07:40:04Z",
+  "date": "2026-11-21",
+  "updated_at": "2026-11-20T20:38:59Z",
   "total": 20,
   "by_category": {
-    "geopolitics": 3,
+    "geopolitics": 5,
     "politics": 7,
-    "markets": 10
+    "markets": 8
   },
   "top3": [
     {
-      "id": "648b1fe6eb32",
-      "title": "这些是周四股市大跌中唯一上涨的股票。",
-      "heat": 85
+      "id": "8bf1339f28ae",
+      "title": "策略师警告称，如果华尔街低估经济衰退的风险，股市可能会陷入“恶性循环”",
+      "heat": 96
     },
     {
-      "id": "71fe76ed06ab",
-      "title": "受人工智能板块抛售冲击亚洲科技股，软银遭遇两年多来最糟糕的一天",
-      "heat": 83
+      "id": "b9618c609f31",
+      "title": "英伟达的股价正走向2008年以来未曾出现过的连续周跌幅",
+      "heat": 93
     },
     {
-      "id": "8ecd020a7bde",
-      "title": "Anthropic IPO要点：蚂蚁集团以1.8万亿美元的市值首次亮相，这是人工智能领域的里程碑时刻",
-      "heat": 83
+      "id": "7bbdc82bf9fc",
+      "title": "美联储忙于抗通胀，无暇拯救股市",
+      "heat": 93
     }
   ],
   "geo": {
-    "located": 19,
-    "has_country": 19,
-    "has_city": 2,
-    "countries": 8,
+    "located": 17,
+    "has_country": 17,
+    "has_city": 0,
+    "countries": 6,
     "top_country": "美国",
-    "cities": [
-      {
-        "city": "柏林",
-        "count": 1
-      },
-      {
-        "city": "深圳",
-        "count": 1
-      }
-    ]
+    "cities": []
   },
   "sections": [
     {
       "category": "geopolitics",
-      "count": 3,
-      "text": "地缘冲突 3 条，最受关注的是《伊朗对霍尔木兹海峡船只的袭击升级》（热度 73），来自 NPR World。"
+      "count": 5,
+      "text": "地缘冲突 5 条，最受关注的是《共和党参议员约翰逊拒绝将政府拨款与结束伊朗战争挂钩》（热度 79），来自 NPR World。其余报道来自 CNBC World News、NPR Business。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《英印贸易协议因苏格兰威士忌进口税而面临严峻考验》（热度 78），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。"
+      "text": "国际政治 7 条，最受关注的是《特朗普誓言阻止美国公司在海外建设数据中心，并威胁要征收“巨额税款”》（热度 92），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。"
     },
     {
       "category": "markets",
-      "count": 10,
-      "text": "金融市场 10 条，最受关注的是《这些是周四股市大跌中唯一上涨的股票。》（热度 85），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Business。"
+      "count": 8,
+      "text": "金融市场 8 条，最受关注的是《策略师警告称，如果华尔街低估经济衰退的风险，股市可能会陷入“恶性循环”》（热度 96），来自 MarketWatch Top。其余报道来自 CNBC World News。"
     }
   ],
   "paragraphs": [
     "本期共收录 20 条国际新闻，来自 5 个来源。",
-    "按领域分布为：地缘冲突 3 条、国际政治 7 条、金融市场 10 条。",
-    "地理上看，美国出现最多，共 11 条；8 个国家/地区被提及。",
-    "涉及城市共 2 个，其中 柏林 1 条、深圳 1 条。",
-    "地缘冲突 3 条，最受关注的是《伊朗对霍尔木兹海峡船只的袭击升级》（热度 73），来自 NPR World。",
-    "国际政治 7 条，最受关注的是《英印贸易协议因苏格兰威士忌进口税而面临严峻考验》（热度 78），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。",
-    "金融市场 10 条，最受关注的是《这些是周四股市大跌中唯一上涨的股票。》（热度 85），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Business。"
+    "按领域分布为：地缘冲突 5 条、国际政治 7 条、金融市场 8 条。",
+    "地理上看，美国出现最多，共 9 条；6 个国家/地区被提及。",
+    "地缘冲突 5 条，最受关注的是《共和党参议员约翰逊拒绝将政府拨款与结束伊朗战争挂钩》（热度 79），来自 NPR World。其余报道来自 CNBC World News、NPR Business。",
+    "国际政治 7 条，最受关注的是《特朗普誓言阻止美国公司在海外建设数据中心，并威胁要征收“巨额税款”》（热度 92），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。",
+    "金融市场 8 条，最受关注的是《策略师警告称，如果华尔街低估经济衰退的风险，股市可能会陷入“恶性循环”》（热度 96），来自 MarketWatch Top。其余报道来自 CNBC World News。"
   ]
 }
