@@ -1,6 +1,6 @@
 {
   "date": "2026-11-20",
-  "updated_at": "2026-11-19T20:53:24Z",
+  "updated_at": "2026-11-20T07:40:04Z",
   "total": 20,
   "by_category": {
     "geopolitics": 3,
@@ -9,34 +9,34 @@
   },
   "top3": [
     {
+      "id": "648b1fe6eb32",
+      "title": "这些是周四股市大跌中唯一上涨的股票。",
+      "heat": 85
+    },
+    {
+      "id": "71fe76ed06ab",
+      "title": "受人工智能板块抛售冲击亚洲科技股，软银遭遇两年多来最糟糕的一天",
+      "heat": 83
+    },
+    {
       "id": "8ecd020a7bde",
-      "title": "Anthropic IPO实时更新：人工智能实验室在创纪录的IPO后市值突破2万亿美元",
-      "heat": 91
-    },
-    {
-      "id": "c74256fff44a",
-      "title": "英伟达股价进一步下跌。在六个交易日内，该公司市值蒸发了6110亿美元。",
-      "heat": 90
-    },
-    {
-      "id": "a1e062aede4a",
-      "title": "CoreWeave的联合创始人刚刚对其受挫的债券下了一笔3000万美元的非常规赌注",
-      "heat": 86
+      "title": "Anthropic IPO要点：蚂蚁集团以1.8万亿美元的市值首次亮相，这是人工智能领域的里程碑时刻",
+      "heat": 83
     }
   ],
   "geo": {
-    "located": 20,
-    "has_country": 20,
-    "has_city": 3,
-    "countries": 6,
+    "located": 19,
+    "has_country": 19,
+    "has_city": 2,
+    "countries": 8,
     "top_country": "美国",
     "cities": [
       {
-        "city": "深圳",
-        "count": 2
+        "city": "柏林",
+        "count": 1
       },
       {
-        "city": "柏林",
+        "city": "深圳",
         "count": 1
       }
     ]
@@ -45,26 +45,26 @@
     {
       "category": "geopolitics",
       "count": 3,
-      "text": "地缘冲突 3 条，最受关注的是《伊朗对霍尔木兹海峡船只的袭击升级》（热度 84），来自 NPR World。"
+      "text": "地缘冲突 3 条，最受关注的是《伊朗对霍尔木兹海峡船只的袭击升级》（热度 73），来自 NPR World。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《“比巴拉克·奥巴马的当选更重要”：学者们对密西西比州参议员竞选的看法》（热度 79），来自 NPR Politics。其余报道来自 CNBC World News、NPR World。"
+      "text": "国际政治 7 条，最受关注的是《英印贸易协议因苏格兰威士忌进口税而面临严峻考验》（热度 78），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。"
     },
     {
       "category": "markets",
       "count": 10,
-      "text": "金融市场 10 条，最受关注的是《Anthropic IPO实时更新：人工智能实验室在创纪录的IPO后市值突破2万亿美元》（热度 91），来自 CNBC World News。其余报道来自 MarketWatch Top。"
+      "text": "金融市场 10 条，最受关注的是《这些是周四股市大跌中唯一上涨的股票。》（热度 85），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Business。"
     }
   ],
   "paragraphs": [
-    "本期共收录 20 条国际新闻，来自 4 个来源。",
+    "本期共收录 20 条国际新闻，来自 5 个来源。",
     "按领域分布为：地缘冲突 3 条、国际政治 7 条、金融市场 10 条。",
-    "地理上看，美国出现最多，共 12 条；6 个国家/地区被提及。",
-    "涉及城市共 2 个，其中 深圳 2 条、柏林 1 条。",
-    "地缘冲突 3 条，最受关注的是《伊朗对霍尔木兹海峡船只的袭击升级》（热度 84），来自 NPR World。",
-    "国际政治 7 条，最受关注的是《“比巴拉克·奥巴马的当选更重要”：学者们对密西西比州参议员竞选的看法》（热度 79），来自 NPR Politics。其余报道来自 CNBC World News、NPR World。",
-    "金融市场 10 条，最受关注的是《Anthropic IPO实时更新：人工智能实验室在创纪录的IPO后市值突破2万亿美元》（热度 91），来自 CNBC World News。其余报道来自 MarketWatch Top。"
+    "地理上看，美国出现最多，共 11 条；8 个国家/地区被提及。",
+    "涉及城市共 2 个，其中 柏林 1 条、深圳 1 条。",
+    "地缘冲突 3 条，最受关注的是《伊朗对霍尔木兹海峡船只的袭击升级》（热度 73），来自 NPR World。",
+    "国际政治 7 条，最受关注的是《英印贸易协议因苏格兰威士忌进口税而面临严峻考验》（热度 78），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。",
+    "金融市场 10 条，最受关注的是《这些是周四股市大跌中唯一上涨的股票。》（热度 85），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Business。"
   ]
 }
