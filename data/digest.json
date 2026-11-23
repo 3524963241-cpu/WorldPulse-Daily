@@ -1,44 +1,36 @@
 {
   "date": "2026-11-23",
-  "updated_at": "2026-11-22T19:54:28Z",
+  "updated_at": "2026-11-23T08:03:40Z",
   "total": 20,
   "by_category": {
     "geopolitics": 3,
-    "politics": 9,
-    "markets": 8
+    "politics": 7,
+    "markets": 10
   },
   "top3": [
     {
-      "id": "459286d9475e",
-      "title": "这些鲜为人知的投资可能是在市场崩盘时最划算的投资之一",
-      "heat": 88
+      "id": "0d63d1c624d8",
+      "title": "投资者对塔塔钢铁与APL Apollo的16.7亿美元交易表示不满，导致股价暴跌",
+      "heat": 89
     },
     {
-      "id": "ce06218f96cb",
-      "title": "俄罗斯船只在波罗的海被无人机击中后仍在冒烟，芬兰和爱沙尼亚协助灭火",
-      "heat": 84
+      "id": "8deb736225f2",
+      "title": "随着人工智能行业低迷导致股市下跌，亚洲国家正寻求提振市场",
+      "heat": 89
     },
     {
-      "id": "5aca005e2cdf",
-      "title": "“英伟达的动荡让我感到害怕”：现在是不是该卖掉我的股票去买房产了？",
-      "heat": 79
+      "id": "33613d30a88c",
+      "title": "也门胡塞武装声称袭击了沙特炼油厂，而特朗普则警告明年将发动新一轮空袭",
+      "heat": 85
     }
   ],
   "geo": {
-    "located": 18,
-    "has_country": 18,
-    "has_city": 3,
-    "countries": 10,
+    "located": 17,
+    "has_country": 17,
+    "has_city": 1,
+    "countries": 9,
     "top_country": "美国",
     "cities": [
-      {
-        "city": "日内瓦",
-        "count": 1
-      },
-      {
-        "city": "波士顿",
-        "count": 1
-      },
       {
         "city": "深圳",
         "count": 1
@@ -49,26 +41,26 @@
     {
       "category": "geopolitics",
       "count": 3,
-      "text": "地缘冲突 3 条，最受关注的是《俄罗斯船只在波罗的海被无人机击中后仍在冒烟，芬兰和爱沙尼亚协助灭火》（热度 84），来自 CNBC World News。"
+      "text": "地缘冲突 3 条，最受关注的是《也门胡塞武装声称袭击了沙特炼油厂，而特朗普则警告明年将发动新一轮空袭》（热度 85），来自 CNBC World News。其余报道来自 NPR World。"
     },
     {
       "category": "politics",
-      "count": 9,
-      "text": "国际政治 9 条，最受关注的是《气候变化谈判在最后时刻因化石燃料问题破裂》（热度 78），来自 NPR World。其余报道来自 CNBC World News、NPR Politics。"
+      "count": 7,
+      "text": "国际政治 7 条，最受关注的是《气候变化谈判在最后时刻因化石燃料问题破裂》（热度 65），来自 NPR World。其余报道来自 CNBC World News、MarketWatch Top、NPR Politics。"
     },
     {
       "category": "markets",
-      "count": 8,
-      "text": "金融市场 8 条，最受关注的是《这些鲜为人知的投资可能是在市场崩盘时最划算的投资之一》（热度 88），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+      "count": 10,
+      "text": "金融市场 10 条，最受关注的是《投资者对塔塔钢铁与APL Apollo的16.7亿美元交易表示不满，导致股价暴跌》（热度 89），来自 CNBC World News。其余报道来自 MarketWatch Top。"
     }
   ],
   "paragraphs": [
     "本期共收录 20 条国际新闻，来自 4 个来源。",
-    "按领域分布为：地缘冲突 3 条、国际政治 9 条、金融市场 8 条。",
-    "地理上看，美国出现最多，共 9 条；10 个国家/地区被提及。",
-    "涉及城市共 3 个，其中 日内瓦 1 条、波士顿 1 条、深圳 1 条。",
-    "地缘冲突 3 条，最受关注的是《俄罗斯船只在波罗的海被无人机击中后仍在冒烟，芬兰和爱沙尼亚协助灭火》（热度 84），来自 CNBC World News。",
-    "国际政治 9 条，最受关注的是《气候变化谈判在最后时刻因化石燃料问题破裂》（热度 78），来自 NPR World。其余报道来自 CNBC World News、NPR Politics。",
-    "金融市场 8 条，最受关注的是《这些鲜为人知的投资可能是在市场崩盘时最划算的投资之一》（热度 88），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+    "按领域分布为：地缘冲突 3 条、国际政治 7 条、金融市场 10 条。",
+    "地理上看，美国出现最多，共 8 条；9 个国家/地区被提及。",
+    "涉及城市共 1 个，其中 深圳 1 条。",
+    "地缘冲突 3 条，最受关注的是《也门胡塞武装声称袭击了沙特炼油厂，而特朗普则警告明年将发动新一轮空袭》（热度 85），来自 CNBC World News。其余报道来自 NPR World。",
+    "国际政治 7 条，最受关注的是《气候变化谈判在最后时刻因化石燃料问题破裂》（热度 65），来自 NPR World。其余报道来自 CNBC World News、MarketWatch Top、NPR Politics。",
+    "金融市场 10 条，最受关注的是《投资者对塔塔钢铁与APL Apollo的16.7亿美元交易表示不满，导致股价暴跌》（热度 89），来自 CNBC World News。其余报道来自 MarketWatch Top。"
   ]
 }
