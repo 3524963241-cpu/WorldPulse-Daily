@@ -1,36 +1,40 @@
 {
-  "date": "2026-11-25",
-  "updated_at": "2026-11-25T09:00:22Z",
+  "date": "2026-11-26",
+  "updated_at": "2026-11-25T21:54:50Z",
   "total": 20,
   "by_category": {
-    "geopolitics": 5,
+    "geopolitics": 4,
     "politics": 7,
-    "markets": 8
+    "markets": 9
   },
   "top3": [
     {
-      "id": "1975e1ca3a40",
-      "title": "有报道称美国将征收新关税，科技股抛售加剧，纳斯达克期货走低：实时更新",
-      "heat": 97
+      "id": "7b6b3f78a654",
+      "title": "美联储表示，在12月加息的关键投票之前，通胀情况并未得到任何改善",
+      "heat": 95
     },
     {
-      "id": "a1cb4567b16b",
-      "title": "投资者等待关键通胀信号，国债收益率走低",
+      "id": "6fe3fbf4dcad",
+      "title": "宏观投资者Raoul Pal为何表示美元是观察股票和加密货币的信号",
+      "heat": 91
+    },
+    {
+      "id": "ac22be8de915",
+      "title": "科技股下挫，但收盘时远高于低点，Anthropic努力反弹至IPO价格之上",
       "heat": 90
-    },
-    {
-      "id": "a2acf5847ee5",
-      "title": "体育仲裁法庭裁定摩洛哥败诉，非洲杯冠军归还塞内加尔",
-      "heat": 86
     }
   ],
   "geo": {
-    "located": 16,
-    "has_country": 16,
-    "has_city": 1,
-    "countries": 7,
+    "located": 17,
+    "has_country": 17,
+    "has_city": 2,
+    "countries": 6,
     "top_country": "美国",
     "cities": [
+      {
+        "city": "上海",
+        "count": 1
+      },
       {
         "city": "华盛顿",
         "count": 1
@@ -40,27 +44,27 @@
   "sections": [
     {
       "category": "geopolitics",
-      "count": 5,
-      "text": "地缘冲突 5 条，最受关注的是《胡塞武装袭击沙特阿拉伯主权财富基金PIF的大楼，造成11人受伤》（热度 82），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。"
+      "count": 4,
+      "text": "地缘冲突 4 条，最受关注的是《就连玩具的价格也在上涨。美国人如何缩减假日计划》（热度 72），来自 CNBC World News。其余报道来自 NPR Politics。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《体育仲裁法庭裁定摩洛哥败诉，非洲杯冠军归还塞内加尔》（热度 86），来自 NPR World。其余报道来自 CNBC World News、NPR Business、NPR Politics。"
+      "text": "国际政治 7 条，最受关注的是《体育仲裁法庭裁定摩洛哥败诉，非洲杯冠军归还塞内加尔》（热度 72），来自 NPR World。其余报道来自 CNBC World News、NPR Business、NPR Politics。"
     },
     {
       "category": "markets",
-      "count": 8,
-      "text": "金融市场 8 条，最受关注的是《有报道称美国将征收新关税，科技股抛售加剧，纳斯达克期货走低：实时更新》（热度 97），来自 CNBC World News。其余报道来自 MarketWatch Top。"
+      "count": 9,
+      "text": "金融市场 9 条，最受关注的是《美联储表示，在12月加息的关键投票之前，通胀情况并未得到任何改善》（热度 95），来自 MarketWatch Top。其余报道来自 CNBC World News。"
     }
   ],
   "paragraphs": [
     "本期共收录 20 条国际新闻，来自 5 个来源。",
-    "按领域分布为：地缘冲突 5 条、国际政治 7 条、金融市场 8 条。",
-    "地理上看，美国出现最多，共 8 条；7 个国家/地区被提及。",
-    "涉及城市共 1 个，其中 华盛顿 1 条。",
-    "地缘冲突 5 条，最受关注的是《胡塞武装袭击沙特阿拉伯主权财富基金PIF的大楼，造成11人受伤》（热度 82），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。",
-    "国际政治 7 条，最受关注的是《体育仲裁法庭裁定摩洛哥败诉，非洲杯冠军归还塞内加尔》（热度 86），来自 NPR World。其余报道来自 CNBC World News、NPR Business、NPR Politics。",
-    "金融市场 8 条，最受关注的是《有报道称美国将征收新关税，科技股抛售加剧，纳斯达克期货走低：实时更新》（热度 97），来自 CNBC World News。其余报道来自 MarketWatch Top。"
+    "按领域分布为：地缘冲突 4 条、国际政治 7 条、金融市场 9 条。",
+    "地理上看，美国出现最多，共 12 条；6 个国家/地区被提及。",
+    "涉及城市共 2 个，其中 上海 1 条、华盛顿 1 条。",
+    "地缘冲突 4 条，最受关注的是《就连玩具的价格也在上涨。美国人如何缩减假日计划》（热度 72），来自 CNBC World News。其余报道来自 NPR Politics。",
+    "国际政治 7 条，最受关注的是《体育仲裁法庭裁定摩洛哥败诉，非洲杯冠军归还塞内加尔》（热度 72），来自 NPR World。其余报道来自 CNBC World News、NPR Business、NPR Politics。",
+    "金融市场 9 条，最受关注的是《美联储表示，在12月加息的关键投票之前，通胀情况并未得到任何改善》（热度 95），来自 MarketWatch Top。其余报道来自 CNBC World News。"
   ]
 }
