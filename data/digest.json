@@ -1,42 +1,38 @@
 {
   "date": "2026-11-26",
-  "updated_at": "2026-11-25T21:54:50Z",
+  "updated_at": "2026-11-26T08:48:26Z",
   "total": 20,
   "by_category": {
-    "geopolitics": 4,
+    "geopolitics": 3,
     "politics": 7,
-    "markets": 9
+    "markets": 10
   },
   "top3": [
     {
-      "id": "7b6b3f78a654",
-      "title": "美联储表示，在12月加息的关键投票之前，通胀情况并未得到任何改善",
-      "heat": 95
+      "id": "62bdeb72533b",
+      "title": "随着投资者对美国关税和人工智能的担忧消散，全球股市上涨",
+      "heat": 97
     },
     {
-      "id": "6fe3fbf4dcad",
-      "title": "宏观投资者Raoul Pal为何表示美元是观察股票和加密货币的信号",
-      "heat": 91
+      "id": "5bfa4d5f1dbd",
+      "title": "基金经理表示，要警惕相关性升高，但要抓住美国信用债的高收益率",
+      "heat": 94
     },
     {
-      "id": "ac22be8de915",
-      "title": "科技股下挫，但收盘时远高于低点，Anthropic努力反弹至IPO价格之上",
-      "heat": 90
+      "id": "32b53fdfdec0",
+      "title": "感恩节股市是否开市？答案可能会让您感到惊讶。",
+      "heat": 88
     }
   ],
   "geo": {
     "located": 17,
     "has_country": 17,
-    "has_city": 2,
-    "countries": 6,
+    "has_city": 1,
+    "countries": 8,
     "top_country": "美国",
     "cities": [
       {
         "city": "上海",
-        "count": 1
-      },
-      {
-        "city": "华盛顿",
         "count": 1
       }
     ]
@@ -44,27 +40,27 @@
   "sections": [
     {
       "category": "geopolitics",
-      "count": 4,
-      "text": "地缘冲突 4 条，最受关注的是《就连玩具的价格也在上涨。美国人如何缩减假日计划》（热度 72），来自 CNBC World News。其余报道来自 NPR Politics。"
+      "count": 3,
+      "text": "地缘冲突 3 条，最受关注的是《朝鲜的金正恩呼吁扩大核武库，并表示这一立场“永远不会改变”》（热度 86），来自 CNBC World News。其余报道来自 NPR Politics。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《体育仲裁法庭裁定摩洛哥败诉，非洲杯冠军归还塞内加尔》（热度 72），来自 NPR World。其余报道来自 CNBC World News、NPR Business、NPR Politics。"
+      "text": "国际政治 7 条，最受关注的是《中国电动汽车公司表示，机器人可能在1-2年内就能做家务》（热度 80），来自 CNBC World News。其余报道来自 NPR Business、NPR Politics、NPR World。"
     },
     {
       "category": "markets",
-      "count": 9,
-      "text": "金融市场 9 条，最受关注的是《美联储表示，在12月加息的关键投票之前，通胀情况并未得到任何改善》（热度 95），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+      "count": 10,
+      "text": "金融市场 10 条，最受关注的是《随着投资者对美国关税和人工智能的担忧消散，全球股市上涨》（热度 97），来自 CNBC World News。其余报道来自 MarketWatch Top。"
     }
   ],
   "paragraphs": [
     "本期共收录 20 条国际新闻，来自 5 个来源。",
-    "按领域分布为：地缘冲突 4 条、国际政治 7 条、金融市场 9 条。",
-    "地理上看，美国出现最多，共 12 条；6 个国家/地区被提及。",
-    "涉及城市共 2 个，其中 上海 1 条、华盛顿 1 条。",
-    "地缘冲突 4 条，最受关注的是《就连玩具的价格也在上涨。美国人如何缩减假日计划》（热度 72），来自 CNBC World News。其余报道来自 NPR Politics。",
-    "国际政治 7 条，最受关注的是《体育仲裁法庭裁定摩洛哥败诉，非洲杯冠军归还塞内加尔》（热度 72），来自 NPR World。其余报道来自 CNBC World News、NPR Business、NPR Politics。",
-    "金融市场 9 条，最受关注的是《美联储表示，在12月加息的关键投票之前，通胀情况并未得到任何改善》（热度 95），来自 MarketWatch Top。其余报道来自 CNBC World News。"
+    "按领域分布为：地缘冲突 3 条、国际政治 7 条、金融市场 10 条。",
+    "地理上看，美国出现最多，共 8 条；8 个国家/地区被提及。",
+    "涉及城市共 1 个，其中 上海 1 条。",
+    "地缘冲突 3 条，最受关注的是《朝鲜的金正恩呼吁扩大核武库，并表示这一立场“永远不会改变”》（热度 86），来自 CNBC World News。其余报道来自 NPR Politics。",
+    "国际政治 7 条，最受关注的是《中国电动汽车公司表示，机器人可能在1-2年内就能做家务》（热度 80），来自 CNBC World News。其余报道来自 NPR Business、NPR Politics、NPR World。",
+    "金融市场 10 条，最受关注的是《随着投资者对美国关税和人工智能的担忧消散，全球股市上涨》（热度 97），来自 CNBC World News。其余报道来自 MarketWatch Top。"
   ]
 }
