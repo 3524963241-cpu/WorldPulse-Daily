@@ -1,6 +1,6 @@
 {
   "date": "2026-11-27",
-  "updated_at": "2026-11-26T21:48:37Z",
+  "updated_at": "2026-11-27T08:58:54Z",
   "total": 20,
   "by_category": {
     "geopolitics": 5,
@@ -9,26 +9,26 @@
   },
   "top3": [
     {
-      "id": "afd70fe24e55",
-      "title": "朝鲜的金正恩在无视特朗普的示好后誓言要制造更多核武器",
+      "id": "123ab3511f36",
+      "title": "科威特无人机袭击造成两名意大利人死亡；特朗普称“只要我想”，伊朗战争就会结束",
       "heat": 91
     },
     {
-      "id": "438eb0460449",
-      "title": "期货指向华尔街黑色星期五的涨势，全球市场对美国经济的韧性表示欢迎",
+      "id": "18028c0bea0f",
+      "title": "马斯克表示将扩大特朗普账户的股份捐赠，SpaceX股票在另类交易平台上大涨",
       "heat": 84
     },
     {
-      "id": "5bfa4d5f1dbd",
-      "title": "基金经理表示，要警惕相关性升高，但要抓住美国信用债的高收益率",
-      "heat": 80
+      "id": "6e0e06b6b957",
+      "title": "对于投资者而言，私募市场比以往任何时候都更加容易进入。退出则是另一回事",
+      "heat": 82
     }
   ],
   "geo": {
-    "located": 17,
-    "has_country": 17,
+    "located": 15,
+    "has_country": 15,
     "has_city": 1,
-    "countries": 9,
+    "countries": 7,
     "top_country": "美国",
     "cities": [
       {
@@ -41,26 +41,26 @@
     {
       "category": "geopolitics",
       "count": 5,
-      "text": "地缘冲突 5 条，最受关注的是《朝鲜的金正恩在无视特朗普的示好后誓言要制造更多核武器》（热度 91），来自 NPR World。其余报道来自 CNBC World News。"
+      "text": "地缘冲突 5 条，最受关注的是《科威特无人机袭击造成两名意大利人死亡；特朗普称“只要我想”，伊朗战争就会结束》（热度 91），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。"
     },
     {
       "category": "politics",
       "count": 7,
-      "text": "国际政治 7 条，最受关注的是《法院允许波多黎各总督解雇负责该岛问题重重的电网的公司》（热度 71），来自 NPR Politics。其余报道来自 CNBC World News、NPR Business、NPR World。"
+      "text": "国际政治 7 条，最受关注的是《前《时代》杂志记者、美国前副国务卿斯特罗布·塔尔博特去世》（热度 71），来自 NPR World。其余报道来自 CNBC World News、NPR Politics。"
     },
     {
       "category": "markets",
       "count": 8,
-      "text": "金融市场 8 条，最受关注的是《期货指向华尔街黑色星期五的涨势，全球市场对美国经济的韧性表示欢迎》（热度 84），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Politics。"
+      "text": "金融市场 8 条，最受关注的是《马斯克表示将扩大特朗普账户的股份捐赠，SpaceX股票在另类交易平台上大涨》（热度 84），来自 CNBC World News。其余报道来自 MarketWatch Top。"
     }
   ],
   "paragraphs": [
-    "本期共收录 20 条国际新闻，来自 5 个来源。",
+    "本期共收录 20 条国际新闻，来自 4 个来源。",
     "按领域分布为：地缘冲突 5 条、国际政治 7 条、金融市场 8 条。",
-    "地理上看，美国出现最多，共 7 条；9 个国家/地区被提及。",
+    "地理上看，美国出现最多，共 7 条；7 个国家/地区被提及。",
     "涉及城市共 1 个，其中 上海 1 条。",
-    "地缘冲突 5 条，最受关注的是《朝鲜的金正恩在无视特朗普的示好后誓言要制造更多核武器》（热度 91），来自 NPR World。其余报道来自 CNBC World News。",
-    "国际政治 7 条，最受关注的是《法院允许波多黎各总督解雇负责该岛问题重重的电网的公司》（热度 71），来自 NPR Politics。其余报道来自 CNBC World News、NPR Business、NPR World。",
-    "金融市场 8 条，最受关注的是《期货指向华尔街黑色星期五的涨势，全球市场对美国经济的韧性表示欢迎》（热度 84），来自 MarketWatch Top。其余报道来自 CNBC World News、NPR Politics。"
+    "地缘冲突 5 条，最受关注的是《科威特无人机袭击造成两名意大利人死亡；特朗普称“只要我想”，伊朗战争就会结束》（热度 91），来自 CNBC World News。其余报道来自 NPR Politics、NPR World。",
+    "国际政治 7 条，最受关注的是《前《时代》杂志记者、美国前副国务卿斯特罗布·塔尔博特去世》（热度 71），来自 NPR World。其余报道来自 CNBC World News、NPR Politics。",
+    "金融市场 8 条，最受关注的是《马斯克表示将扩大特朗普账户的股份捐赠，SpaceX股票在另类交易平台上大涨》（热度 84），来自 CNBC World News。其余报道来自 MarketWatch Top。"
   ]
 }
