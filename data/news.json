@@ -1,13 +1,77 @@
 {
-  "updated_at": "2026-11-27T21:31:12Z",
-  "generated_at": "2026-11-27T21:31:12Z",
+  "updated_at": "2026-11-28T08:19:38Z",
+  "generated_at": "2026-11-28T08:19:38Z",
   "date_beijing": "2026-11-28",
-  "shift": "am",
+  "shift": "pm",
   "news": [
+    {
+      "id": "80bfbe6f5c07",
+      "title": "非洲首富正通过轰动一时的IPO将其大型炼油厂上市",
+      "summary": "丹格特炼油厂的IPO可能会使该公司估值达到约470亿美元，预计这将是非洲最大的股票市场上市。",
+      "category": "markets",
+      "country": "美国",
+      "city": null,
+      "lat": 38.91,
+      "lng": -77.04,
+      "locate_basis": "source",
+      "image": "https://image.cnbcfm.com/api/v1/image/108559960-1795761342779-gettyimages-2299595583-NIGERIA_DANGOTE.jpeg?v=1795761503&w=1920&h=1080",
+      "published_at": "2026-11-28T06:00:01Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/11/28/dangote-refinery-oil-ipo-nigeria-africa-energy.html",
+      "heat": 89
+    },
+    {
+      "id": "3112fd17398a",
+      "title": "据《金融时报》报道，本月美国军方在英国空军基地击退了无人机",
+      "summary": "该报援引知情人士的话称，美国部署了反无人机技术来驱赶无人机系统。",
+      "category": "geopolitics",
+      "country": "美国",
+      "city": null,
+      "lat": 37.09,
+      "lng": -95.71,
+      "locate_basis": "title",
+      "image": "https://image.cnbcfm.com/api/v1/image/108560353-1795850379842-gettyimages-2297552102-3b9a1156_aeh9udyx.jpeg?v=1795850410&w=1920&h=1080",
+      "published_at": "2026-11-28T07:40:14Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/11/28/us-military-repelled-drones-at-uk-airbase-this-month-ft-reports.html",
+      "heat": 88
+    },
+    {
+      "id": "89a758bd0c0f",
+      "title": "沙特阿拉伯在经济和安全压力下调整“2030愿景”支出",
+      "summary": "经济大臣费萨尔·伊卜拉欣（Faisal Alibrahim）在接受CNBC采访时表示，沙特正从“不惜一切代价支出和交付”转向“以合理成本支出和交付”。",
+      "category": "markets",
+      "country": "沙特阿拉伯",
+      "city": null,
+      "lat": 23.89,
+      "lng": 45.08,
+      "locate_basis": "title",
+      "image": "https://image.cnbcfm.com/api/v1/image/108560129-1795788133101-gettyimages-2242624345-GERMANY_BGD2025.jpeg?v=1795788271&w=1920&h=1080",
+      "published_at": "2026-11-28T06:00:01Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/11/28/saudi-arabia-vision-2030-spending.html",
+      "heat": 83
+    },
+    {
+      "id": "a42b2438b501",
+      "title": "国防公司Chemring为北约舰队提供保护。以下是一位激进投资者希望该公司分拆的原因",
+      "summary": "一位对冲基金激进投资者表示，Chemring的重组可能会使这家国防股的股价上涨多达80%。",
+      "category": "markets",
+      "country": "美国",
+      "city": null,
+      "lat": 38.91,
+      "lng": -77.04,
+      "locate_basis": "source",
+      "image": "https://image.cnbcfm.com/api/v1/image/107068936-16539976022022-05-31t104609z_1130027660_rc29iu9mptbs_rtrmadp_0_ukraine-crisis-nato-turkey-finland.jpeg?v=1679900606&w=1920&h=1080",
+      "published_at": "2026-11-28T06:15:09Z",
+      "source": "CNBC World News",
+      "url": "https://www.cnbc.com/2026/11/28/defense-nato-activist-investor.html",
+      "heat": 81
+    },
     {
       "id": "b9521c3d85f4",
       "title": "西班牙大选可能使马德里与特朗普的华盛顿更加接近",
-      "summary": "西班牙选民将于周日前往投票站参加提前选举，这场选举可能会结束社会党总理佩德罗·桑切斯（Pedro Sánchez）长达八年的执政生涯。",
+      "summary": "西班牙选民将于周日前往投票站参加提前选举，这场选举可能会终结社会党总理佩德罗·桑切斯（Pedro Sánchez）长达八年的执政生涯。",
       "category": "politics",
       "country": "西班牙",
       "city": "马德里",
@@ -18,11 +82,11 @@
       "published_at": "2026-11-27T13:00:42Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/11/27/spain-election-trump-sanchez.html",
-      "heat": 84
+      "heat": 73
     },
     {
       "id": "18028c0bea0f",
-      "title": "在科技股上涨以及马斯克表示将扩大对特朗普账户的股份捐赠之后，SpaceX股价飙升逾4%",
+      "title": "在科技股上涨以及马斯克表示将扩大特朗普账户的股份捐赠之后，SpaceX的股价飙升逾4%",
       "summary": "埃隆·马斯克在X上表示，他将每年向美国儿童捐赠股份，此后SpaceX的股价在周五的交易中飙升。",
       "category": "markets",
       "country": "美国",
@@ -34,7 +98,7 @@
       "published_at": "2026-11-27T18:24:06Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/11/27/spacex-shares-musk-donations.html",
-      "heat": 83
+      "heat": 71
     },
     {
       "id": "c26728ea18ee",
@@ -50,12 +114,12 @@
       "published_at": "2026-11-27T20:16:00Z",
       "source": "MarketWatch Top",
       "url": "https://www.marketwatch.com/story/these-stocks-soared-the-most-during-a-wild-week-highlighted-by-huangs-return-to-nvidia-578b3f9a?mod=mw_rss_topstories",
-      "heat": 81
+      "heat": 69
     },
     {
       "id": "247b4b5ebc4d",
       "title": "本周股市上涨背后的警示",
-      "summary": "本期《周末读物》还包括：Medicare参保的重要提示、如何识别网购诈骗以及The Moneyist的婚姻建议。",
+      "summary": "本期周末读物还包括：Medicare参保的重要提示、如何识别网购诈骗以及来自The Moneyist的婚姻建议。",
       "category": "markets",
       "country": "美国",
       "city": null,
@@ -66,12 +130,12 @@
       "published_at": "2026-11-27T18:40:00Z",
       "source": "MarketWatch Top",
       "url": "https://www.marketwatch.com/story/the-warnings-behind-this-weeks-stock-market-rally-86e5319c?mod=mw_rss_topstories",
-      "heat": 79
+      "heat": 68
     },
     {
       "id": "5b8f407acf07",
       "title": "道指上涨近600点，创下2022年以来最佳周度表现：实时更新",
-      "summary": "周五，美国股市上涨，投资者结束了动荡且因节假日而缩短的交易周。",
+      "summary": "周五，美国股市上涨，投资者结束了动荡且因假期而缩短的交易周。",
       "category": "markets",
       "country": "美国",
       "city": null,
@@ -82,12 +146,12 @@
       "published_at": "2026-11-27T18:11:52Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/11/26/stock-market-today-live-updates.html",
-      "heat": 79
+      "heat": 67
     },
     {
       "id": "123ab3511f36",
       "title": "科威特无人机袭击造成两名意大利人丧生；特朗普称“只要我想”，伊朗战争就会结束",
-      "summary": "伊朗外交部长阿巴斯·阿拉格齐表示：“这起事件令人怀疑，看起来像是为战争精心策划的阴谋。”",
+      "summary": "伊朗外交部长阿巴斯·阿拉格齐表示：“该事件令人起疑，看起来像是为战争精心策划的阴谋。”",
       "category": "geopolitics",
       "country": "科威特",
       "city": null,
@@ -98,12 +162,28 @@
       "published_at": "2026-11-27T03:30:23Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/11/27/us-iran-war-trump-hormuz-italian-killed-trump.html",
-      "heat": 78
+      "heat": 67
+    },
+    {
+      "id": "50c9b5aa045d",
+      "title": "阿博特离任后，德州数据中心的未来会是什么样子？",
+      "summary": "德克萨斯州一直是数据中心最受欢迎的州之一，但随着新州长的上任，这种情况可能会发生变化。",
+      "category": "politics",
+      "country": null,
+      "city": null,
+      "lat": null,
+      "lng": null,
+      "locate_basis": null,
+      "image": "https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg",
+      "published_at": "2026-11-27T22:20:33Z",
+      "source": "NPR Politics",
+      "url": "https://www.npr.org/2026/11/27/nx-s1-6048749/with-abbott-out-what-does-the-future-look-like-for-data-centers-in-texas",
+      "heat": 62
     },
     {
       "id": "cac552ba2dbd",
-      "title": "科技快讯：黄仁勋的回归会成为动荡的人工智能市场所需要的火花吗？",
-      "summary": "近期，随着投资者对人工智能热潮的可持续性产生质疑，人工智能股票出现下跌。",
+      "title": "科技快讯：黄仁勋的回归是否会成为动荡的人工智能市场所需要的火花？",
+      "summary": "近期，随着投资者对人工智能热潮的可持续性产生疑问，人工智能股票出现了下跌。",
       "category": "markets",
       "country": "美国",
       "city": null,
@@ -114,12 +194,12 @@
       "published_at": "2026-11-27T12:00:22Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/11/27/tech-download-jensen-huang-ai-market.html",
-      "heat": 73
+      "heat": 62
     },
     {
       "id": "49c13b379ef6",
       "title": "西班牙大选：桑切斯的大胆赌博能否奏效？",
-      "summary": "西班牙将于本周日举行提前大选，这场大选可能会终结由社会党领导的政府长达八年的执政，并有可能使极右翼政党在该国现代民主史上首次上台执政。CNBC的Charlotte Reed报道。",
+      "summary": "西班牙将于本周日举行提前大选，这场选举可能会终结由社会党领导的政府长达八年的执政，并有可能使极右翼政党在该国现代民主史上首次掌权。CNBC的Charlotte Reed发回报道。",
       "category": "politics",
       "country": "西班牙",
       "city": null,
@@ -130,44 +210,12 @@
       "published_at": "2026-11-27T09:44:38Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/video/2026/11/27/spain-election-preview-sanchez-feijoo-vox.html",
-      "heat": 73
-    },
-    {
-      "id": "ffc9529500e1",
-      "title": "一名66岁的护士即将退休，但她仅有500美元的积蓄。这该怪谁？",
-      "summary": "“退休是一种财务状况，而不是年龄。”",
-      "category": "markets",
-      "country": "美国",
-      "city": null,
-      "lat": 38.91,
-      "lng": -77.04,
-      "locate_basis": "source",
-      "image": "https://images.mktw.net/im-83830528",
-      "published_at": "2026-11-27T16:00:00Z",
-      "source": "MarketWatch Top",
-      "url": "https://www.marketwatch.com/story/a-66-year-old-nurse-faces-retirement-with-just-500-saved-whos-to-blame-4249a0fd?mod=mw_rss_topstories",
-      "heat": 72
-    },
-    {
-      "id": "9489fb207bf2",
-      "title": "人工智能的使用正在爆炸式增长，但支出却停滞不前。为什么一条经济学基本法则正在被打破。",
-      "summary": "对于前沿模型实验室的开发者来说，AI代币（他们通过这种方式获得计算报酬）的消耗增加是一个利好消息。然而，他们似乎并没有以同样的速度从中赚取收入。",
-      "category": "markets",
-      "country": "美国",
-      "city": null,
-      "lat": 38.91,
-      "lng": -77.04,
-      "locate_basis": "source",
-      "image": "https://images.mktw.net/im-21556022",
-      "published_at": "2026-11-27T15:01:00Z",
-      "source": "MarketWatch Top",
-      "url": "https://www.marketwatch.com/story/artificial-intelligence-usage-is-exploding-yet-spending-is-stalling-why-a-foundational-rule-of-economics-is-breaking-9c7ad4b3?mod=mw_rss_topstories",
-      "heat": 71
+      "heat": 61
     },
     {
       "id": "c94df6fa2ace",
       "title": "随着政治压力加剧，欧盟领导人未能打破1.7万亿美元预算僵局",
-      "summary": "欧盟领导人未能打破该集团预算僵局，谈判将于12月恢复，而关键的截止日期即将到来。",
+      "summary": "欧盟领导人未能打破该集团预算僵局，谈判将于12月恢复，而关键的最后期限即将到来。",
       "category": "politics",
       "country": null,
       "city": null,
@@ -178,28 +226,12 @@
       "published_at": "2026-11-27T14:12:55Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/11/27/eu-budget-2028-2034-deadlock.html",
-      "heat": 71
-    },
-    {
-      "id": "51c2516bc745",
-      "title": "随着欧洲的重整军备热潮遭遇阻碍，莱茵金属公司放缓了增长步伐",
-      "summary": "这家德国军火制造商承诺采取“更加谨慎的方法”来预测坦克和弹药的销售情况。",
-      "category": "markets",
-      "country": "德国",
-      "city": null,
-      "lat": 51.17,
-      "lng": 10.45,
-      "locate_basis": "summary",
-      "image": "https://image.cnbcfm.com/api/v1/image/108191734-1756364310897-gettyimages-2231659141-_mma9642.jpeg?v=1756364320&w=1920&h=1080",
-      "published_at": "2026-11-27T13:08:07Z",
-      "source": "CNBC World News",
-      "url": "https://www.cnbc.com/2026/11/27/rheinmetall-stock-cmd-guidance-sales.html",
-      "heat": 69
+      "heat": 60
     },
     {
       "id": "8852bb397a39",
       "title": "特朗普 фактически фактически废除了庇护制度。支持者希望最高法院能恢复庇护权",
-      "summary": "特朗普的移民政策大刀阔斧地改革——禁止庇护、大规模遣返和新的法律手段——几乎彻底终结了庇护制度。最高法院即将审议某些变动是否剥夺了人们的法定程序权利。",
+      "summary": "特朗普的移民政策大刀阔斧地改革——包括庇护禁令、大规模遣返和新的法律手段——几乎彻底终结了庇护制度。最高法院即将审议某些变动是否剥夺了人们的法定程序权利。",
       "category": "politics",
       "country": null,
       "city": null,
@@ -210,7 +242,7 @@
       "published_at": "2026-11-27T10:00:00Z",
       "source": "NPR Politics",
       "url": "https://www.npr.org/2026/11/27/nx-s1-6037854/trump-effectively-ended-asylum-supreme-court",
-      "heat": 68
+      "heat": 57
     },
     {
       "id": "afd70fe24e55",
@@ -226,7 +258,7 @@
       "published_at": "2026-11-26T13:31:28Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/11/26/g-s1-155955/north-korea-kim-nuclear-weapons-trump",
-      "heat": 67
+      "heat": 55
     },
     {
       "id": "0b6e4500df56",
@@ -242,12 +274,12 @@
       "published_at": "2026-11-27T15:52:00Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/11/26/trump-gdp-revision-investigation.html",
-      "heat": 65
+      "heat": 54
     },
     {
       "id": "251c853bebc8",
       "title": "前《时代》杂志记者、美国前副国务卿斯特罗布·塔尔博特去世",
-      "summary": "斯特罗布·塔尔博特（Strobe Talbott）于周四去世，享年80岁。他曾是《时代》杂志的记者，后来在比尔·克林顿总统任内担任副国务卿，之后又担任布鲁金斯学会主席。",
+      "summary": "斯特罗布·塔尔博特（Strobe Talbott）于周四去世，享年80岁。他曾是《时代》杂志的记者，后来在比尔·克林顿总统任内担任副国务卿，随后又担任布鲁金斯学会（Brookings Institution）的主席。",
       "category": "politics",
       "country": null,
       "city": null,
@@ -258,12 +290,12 @@
       "published_at": "2026-11-27T06:12:45Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/11/27/g-s1-155990/strobe-talbott-obit",
-      "heat": 58
+      "heat": 47
     },
     {
       "id": "798dddff646f",
       "title": "随着对乌克兰能源基础设施的袭击加剧，特朗普和北约秘书长警告俄罗斯",
-      "summary": "特朗普和北约主席马克·吕特敦促俄罗斯避免可能扩大战争的行动，并呼吁迅速和平解决。",
+      "summary": "特朗普和北约主席马克·吕特敦促俄罗斯避免采取可能扩大战争的行动，并呼吁迅速和平解决问题。",
       "category": "geopolitics",
       "country": "俄罗斯",
       "city": null,
@@ -274,11 +306,11 @@
       "published_at": "2026-11-26T16:12:47Z",
       "source": "CNBC World News",
       "url": "https://www.cnbc.com/2026/11/26/trump-nato-rutte-russia-ukraine-war.html",
-      "heat": 54
+      "heat": 43
     },
     {
       "id": "f70baf0ffc8a",
-      "title": "刚果埃博拉疫情病例数已达12000例，部分应急人员已撤离",
+      "title": "刚果埃博拉疫情病例数已达12000例，部分救援人员撤离",
       "summary": "随着疫情在刚果东部迅速蔓延，叛军与政府军之间的战斗正在阻碍遏制疫情蔓延的努力。",
       "category": "geopolitics",
       "country": "刚果（金）",
@@ -290,39 +322,7 @@
       "published_at": "2026-11-26T13:47:09Z",
       "source": "NPR World",
       "url": "https://www.npr.org/2026/11/26/g-s1-155957/congo-ebola-responders",
-      "heat": 51
-    },
-    {
-      "id": "41a5dbeca937",
-      "title": "民主党在中期选举中获胜后，有人希望对DEI的攻击会缓和下来",
-      "summary": "中期选举结束后，一位民主党众议员宣布DEI（多元化、公平性和包容性）回归。民主党的崛起对特朗普政府无情攻击的多元化倡议有何预示？",
-      "category": "geopolitics",
-      "country": null,
-      "city": null,
-      "lat": null,
-      "lng": null,
-      "locate_basis": null,
-      "image": "https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg",
-      "published_at": "2026-11-26T23:06:14Z",
-      "source": "NPR Politics",
-      "url": "https://www.npr.org/2026/11/26/nx-s1-6036795-e1/after-democrats-midterm-wins-some-hope-attacks-on-dei-will-ease",
-      "heat": 49
-    },
-    {
-      "id": "eefc3e346b90",
-      "title": "法院允许波多黎各总督解雇负责该岛问题重重的电网的公司",
-      "summary": "LUMA Energy 于五年前接管了电网。法院的裁决宣告其合同无效，并给予政府一年时间寻找新的运营商。",
-      "category": "politics",
-      "country": null,
-      "city": null,
-      "lat": null,
-      "lng": null,
-      "locate_basis": null,
-      "image": "https://media.npr.org/include/images/facebook-default-wide-s1400-c85.jpg",
-      "published_at": "2026-11-26T09:44:20Z",
-      "source": "NPR Politics",
-      "url": "https://www.npr.org/2026/11/26/nx-s1-6054139/court-rules-puerto-ricos-governor-can-fire-company-that-runs-troubled-power-grid",
-      "heat": 47
+      "heat": 40
     }
   ]
 }
